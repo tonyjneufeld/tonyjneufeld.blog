@@ -4,3 +4,68 @@
 @import "bootstrap-dark";
 @import "syntax-highlighting";
 @import "main";
+
+/* General reset */
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  background-color: #fafafa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header / Hero */
+header {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Navigation (if you have links) */
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0077cc;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Posts */
+.post-preview {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.post-preview h2 {
+  margin-top: 0;
+}
+
+.post-preview a {
+  color: #0077cc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
