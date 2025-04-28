@@ -10,9 +10,9 @@ title: tonyneufeld.blog
 
 # Link to avatar in the navbar (/assets/images/avatar.png). Leave empty if no logo desired. Two avatars for light and dark mode.
 # Avatar for light mode site
-lightavatar: tnc_logo.png
+lightavatar: coffeecup.png
 # Avatar for dark mode site
-darkavatar: tnc_logo.png
+darkavatar: coffeecup.png
 
 # A short description (e.g., A blog dedicated to reviewing cat gifs), used as part of the title tag like Ben's Awesome Site | A blog dedicated to reviewing cat gifs instead of Ben's Awesome Site | Long description about a blog dedicated to reviewing cat gifs that would be used when page.title is not defined.
 tagline: tonyneufeld.blog
