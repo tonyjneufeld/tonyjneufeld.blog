@@ -33,7 +33,7 @@ baseurl: ""
 author: tony-neufeld
 
 # URL to a site-wide logo (e.g., /assets/your-company-logo.png)
-logo: tnc_logo.png
+logo: coffeecup.png
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
