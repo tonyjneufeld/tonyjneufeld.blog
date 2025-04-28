@@ -18,10 +18,6 @@ For general inquiries and support: [tonyjneufeld@gmail.com](mailto:tonyjneufeld@
 Calendly link: [click here to find a time that works for us](https://calendly.com/tonyneufeld)
 
 
-##### Social Media
-Follow us on social media to stay updated with the latest news and insights: [LinkedIn](https://www.linkedin.com/in/tony-neufeld-050a0685/)
-
-
 ##### Office Hours (TBD)
 
 
