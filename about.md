@@ -4,9 +4,6 @@ title: "About"
 permalink: /about/
 description: “Helping people from Saskatchewan design a life of freedom, purpose, and financial confidence — with simple strategies for lifestyle design and long-term wealth.”
 ---
-
-## Meet Tony
-
 Hi, I'm Tony Neufeld. My goal is to help young professionals, immigrants, indigenous folks, new parents, and families simplify their finances, build wealth, and align their money with the life they want to live — all with a distinctly Saskatchewan lens.
 
 My journey started like many Canadian professionals — with student loans, big dreams, and the nagging question of whether I could truly build wealth while still enjoying my life in my 20s.
@@ -39,7 +36,7 @@ A life well-lived requires intention. This means designing your career and lifes
 
 ---
 
-## Ready to Write Your Own Success Story?
+### Ready to Write Your Own Success Story?
 
 I'd love to help you create a personalized roadmap to financial independence and your ideal lifestyle vision.
 
