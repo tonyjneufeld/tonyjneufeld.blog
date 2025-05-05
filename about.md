@@ -40,5 +40,4 @@ A life well-lived requires intention. This means designing your career and lifes
 
 I'd love to help you create a personalized roadmap to financial independence and your ideal lifestyle vision.
 
-[See My Coaching Options](/coaching/)
 [Book a Free Consultation](/contact/)
