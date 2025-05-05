@@ -18,7 +18,7 @@ darkavatar: coffeecup.png
 tagline: tonyneufeld.blog
 
 # A longer description used for the description meta tag. Also used as fallback for pages that don't provide their own description, and also as part of the page's title tag if neither page.title nor site.tagline has been defined.
-description: "Practical insights on lifestyle design, personal finance, and fatherhood in Saskatchewan — helping young professionals, immigrants, indigenous folks, new parents, and families simplify their finances, build wealth, and align their money with the life they want to live — all with a distinctly Saskatchewan lens."
+description: "Practical insights on lifestyle design and personal finance in Saskatchewan — helping young professionals, immigrants, indigenous folks, new parents, and families simplify their finances, build wealth, and align their money with the life they want to live — all with a distinctly Saskatchewan lens."
 
 # The full URL to your site. Note: site.github.url will be used by default.
 url: tonyneufeld.blog
