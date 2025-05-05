@@ -1,3 +1,8 @@
+---
+layout: post
+title:  "Why am I starting this Blog?"
+---
+
 The purpose of this blog is to be an open place where I can write about literally anything. And that excites me. I am a Myers-Briggs ENFP, and that means I will constantly be finding new interests and new things to do with life. It also means that I love learning from real people about their interests and what makes them tick. At the end of the day, I am who I am. I believe writing this blog will help me be the best version of myself and can eventually help others be the best versions of themselves. 
 
 So, since we are very early days of this blog, I want to write about what my interests are today as I look ahead to my 30s. First, I have to share who I was in my 20s. Since, over the years, I have tried to be many different people. I have tried to be a YouTuber, a personal finance influencer, an animal TikToker, an Engineer, a disc golfer, a gardener, a golfer, a travel vlogger, an entrepreneur, a guitar player, a solopreneur, a skateboarder, a digital minimalist, a minimalist, a hockey player, and many, many other random endeavours. 
