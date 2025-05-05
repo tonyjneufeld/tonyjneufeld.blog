@@ -36,7 +36,7 @@ author: tony-neufeld
 logo: coffeecup.png
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+google_analytics: 'G-FM601HF0DV'
 
 permalink: /:year/:month/:day/:title/
 
