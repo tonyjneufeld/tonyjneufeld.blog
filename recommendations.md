@@ -2,7 +2,7 @@
 layout: page
 title: Tony Recommends
 description: A curated list of books, tools, local spots, and resources that have helped me build financial independence and an intentional lifestyle in Saskatchewan.
-permalink: /recommends/
+permalink: /recommendations/
 ---
 
 # Tony Recommends
