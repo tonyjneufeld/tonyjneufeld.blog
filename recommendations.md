@@ -5,12 +5,6 @@ description: A curated list of books, tools, local spots, and resources that hav
 permalink: /recommendations/
 ---
 
-# Tony Recommends
-
-These are the books, tools, and local gems that have shaped how I live, work, and enjoy life in Saskatchewan. Whether you're building wealth, designing a life you don’t need to escape from, or just looking for great places to explore in Saskatoon — here’s my personal list of favourites.
-
----
-
 ## My Favourite Books
 
 These are the books that influenced my approach to money, work, and life. And before you go and buy any of them, go get them for free from your local library!
