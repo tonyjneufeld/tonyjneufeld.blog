@@ -19,7 +19,7 @@ Now, I want to help other people in Saskatchewan build their own paths to financ
 
 ### Financial Independence
 
-Financial independence** isn't just about the money — it's about creating freedom to live your ideal lifestyle. It's about building systems and habits that grow your net worth while still enjoying your life now. My approach focuses on optimizing the big decisions that really move the needle, rather than cutting out every small pleasure.
+Financial independence isn't just about the money — it's about creating freedom to live your ideal lifestyle. It's about building systems and habits that grow your net worth while still enjoying your life now. My approach focuses on optimizing the big decisions that really move the needle, rather than cutting out every small pleasure.
 
 - Intentional spending that aligns with values
 - Strategic career growth and income expansion
