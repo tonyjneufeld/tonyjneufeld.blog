@@ -50,7 +50,7 @@ footer-links:
   linkedin: tony-neufeld-050a0685
   rss: test_rss_tonyneufeld_blog
   twitter: 
-  strava: "137288884"
+  strava: 137288884
 
 plugins:
   - jekyll-seo-tag
