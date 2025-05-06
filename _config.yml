@@ -48,8 +48,9 @@ footer-links:
   github:
   instagram: 
   linkedin: 
-  rss: # just type anything here for a working RSS icon
+  rss: test_rss_tonyneufeld_blog
   twitter: 
+  strava: 137288884
 
 plugins:
   - jekyll-seo-tag
