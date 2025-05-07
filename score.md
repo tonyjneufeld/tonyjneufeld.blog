@@ -35,15 +35,18 @@ title: Score
 // Pull data from Jekyll data file into JavaScript arrays
 const labels = [{% for log in site.data.jim_collins_log | sort: 'date' %}'{{ log.date }}',{% endfor %}];
 const scores = [{% for log in site.data.jim_collins_log | sort: 'date' %}{{ log.score }},{% endfor %}];
+const hours = [{% for log in site.data.jim_collins_log | sort: 'date' %}{{ log.creative_hours }},{% endfor %}];
 
 const ctx = document.getElementById('scoreChart').getContext('2d');
 const scoreChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: labels,
-        datasets: [{
+        datasets: [
+          {
             label: 'Daily Score',
             data: scores,
+            yAxisID: 'yScore',
             fill: false,
             borderColor: '#2ecc71',
             backgroundColor: '#2ecc71',
@@ -58,19 +61,42 @@ const scoreChart = new Chart(ctx, {
                 if (val === -2) return '#e74c3c';
                 return '#000';
             },
-        }]
+          },
+          {
+            label: 'Creative Hours',
+            data: hours,
+            yAxisID: 'yHours',
+            fill: false,
+            borderColor: '#3498db',
+            backgroundColor: '#3498db',
+            borderDash: [5, 5],
+            tension: 0.3,
+            pointRadius: 3,
+          }
+        ]
     },
     options: {
         scales: {
-            y: {
+            yScore: {
+                type: 'linear',
+                position: 'left',
                 min: -2,
                 max: 2,
-                ticks: {
-                    stepSize: 1
-                },
+                ticks: { stepSize: 1 },
                 title: {
                     display: true,
                     text: 'Score'
+                }
+            },
+            yHours: {
+                type: 'linear',
+                position: 'right',
+                title: {
+                    display: true,
+                    text: 'Creative Hours'
+                },
+                grid: {
+                    drawOnChartArea: false
                 }
             },
             x: {
@@ -82,14 +108,11 @@ const scoreChart = new Chart(ctx, {
         },
         plugins: {
             legend: {
-                display: false
+                display: true
             },
             tooltip: {
-                callbacks: {
-                    label: function(context) {
-                        return `Score: ${context.raw}`;
-                    }
-                }
+                mode: 'index',
+                intersect: false
             }
         }
     }
