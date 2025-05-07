@@ -23,7 +23,7 @@
   window.onload = function() {
     Calendly.initBadgeWidget({
       url: 'https://calendly.com/tonyneufeld/coffee',
-      text: "Coffee?", // still required (we'll hide it visually)
+      text: "", // still required (we'll hide it visually)
       color: '#38250E',
       textColor: '#ffffff',
       branding: undefined
@@ -36,7 +36,7 @@
 .calendly-badge-content {
   font-size: 0;
   line-height: 0;
-  padding: 6px; /* adjust padding around the icon */
+  padding: 1px; /* adjust padding around the icon */
 }
 
 /* Replace text with the coffee cup image */
@@ -46,8 +46,8 @@
   background-image: url('/coffeecup_white.PNG'); /* <-- Adjust path if needed */
   background-size: contain;
   background-repeat: no-repeat;
-  width: 28px;
-  height: 28px;
+  width: 16px;
+  height: 16px;
   vertical-align: middle;
 }
 
