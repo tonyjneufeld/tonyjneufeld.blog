@@ -10,7 +10,14 @@ title: Score
 
 <p>This page tracks my daily self-assessment inspired by Jim Collins: quality of day, creative hours, and brief reflections.</p>
 
-<canvas id="scoreChart" width="100%" height="400"></canvas>
+<canvas id="scoreChart"></canvas>
+
+<style>
+#scoreChart {
+  max-height: 300px;  /* Adjust size here */
+  width: 100%;
+}
+</style>
 
 <div class="score-log">
   {% assign logs = site.data.jim_collins_log | sort: 'date' %}
