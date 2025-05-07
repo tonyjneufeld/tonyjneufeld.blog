@@ -1,6 +1,6 @@
 ---
 layout: default
-title: My Jim Collins Score
+title: Score
 ---
 
 <link rel="stylesheet" href="/assets/css/jim-collins.css">
