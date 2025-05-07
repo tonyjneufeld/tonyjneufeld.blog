@@ -6,27 +6,27 @@ title: Score
 <link rel="stylesheet" href="/assets/css/jim-collins.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<h1>My Jim Collins Daily Score</h1>
+<h1>My Daily Score</h1>
 
-<p>This page tracks my daily self-assessment inspired by Jim Collins: quality of day, creative hours, and brief reflections.</p>
+<p>This page tracks my daily self-assessment inspired by Jim Collins: quality of day, creative hours, and brief reflections. The one tweak I made is to label creative hours as Deep hours. The current thinking is that I want to better understand how I am trending towards my Deep Life goals.</p>
 
 <canvas id="scoreChart"></canvas>
 
 <style>
 #scoreChart {
-  max-height: 300px;  /* Adjust size here */
+  max-height: 50px;  /* Adjust size here */
   width: 100%;
 }
 </style>
 
 <div class="score-log">
-  {% assign logs = site.data.jim_collins_log | sort: 'date' %}
+  {% assign logs = site.data.jim_collins_log | sort: 'date' | reverse %}
   {% for log in logs %}
     <div class="score-entry">
       <strong>{{ log.date }}</strong>  
-      [Score: {{ log.score }}]  
-      {{ log.creative_hours }} hrs  
-      <br><em>{{ log.note }}</em>
+       - Daily Score: {{ log.score }} -  
+      - Deep: {{ log.creative_hours }} hrs -  
+      <em>{{ log.note }}</em>
     </div>
   {% endfor %}
 </div>
@@ -63,7 +63,7 @@ const scoreChart = new Chart(ctx, {
             },
           },
           {
-            label: 'Creative Hours',
+            label: 'Deep Hours',
             data: hours,
             yAxisID: 'yHours',
             fill: false,
@@ -93,7 +93,7 @@ const scoreChart = new Chart(ctx, {
                 position: 'right',
                 title: {
                     display: true,
-                    text: 'Creative Hours'
+                    text: 'Deep Hours'
                 },
                 grid: {
                     drawOnChartArea: false
