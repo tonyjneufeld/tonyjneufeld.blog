@@ -21,6 +21,20 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/tonyneufeld/coffee', text: "Let's have a cup of coffee!", color: '#38250E', textColor: '#ffffff', branding: undefined }); }</script>
     <!-- Calendly badge widget end -->
+    <style>
+    /* Wait for Calendly badge to load, then add icon */
+  .calendly-badge-content::before {
+  content: "";
+  display: inline-block;
+  background-image: url('coffeecup_white.png'); /* adjust path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+</style>
     <meta
       name="theme-color"
       content="#eeeeee"
