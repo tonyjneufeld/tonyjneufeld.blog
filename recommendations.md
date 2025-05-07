@@ -62,9 +62,3 @@ I love supporting local shops that have high-quality, buy-it-for-life products. 
 - **Escape Sports** — A locally owned shop for people who love to get outside. They specialize in gear for paddleboarding, longboarding, disc golf, camping, and commuting by bike or skateboard. A perfect stop if you want to add a little more adventure and movement to your lifestyle. The staff are incredibly knowledgeable and friendly.
 
 ---
-
-## Curious?
-
-If you’re curious about a resource, book, or local spot, [contact me](/contact/) — I’m happy to share what’s worked (or hasn’t) for me!
-
----
