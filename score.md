@@ -14,7 +14,7 @@ title: Score
 
 <style>
 #scoreChart {
-  max-height: 50px;  /* Adjust size here */
+  max-height: 150px;  /* Adjust size here */
   width: 100%;
 }
 </style>
@@ -24,8 +24,8 @@ title: Score
   {% for log in logs %}
     <div class="score-entry">
       <strong>{{ log.date }}</strong>  
-       - Daily Score: {{ log.score }} -  
-      - Deep: {{ log.creative_hours }} hrs -  
+       - Daily Score: {{ log.score }}   
+      - Deep Hours: {{ log.creative_hours }} hrs -  
       <em>{{ log.note }}</em>
     </div>
   {% endfor %}
