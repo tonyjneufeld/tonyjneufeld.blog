@@ -9,12 +9,19 @@ permalink: /recommendations/
 
 These are the books that influenced my approach to money, work, and life. And before you go and buy any of them, go get them for free from your local library!
 
+### Fiction
+
+- *And Then There Were None* by Agatha Christie — A quick read, and one of my favourite mysteries.
+- *Lord of the Flies* by William Golding — Another quick read, but an absolute classic.
+- *1984* by George Orwell — Incredibly relevant for today's day and age.
+- *The Shining* by Stephen King - I didn't sleep for a couple weeks after this one.
+- *The Way of Kings* by Brandon Sanderson - An incredible journey, this book is long, but completely on another level.
+
 ### Financial Independence & Money
 
 - *5 Years to Freedom: A Canadian Guide to Early Retirement* by Rejean Venne — This Canadian-based guide will help you retire way earlier than you think possible.
 - *Your Money or Your Life* by Vicki Robin — A mindset reset on how we exchange life energy for money.
-- *Simple Path to Wealth* by JL Collins — A no-nonsense guide to financial independence and index investing.
-- *Die With Zero* by Bill Perkins — A fresh perspective on spending intentionally throughout life.
+- *The Psychology of Money* by Morgan Housel — A fantastic bundle of stories about wealth, greed, and happiness.
 
 ### Lifestyle Design & Work
 
@@ -26,13 +33,13 @@ These are the books that influenced my approach to money, work, and life. And be
 
 ---
 
-## How to Get a Saskatoon Library Card
+## Go get a Library Card!
 
 Getting a library card in Saskatoon is easy and opens up free access to thousands of books, audiobooks, tools, and workshops — perfect for lifelong learners and budget-friendly living.
 
 1. **Visit any Saskatoon Public Library branch** — You’ll need a piece of ID and proof of Saskatoon residency (like a driver’s license or utility bill).
 2. **Sign up in person or online** — You can start the process online at [saskatoonlibrary.ca](https://saskatoonlibrary.ca) and finish it at a branch.
-3. **Start borrowing** — You’ll get access to physical books, ebooks (with Libby app), audiobooks, streaming services (like Kanopy), and free events.
+3. **Start borrowing** — You’ll get access to physical books, ebooks (with Libby app), audiobooks, streaming services (like Kanopy), and free events. Bonus: If you buy a Kobo e-reader, you can get ebooks from the library instantly and for free!
 
 I love the library, I use it to borrow books, movies, and even PS5 games!
 
