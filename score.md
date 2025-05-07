@@ -48,8 +48,8 @@ const scoreChart = new Chart(ctx, {
             data: scores,
             yAxisID: 'yScore',
             fill: false,
-            /*borderColor: '#2ecc71',*/
-            backgroundColor: '#2ecc71',
+            borderColor: '#3b3d3c',
+            backgroundColor: '#3b3d3c',
             tension: 0.3,
             pointRadius: 4,
             pointBackgroundColor: function(context) {
