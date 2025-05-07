@@ -33,9 +33,9 @@ title: Score
 
 <script>
 // Pull data from Jekyll data file into JavaScript arrays
-const labels = [{% for log in site.data.jim_collins_log | sort: 'date' %}'{{ log.date }}',{% endfor %}];
-const scores = [{% for log in site.data.jim_collins_log | sort: 'date' %}{{ log.score }},{% endfor %}];
-const hours = [{% for log in site.data.jim_collins_log | sort: 'date' %}{{ log.creative_hours }},{% endfor %}];
+const labels = [{% for log in site.data.jim_collins_log | sort: 'date' | reverse %}'{{ log.date }}',{% endfor %}];
+const scores = [{% for log in site.data.jim_collins_log | sort: 'date' | reverse %}{{ log.score }},{% endfor %}];
+const hours = [{% for log in site.data.jim_collins_log | sort: 'date' | reverse %}{{ log.creative_hours }},{% endfor %}];
 
 const ctx = document.getElementById('scoreChart').getContext('2d');
 const scoreChart = new Chart(ctx, {
@@ -48,15 +48,15 @@ const scoreChart = new Chart(ctx, {
             data: scores,
             yAxisID: 'yScore',
             fill: false,
-            borderColor: '#2ecc71',
+            /*borderColor: '#2ecc71',*/
             backgroundColor: '#2ecc71',
             tension: 0.3,
             pointRadius: 4,
             pointBackgroundColor: function(context) {
                 const val = context.raw;
-                if (val === 2) return '#27ae60';
-                if (val === 1) return '#2ecc71';
-                if (val === 0) return '#bdc3c7';
+                if (val === 2) return '#2ecc71';
+                if (val === 1) return '#3498db';
+                if (val === 0) return '#000000';
                 if (val === -1) return '#e67e22';
                 if (val === -2) return '#e74c3c';
                 return '#000';
