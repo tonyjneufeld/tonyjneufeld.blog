@@ -14,7 +14,7 @@ title: Score
 
 <style>
 #scoreChart {
-  max-height: 150px;  /* Adjust size here */
+  max-height: 400px;  /* Adjust size here */
   width: 100%;
 }
 </style>
