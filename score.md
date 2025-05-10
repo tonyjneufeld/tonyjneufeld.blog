@@ -20,7 +20,7 @@ title: Score
 </style>
 
 <div class="score-log">
-  {% assign logs = site.data.jim_collins_log | sort: 'date' | reverse %}
+  {% assign logs = site.data.jim_collins_log | sort: 'date' | %}
   {% for log in logs %}
     <div class="score-entry">
       <strong>{{ log.date }}</strong>  
