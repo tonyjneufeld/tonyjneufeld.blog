@@ -20,7 +20,7 @@ title: Score
 </style>
 
 <div class="score-log">
-  {% assign logs = site.data.jim_collins_log | sort: 'date' | reverse %}
+  {% assign logs = site.data.jim_collins_log | sort: 'date' %}
   {% for log in logs %}
     <div class="score-entry">
       <strong>{{ log.date }}</strong>  
@@ -32,7 +32,7 @@ title: Score
 </div>
 
 <script>
-// Pull data from Jekyll data file into JavaScript arrays
+// Pull data from Jekyll data file into JavaScript arrays (sorted oldest to newest)
 const labels = [{% for log in logs %}'{{ log.date }}',{% endfor %}];
 const scores = [{% for log in logs %}{{ log.score }},{% endfor %}];
 const hours = [{% for log in logs %}{{ log.creative_hours }},{% endfor %}];
@@ -103,6 +103,10 @@ const scoreChart = new Chart(ctx, {
                 ticks: {
                     maxRotation: 45,
                     minRotation: 45
+                },
+                title: {
+                    display: true,
+                    text: 'Date'
                 }
             }
         },
