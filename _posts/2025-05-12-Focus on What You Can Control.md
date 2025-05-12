@@ -1,3 +1,7 @@
+---
+layout: post
+title:  "Focus on What You Can Control"
+---
 As you may have already read in my previous post about [why I am writing this blog](https://tonyneufeld.blog/2025/05/05/Why-am-I-starting-this-Blog/), I like to try new things, especially when it comes to sports. This winter, it was Flag Football. Flag Football is traditionally a non-contact sport, but sometimes things get heated when it comes to playoffs. 
 
 So let's set the stage. Week 2 of the playoffs, our team is playing against one of the top teams in the league with a birth in the finals at stake. We are down a touchdown late in the first half, and we have the ball. The play call is a WR bubble screen to me, and I catch the ball, make the first guy miss, go to juke the second guy, and… we crash head-on-head. Both of us have a huge gash right above our eyes, in the **exact same spot**. 
