@@ -1,16 +1,20 @@
-- date: 2025-05-08
+- date: 2025-05-11
+  score: 1
+  note: "Interesting day, filled with some family time, yard work, ran 17km, and writing a blog post."
+  creative_hours: 3
+- date: 2025-05-10
   score: 1
   note: "Great day, filled with family, community, yard chores, and some deep work on the blog!"
   creative_hours: 2
-- date: 2025-05-08
+- date: 2025-05-09
   score: 0
   note: "Interesting work project, not a whole lot of deep time. Fun round of disc golf with friends though!"
   creative_hours: 1
-- date: 2025-05-07
+- date: 2025-05-08
   score: 0
   note: "Had a few interesting challenges at work. Did some reading and went for a run, overall solid."
   creative_hours: 3.5
-- date: 2025-05-06
+- date: 2025-05-07
   score: 1
   note: "Solid deep work on the blog, made this page, and a great wing-surfskate session"
   creative_hours: 4
