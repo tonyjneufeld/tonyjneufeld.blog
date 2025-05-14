@@ -149,3 +149,60 @@ a:hover {
       margin: 0 auto;
     }
 }
+  .subscribe-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 2rem auto;
+    font-family: system-ui, sans-serif;
+  }
+
+  .subscribe-box label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .subscribe-box input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .subscribe-box input[type="submit"] {
+    background-color: #222;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .subscribe-box input[type="submit"]:hover {
+    background-color: #444;
+  }
+
+  .subscribe-box p {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .subscribe-box p a {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .subscribe-box p a:hover {
+    text-decoration: underline;
+  }
