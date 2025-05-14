@@ -6,9 +6,9 @@ description: “Helping Canadians design a life of freedom, purpose, and financi
 ---
 Hi there! 
 
-My name is Tony Neufeld. I’m obsessed with the FIRE movement. I found out about FIRE after I stumbled upon a [video by Mr Money Mustache](https://www.youtube.com/watch?v=8-Li_sFNc4Q) in 2016. After watching that video and reading his blog, I was hooked!
+My name is Tony Neufeld. My journey started like many Canadians. Student loans, big dreams, and the nagging question of whether I could truly build for my future in Canada while still enjoying my 20s. In 2016, I found out about FIRE after I stumbled upon a [video by Mr Money Mustache](https://www.youtube.com/watch?v=8-Li_sFNc4Q). After watching that video and reading his blog, I was hooked!
 
-After spending my 20s focusing on FIRE, I want to give back and help others achieve their goals. My journey started like many Canadian professionals—with student loans, big dreams, and the nagging question of whether I could truly build for my future in Canada while still enjoying my 20s. What I have learned along the way is that Financial independence isn't just about the money — it's about creating freedom to live your ideal lifestyle. It's about building systems and habits that grow your net worth while still enjoying your life now. A life well-lived requires intention. This means designing your career and lifestyle around what truly matters to you.
+What I have learned along the way is that Financial independence isn't just about the money — it's about creating freedom to live your ideal lifestyle. It's about building systems and habits that grow your net worth while still enjoying your life now. A life well-lived requires intention. This means designing your career and lifestyle around what truly matters to you.
 
 Overall, this blog's goal is to help young professionals, immigrants, indigenous folks, new parents, and families simplify their finances, build wealth, and align their money with the life they want to live—all with a distinctly Canadian lens.
 
