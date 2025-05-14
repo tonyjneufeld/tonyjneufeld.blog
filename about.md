@@ -41,19 +41,4 @@ OK, enough about why I am starting this blog. Who am I, and what’s my story so
 ### Stay in touch
 Click the button in the bottom corner if you want to grab a virtual or in-person coffee!
 
-<form
-  action="https://buttondown.com/api/emails/embed-subscribe/tonyneufeldblog"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.com/tonyneufeldblog', 'popupwindow')"
-  class="subscribe-box"
->
-  <label for="bd-email">Subscribe for email notifications of New Posts:</label>
-  <input type="email" name="email" id="bd-email" placeholder="you@example.com" required />
-  
-  <input type="submit" value="Subscribe" />
-  
-  <p>
-    <a href="https://buttondown.com/refer/tonyneufeldblog" target="_blank">Powered by Buttondown</a>
-  </p>
-</form>
+---
