@@ -19,17 +19,17 @@ layout: default
   <h1 class="archive-year">{{ currDate }}</h1>
   {% assign date = currDate %} {% endif %}
   <div class="archive-item">
-    <span class="post-date archive-date fs-4"
+    <span class="post-date archive-date fs-5"
       >{{ post.date | date: "%B %-d, %Y" }} • 
         {% assign words = post.content | number_of_words %}
         {% assign minutes = words | divided_by:200 %}
         {% if minutes < 1 %}
-          1 min read
+          1 min
         {% else %}
-          {{ minutes }} min read
+          {{ minutes }} min
   {% endif %}</span
     >
-    <a href="{{ post.url | relative_url }}" class="archive-title fs-4"
+    <a href="{{ post.url | relative_url }}" class="archive-title fs-5"
       >{{ post.title }}</a
     >
   </div>
