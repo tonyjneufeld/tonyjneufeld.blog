@@ -39,8 +39,7 @@ OK, enough about why I am starting this blog. Who am I, and what’s my story so
 ---
 
 ### Stay in touch
-Reach out to me. I love hearing from readers!
-Email me at tonyjneufeld [at] gmail.com
+Click the button in the bottom corner if you want to grab a virtual or in-person coffee!
 
 <form
   action="https://buttondown.com/api/emails/embed-subscribe/tonyneufeldblog"
@@ -49,7 +48,7 @@ Email me at tonyjneufeld [at] gmail.com
   onsubmit="window.open('https://buttondown.com/tonyneufeldblog', 'popupwindow')"
   class="subscribe-box"
 >
-  <label for="bd-email">Subscribe for Email Notifications of New Posts:</label>
+  <label for="bd-email">Subscribe for email notifications of New Posts:</label>
   <input type="email" name="email" id="bd-email" placeholder="you@example.com" required />
   
   <input type="submit" value="Subscribe" />
