@@ -30,10 +30,9 @@ OK, enough about why I am starting this blog. Who am I, and what’s my story so
 - ~~Graduate from Engineering~~ (2017)
 - ~~Find a fully-remote job~~ (2022)
 - ~~Get married~~ (2023)
+- ~~Reach CoastFIRE~~ (2024)
 - Start and sustain a blog for one year
 - Be a super dad
-- Pay off our home early
-- Reach CoastFIRE
 - Reach Financial Independence
 
 ### Stay in touch
