@@ -18,13 +18,14 @@ This blog officially started in April 2025, and we will see how things go!
 
 ### Who Am I?
 OK, enough about why I am starting this blog. Who am I, and what’s my story so far?
-
 - I’m 29 years old.
 - I was born in BC but have pretty much lived my whole life in Saskatchewan.
 - I started my career in Sales after completing a degree in Mechanical Engineering.
 - I worked in Sales and Sales Compensation for 5 years.
 - I transitioned into working in Operations with a fully remote tech company for the last three years
 - I got married in 2023, and we will have our first child in 2025.
+
+---
 
 ### I have some long-term ambitions…
 - ~~Graduate from Engineering~~ (2017)
@@ -35,7 +36,27 @@ OK, enough about why I am starting this blog. Who am I, and what’s my story so
 - Be a super dad
 - Reach Financial Independence
 
+---
+
 ### Stay in touch
 Reach out to me. I love hearing from readers!
-
 Email me at tonyjneufeld [at] gmail.com
+
+<form
+  action="https://buttondown.com/api/emails/embed-subscribe/tonyneufeldblog"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.com/tonyneufeldblog', 'popupwindow')"
+  class="subscribe-box"
+>
+  <label for="bd-email">Stay in the loop — new posts straight to your inbox</label>
+  <input type="email" name="email" id="bd-email" placeholder="you@example.com" required />
+  
+  <input type="submit" value="Subscribe" />
+  
+  <p>
+    <a href="https://buttondown.com/refer/tonyneufeldblog" target="_blank">Powered by Buttondown</a>
+  </p>
+</form>
+<br>
+<!--<a href="https://www.buymeacoffee.com/tonyneufeldblog"><img src="https://img.buymeacoffee.com/button-api/?text=Support the blog&emoji=&slug=tonyneufeldblog&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>>
