@@ -20,7 +20,14 @@ layout: default
   {% assign date = currDate %} {% endif %}
   <div class="archive-item">
     <span class="post-date archive-date fs-4"
-      >{{ post.date | date: "%B %-d, %Y" }}</span
+      >{{ post.date | date: "%B %-d, %Y" }} • 
+        {% assign words = content | number_of_words %}
+        {% assign minutes = words | divided_by:200 %}
+        {% if minutes < 1 %}
+          1 min read
+        {% else %}
+          {{ minutes }} min read
+  {% endif %}</span
     >
     <a href="{{ post.url | relative_url }}" class="archive-title fs-4"
       >{{ post.title }}</a
