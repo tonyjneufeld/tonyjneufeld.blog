@@ -49,7 +49,7 @@ Email me at tonyjneufeld [at] gmail.com
   onsubmit="window.open('https://buttondown.com/tonyneufeldblog', 'popupwindow')"
   class="subscribe-box"
 >
-  <label for="bd-email">Stay in the loop — new posts straight to your inbox</label>
+  <label for="bd-email">Subscribe for Email Notifications of New Posts:</label>
   <input type="email" name="email" id="bd-email" placeholder="you@example.com" required />
   
   <input type="submit" value="Subscribe" />
@@ -58,5 +58,3 @@ Email me at tonyjneufeld [at] gmail.com
     <a href="https://buttondown.com/refer/tonyneufeldblog" target="_blank">Powered by Buttondown</a>
   </p>
 </form>
-<br>
-<!--<a href="https://www.buymeacoffee.com/tonyneufeldblog"><img src="https://img.buymeacoffee.com/button-api/?text=Support the blog&emoji=&slug=tonyneufeldblog&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>>
