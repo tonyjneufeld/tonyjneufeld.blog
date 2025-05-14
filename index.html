@@ -1,11 +1,17 @@
 ---
 layout: default
 ---
-<section class="welcome-section">
-  <h2>Welcome!</h2>
-  <p>I blog about <span class="highlight">Financial Independence</span>, <span class="highlight">digital minimalism</span>, and <span class="highlight">seeking happiness</span></p>
-  <p><a href="/about" class="read-more">Read more</a></p>
+<section class="welcome-section d-flex align-items-center justify-content-between flex-wrap">
+  <div class="welcome-text" style="flex: 1 1 300px;">
+    <h2>Welcome!</h2>
+    <p>I blog about <span class="highlight">Financial Independence</span>, <span class="highlight">digital minimalism</span>, and <span class="highlight">seeking happiness</span></p>
+    <p><a href="/about" class="read-more">Read more</a></p>
+  </div>
+  <div class="welcome-image" style="flex: 0 0 auto; padding-left: 2rem;">
+    <img src="me.png" alt="Me" style="max-width: 200px; border-radius: 50%;">
+  </div>
 </section>
+
 
 <div class="archive">
   {% for post in site.posts %} {% assign currDate = post.date | date: "%Y" %} {%
