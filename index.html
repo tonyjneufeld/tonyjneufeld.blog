@@ -28,7 +28,7 @@ layout: default
       </a>
       <p class="text-muted small mb-1">
         {% assign words_array = post.content | strip_html | split: " " %}
-        {% assign excerpt_words = words_array | slice: 0, 60 %}
+        {% assign excerpt_words = words_array | slice: 0, 30 %}
         {{ excerpt_words | join: " " }}...
       </p>
       <span class="text-muted small">
