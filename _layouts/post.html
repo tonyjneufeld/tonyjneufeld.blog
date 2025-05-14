@@ -7,5 +7,22 @@ layout: default
   <span class="fs-6 text-muted">{{ page.date | date: "%B %-d, %Y" }}</span>
   <div class="mt-4">{{ content }}</div>
 </div>
-<be>
+<br>
+<form
+  action="https://buttondown.com/api/emails/embed-subscribe/tonyneufeldblog"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.com/tonyneufeldblog', 'popupwindow')"
+  class="subscribe-box"
+>
+  <label for="bd-email">Stay in the loop — new posts straight to your inbox</label>
+  <input type="email" name="email" id="bd-email" placeholder="you@example.com" required />
+  
+  <input type="submit" value="Subscribe" />
+  
+  <p>
+    <a href="https://buttondown.com/refer/tonyneufeldblog" target="_blank">Powered by Buttondown</a>
+  </p>
+</form>
+<br>
 <!--<a href="https://www.buymeacoffee.com/tonyneufeldblog"><img src="https://img.buymeacoffee.com/button-api/?text=Support the blog&emoji=&slug=tonyneufeldblog&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>>
