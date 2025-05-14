@@ -96,3 +96,17 @@ pre.highlight {
     display: inline-block !important;
   }
 }
+
+// Base link styling: inherit text color
+a {
+  color: inherit;
+  text-decoration: underline; // Optional: Keeps the link visually distinct
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+// Optional hover styling
+a:hover {
+  opacity: 0.8;
+  // Or use a theme-friendly color for more contrast if preferred
+  // color: var(--accent-color);
+}
