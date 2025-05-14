@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+<section class="welcome-section">
+  <h1><strong>Welcome!</strong></h1>
+  <p>I blog about <span class="highlight">Financial Independence</span>, <span class="highlight">digital minimalism</span>, and <span class="highlight">seeking happiness</span></p>
+  <p><a href="/about" class="read-more">Read more</a></p>
+</section>
 
 <div class="archive">
   {% for post in site.posts %} {% assign currDate = post.date | date: "%Y" %} {%
