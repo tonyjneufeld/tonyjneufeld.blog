@@ -23,6 +23,3 @@ So during that time off, I thought deeply about my why and tried to boil it down
 5. Focus on what you can control.
 
 I want to highlight that, depending on who you are and where you are in life, these tenets will be unique to you. And in ten years (*or maybe even in a year lol*), when I reflect back on this post, I have a feeling that I will have a different world view, and I may not even agree with myself. What I do know for certain is that I will be proud of the fact that I spent the time in my 20s thinking about and trying to set my family up for the future. I want to go deep on each of these Tenets in future posts, but that's it for today, blog post \#3 in the books\!
-
-\-Tony Neufeld
-
