@@ -4,7 +4,7 @@ layout: default
 <section class="welcome-section d-flex align-items-center justify-content-between flex-wrap">
   <div class="welcome-text" style="flex: 1 1 300px;">
     <h2>Welcome, I'm Tony!</h2>
-    <p>I write about <span class="highlight">financial independence</span>, <span class="highlight">digital minimalism</span>, and <span class="highlight">growing up.</span></p>
+    <p>I write about <span class="highlight">financial independence</span>, <span class="highlight">digital minimalism</span>, and <span class="highlight">life in Saskatchewan.</span></p>
     <p><a href="/about" class="read-more">Learn more</a></p>
   </div>
   <div class="welcome-image" style="flex: 0 0 auto;">
@@ -14,24 +14,28 @@ layout: default
 
 
 <div class="archive">
-  {% for post in site.posts %} {% assign currDate = post.date | date: "%Y" %} {%
-  if currDate != date %}
-  <h1 class="archive-year">{{ currDate }}</h1>
-  {% assign date = currDate %} {% endif %}
-  <div class="archive-item">
-    <span class="post-date archive-date fs-5"
-      >{{ post.date | date: "%B %-d, %Y" }} • 
+  {% assign date = "" %}
+  {% for post in site.posts %}
+    {% assign currDate = post.date | date: "%Y" %}
+    {% if currDate != date %}
+      <h2 class="archive-year mt-4">{{ currDate }}</h2>
+      {% assign date = currDate %}
+    {% endif %}
+
+    <div class="archive-item mt-3 pb-2 border-bottom">
+      <a href="{{ post.url | relative_url }}" class="archive-title d-block fs-5 mb-1">
+        {{ post.title }}
+      </a>
+      <span class="text-muted small">
+        {{ post.date | date: "%b %-d, %Y" }} • 
         {% assign words = post.content | number_of_words %}
         {% assign minutes = words | divided_by:200 %}
         {% if minutes < 1 %}
-          1 min
+          1 min read
         {% else %}
-          {{ minutes }} min
-  {% endif %}</span
-    >
-    <a href="{{ post.url | relative_url }}" class="archive-title fs-5"
-      >{{ post.title }}</a
-    >
-  </div>
+          {{ minutes }} min read
+        {% endif %}
+      </span>
+    </div>
   {% endfor %}
 </div>
