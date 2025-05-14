@@ -27,7 +27,9 @@ layout: default
         {{ post.title }}
       </a>
       <p class="text-muted small mb-1">
-        {{ post.content | strip_html | truncate: 300, "..." }}
+        {% assign words_array = post.content | strip_html | split: " " %}
+        {% assign excerpt_words = words_array | slice: 0, 60 %}
+        {{ excerpt_words | join: " " }}...
       </p>
       <span class="text-muted small">
         {{ post.date | date: "%B %-d, %Y" }} • 
