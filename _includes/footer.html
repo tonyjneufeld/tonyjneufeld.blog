@@ -1,21 +1,30 @@
 <footer class="footer mt-auto py-3">
   <div class="container footer-container text-center">
-    {% include svg_icons.html %}
+
+    <!-- SVG icons on their own line -->
+    <div class="mb-3">
+      {% include svg_icons.html %}
+    </div>
+
+    <!-- Subscribe form on its own line -->
     <form
       action="https://buttondown.com/api/emails/embed-subscribe/tonyneufeldblog"
       method="post"
       target="popupwindow"
       onsubmit="window.open('https://buttondown.com/tonyneufeldblog', 'popupwindow')"
-      class="d-inline-flex flex-wrap justify-content-center align-items-center gap-2 mt-3"
+      class="d-flex justify-content-center align-items-center flex-wrap gap-2 mb-3"
     >
+      <label for="bd-email" class="form-label mb-0 me-2 small">Get updates:</label>
       <input type="email" name="email" id="bd-email" placeholder="you@example.com" required class="form-control form-control-sm" style="max-width: 200px;" />
       <input type="submit" value="Subscribe" class="btn btn-sm btn-outline-secondary" />
     </form>
 
-    <p class="text-muted small pt-2 mb-0">
-      ©2025 Tony Neufeld | Powered by 
-      <a href="https://jekyllrb.com" target="_blank" rel="noopener" class="text-muted">Jekyll</a> | 
-      <a href="https://buttondown.com/refer/tonyneufeldblog" target="_blank" class="text-muted">Email by Buttondown</a>
+    <!-- Footer text on its own line -->
+    <p class="text-muted small mb-0">
+      ©2025 Tony Neufeld | Blog Powered by 
+      <a href="https://jekyllrb.com" target="_blank" rel="noopener" class="text-muted">Jekyll</a> | Email by
+      <a href="https://buttondown.com/refer/tonyneufeldblog" target="_blank" class="text-muted"> Buttondown</a>
     </p>
+
   </div>
 </footer>
