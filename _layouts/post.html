@@ -5,9 +5,6 @@ layout: default
 <div class="post">
   <h1>{{ page.title }}</h1>
   <span class="fs-6 text-muted">{{ page.date | date: "%B %-d, %Y" }}</span>
-  {% assign words = page.content | number_of_words %}
-  {% assign read_time = words | divided_by:200 %}
-  <span class="fs-6 text-muted">{{ page.read_time }} min read</span>
   <div class="mt-4">{{ content }}</div>
 </div>
 <br>
