@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Focus on What You Can Control"
+title:  "Life Lessons From a Saskatchewan Winter and a Head Injury"
 ---
 As you may have already read in my previous post about [why I am writing this blog](https://tonyneufeld.blog/2025/05/05/Why-am-I-starting-this-Blog/), I like to try new things, especially when it comes to sports. This winter, it was Flag Football. Flag Football is traditionally a non-contact sport, but sometimes things get heated when it comes to playoffs. 
 
