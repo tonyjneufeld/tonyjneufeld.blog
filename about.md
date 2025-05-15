@@ -30,14 +30,7 @@ OK, enough about why I am starting this blog. Who am I, and what’s my story so
 
 ### How am I doing?
 
-This section is inspired by Jim Collins' daily tracking system and is designed to help me reflect on and measure my own personal progress.
-
-The goal of this daily self-assessment is to gain clarity on:
-
-- **Quality of the Day** – Gut feel combined with progress.
-- **Deep Hours** – How much time did I spend in undistracted, meaningful work (i.e., "Deep Work") that aligns with my personal or professional goals?
-- **Brief Reflections** – A short note capturing insights, events, or patterns that affected my day.
-
+This section is inspired by Jim Collins' daily tracking system and is designed to help me reflect on and measure my own personal progress. Tracking this helps me see patterns over time and adjust behaviours or priorities accordingly. I plan on reviewing this monthly as time goes on.
 Each day is rated on a scale from **-2 to +2** to reflect the overall **quality** of the day:
 
 | Score | Description |
@@ -48,9 +41,11 @@ Each day is rated on a scale from **-2 to +2** to reflect the overall **quality*
 | **-1** | Below average; felt misaligned, distracted, or reactive. |
 | **-2** | Poor day; off-track, low energy or intentionality, far from where I want to be. |
 
-Tracking this helps me see patterns over time and adjust behaviours or priorities accordingly. I plan on reviewing this monthly as time goes on.
+The goal of this daily self-assessment is to gain clarity on:
 
-#### Daily Tracking Log
+- **Quality of the Day** – Gut feel combined with progress.
+- **Deep Hours** – How much time did I spend in undistracted, meaningful work (i.e., "Deep Work") that aligns with my personal or professional goals?
+- **Brief Reflections** – A short note capturing insights, events, or patterns that affected my day. How can I tie the qualitative motions of life back to the quantitative.
 <br>
 <div class="score-log">
   {% assign logs = site.data.jim_collins_log | sort: 'date' %}
@@ -160,7 +155,6 @@ const scoreChart = new Chart(ctx, {
     }
 });
 </script>
-<br>
 ---
 
 ### I have some long-term ambitions…
