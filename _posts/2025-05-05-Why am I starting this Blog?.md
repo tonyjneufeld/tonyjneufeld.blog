@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why am I starting this Blog?"
+title:  "What I Actually Do in a Week (And Why I’m Writing About It)"
 ---
 
 The purpose of this blog is to be an open place where I can write about literally anything. And that excites me. I am a Myers-Briggs ENFP, and that means I will constantly be finding new interests and new things to do with life. It also means that I love learning from real people about their interests and what makes them tick. At the end of the day, I am who I am. I believe writing this blog will help me be the best version of myself and can eventually help others be the best versions of themselves. 
