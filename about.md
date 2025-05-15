@@ -30,11 +30,11 @@ OK, enough about why I am starting this blog. Who am I, and what’s my story so
 
 ### How am I doing?
 
-This section is inspired by Jim Collins' daily tracking system and is designed to help me reflect on and measure progress toward a **Deep Life** — a life centered around meaning, focus, and intentionality.
+This section is inspired by Jim Collins' daily tracking system and is designed to help me reflect on and measure my own personal progress.
 
 The goal of this daily self-assessment is to gain clarity on:
 
-- **Quality of the Day** – Did I live with focus, intention, and integrity?
+- **Quality of the Day** – Gut feel combined with progress.
 - **Deep Hours** – How much time did I spend in undistracted, meaningful work (i.e., "Deep Work") that aligns with my personal or professional goals?
 - **Brief Reflections** – A short note capturing insights, events, or patterns that affected my day.
 
@@ -46,10 +46,12 @@ Each day is rated on a scale from **-2 to +2** to reflect the overall **quality*
 | **+1** | Good day; mostly aligned with values and goals, some meaningful progress. |
 | **0**  | Neutral day; mixed focus, little progress, or went through the motions. |
 | **-1** | Below average; felt misaligned, distracted, or reactive. |
-| **-2** | Poor day; off-track, low energy or intentionality, far from the Deep Life. |
+| **-2** | Poor day; off-track, low energy or intentionality, far from where I want to be. |
 
 Tracking this helps me see patterns over time and adjust behaviours or priorities accordingly. I plan on reviewing this monthly as time goes on.
 
+#### Daily Tracking Log
+<br>
 <div class="score-log">
   {% assign logs = site.data.jim_collins_log | sort: 'date' %}
   {% for log in logs %}
@@ -158,8 +160,7 @@ const scoreChart = new Chart(ctx, {
     }
 });
 </script>
-
-
+<br>
 ---
 
 ### I have some long-term ambitions…
