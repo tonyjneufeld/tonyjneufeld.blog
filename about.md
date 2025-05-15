@@ -25,6 +25,133 @@ OK, enough about why I am starting this blog. Who am I, and what’s my story so
 - I transitioned into working in Operations with a fully remote tech company for the last three years
 - I got married in 2023, and we will have our first child in 2025.
 
+
+---
+
+### How am I doing?
+
+This section is inspired by Jim Collins' daily tracking system and is designed to help me reflect on and measure progress toward a **Deep Life** — a life centered around meaning, focus, and intentionality.
+
+The goal of this daily self-assessment is to gain clarity on:
+
+- **Quality of the Day** – Did I live with focus, intention, and integrity?
+- **Deep Hours** – How much time did I spend in undistracted, meaningful work (i.e., "Deep Work") that aligns with my personal or professional goals?
+- **Brief Reflections** – A short note capturing insights, events, or patterns that affected my day.
+
+Each day is rated on a scale from **-2 to +2** to reflect the overall **quality** of the day:
+
+| Score | Description |
+|-------|-------------|
+| **+2** | Exceptional day; lived fully in line with values, high energy and presence, significant progress on deep goals. |
+| **+1** | Good day; mostly aligned with values and goals, some meaningful progress. |
+| **0**  | Neutral day; mixed focus, little progress, or went through the motions. |
+| **-1** | Below average; felt misaligned, distracted, or reactive. |
+| **-2** | Poor day; off-track, low energy or intentionality, far from the Deep Life. |
+
+Tracking this helps me see patterns over time and adjust behaviours or priorities accordingly. I plan on reviewing this monthly as time goes on.
+
+<canvas id="scoreChart"></canvas>
+
+<style>
+#scoreChart {
+  max-height: 400px;  /* Adjust size here */
+  width: 100%;
+}
+</style>
+
+<script>
+// Pull data from Jekyll data file into JavaScript arrays (sorted oldest to newest)
+const labels = [{% for log in logs %}'{{ log.date }}',{% endfor %}];
+const scores = [{% for log in logs %}{{ log.score }},{% endfor %}];
+const hours = [{% for log in logs %}{{ log.creative_hours }},{% endfor %}];
+
+const ctx = document.getElementById('scoreChart').getContext('2d');
+const scoreChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Daily Score',
+            data: scores,
+            yAxisID: 'yScore',
+            fill: false,
+            borderColor: '#3b3d3c',
+            backgroundColor: '#3b3d3c',
+            tension: 0.3,
+            pointRadius: 4,
+            pointBackgroundColor: function(context) {
+                const val = context.raw;
+                if (val === 2) return '#2ecc71';
+                if (val === 1) return '#3498db';
+                if (val === 0) return '#000000';
+                if (val === -1) return '#e67e22';
+                if (val === -2) return '#e74c3c';
+                return '#000';
+            },
+          },
+          {
+            label: 'Deep Hours',
+            data: hours,
+            yAxisID: 'yHours',
+            fill: false,
+            borderColor: '#38250E',
+            backgroundColor: '#38250E',
+            borderDash: [5, 5],
+            tension: 0.3,
+            pointRadius: 3,
+          }
+        ]
+    },
+    options: {
+        scales: {
+            yScore: {
+                type: 'linear',
+                position: 'left',
+                min: -2,
+                max: 2,
+                ticks: { stepSize: 1 },
+                title: {
+                    display: true,
+                    text: 'Score'
+                }
+            },
+            yHours: {
+                type: 'linear',
+                position: 'right',
+                title: {
+                    display: true,
+                    text: 'Deep Hours'
+                },
+                grid: {
+                    drawOnChartArea: false
+                }
+            },
+            x: {
+                ticks: {
+                    maxRotation: 45,
+                    minRotation: 45
+                },
+                title: {
+                    display: true,
+                    text: 'Date'
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: true
+            },
+            tooltip: {
+                mode: 'index',
+                intersect: false
+            }
+        }
+    }
+});
+</script>
+
+
 ---
 
 ### I have some long-term ambitions…
