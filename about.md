@@ -50,6 +50,12 @@ Each day is rated on a scale from **-2 to +2** to reflect the overall **quality*
 
 Tracking this helps me see patterns over time and adjust behaviours or priorities accordingly. I plan on reviewing this monthly as time goes on.
 
+<div class="score-log">
+  {% assign logs = site.data.jim_collins_log | sort: 'date' %}
+  {% for log in logs %}
+  {% endfor %}
+</div>
+
 <link rel="stylesheet" href="/assets/css/jim-collins.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <canvas id="scoreChart"></canvas>
