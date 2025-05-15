@@ -3,9 +3,7 @@
 - name: About
   link: /about/
 - name: Recommendations
-  link: /recommendations/
-- name: Score
-  link: /score/  
+  link: /recommendations/ 
 - name: Contact
   link: /contact/
 
