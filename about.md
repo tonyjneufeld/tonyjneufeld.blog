@@ -32,7 +32,7 @@ OK, enough about why I am starting this blog. Who am I, and what’s my story so
 
 This section is inspired by Jim Collins' daily tracking system and is designed to help me reflect on and measure my own personal progress. Tracking this helps me see patterns over time and adjust behaviours or priorities accordingly. I plan on reviewing this monthly as time goes on.
 Each day is rated on a scale from **-2 to +2** to reflect the overall **quality** of the day:
-<br>
+
 | Score | Description |
 |-------|-------------|
 | **+2** | Exceptional day; lived fully in line with values, high energy and presence, significant progress on goals. |
@@ -40,7 +40,7 @@ Each day is rated on a scale from **-2 to +2** to reflect the overall **quality*
 | **0**  | Neutral day; mixed focus, little progress, or went through the motions. |
 | **-1** | Below average; felt misaligned, distracted, or reactive. |
 | **-2** | Poor day; off-track, low energy or intentionality, far from where I want to be. |
-<br>
+
 The goal of this daily self-assessment is to gain clarity on:
 
 - **Quality of the Day** – Gut feel combined with progress.
