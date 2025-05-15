@@ -46,7 +46,7 @@ The goal of this daily self-assessment is to gain clarity on:
 - **Quality of the Day** – Gut feel combined with progress.
 - **Deep Hours** – How much time did I spend in undistracted, meaningful work (i.e., "Deep Work") that aligns with my personal or professional goals?
 - **Brief Reflections** – A short note capturing insights, events, or patterns that affected my day. How can I tie the qualitative motions of life back to the quantitative.
-<br>
+
 <div class="score-log">
   {% assign logs = site.data.jim_collins_log | sort: 'date' %}
   {% for log in logs %}
