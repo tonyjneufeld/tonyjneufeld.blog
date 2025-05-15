@@ -42,7 +42,7 @@ Each day is rated on a scale from **-2 to +2** to reflect the overall **quality*
 
 | Score | Description |
 |-------|-------------|
-| **+2** | Exceptional day; lived fully in line with values, high energy and presence, significant progress on deep goals. |
+| **+2** | Exceptional day; lived fully in line with values, high energy and presence, significant progress on goals. |
 | **+1** | Good day; mostly aligned with values and goals, some meaningful progress. |
 | **0**  | Neutral day; mixed focus, little progress, or went through the motions. |
 | **-1** | Below average; felt misaligned, distracted, or reactive. |
@@ -50,6 +50,8 @@ Each day is rated on a scale from **-2 to +2** to reflect the overall **quality*
 
 Tracking this helps me see patterns over time and adjust behaviours or priorities accordingly. I plan on reviewing this monthly as time goes on.
 
+<link rel="stylesheet" href="/assets/css/jim-collins.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <canvas id="scoreChart"></canvas>
 
 <style>
