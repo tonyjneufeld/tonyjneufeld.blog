@@ -1,7 +1,7 @@
-\---  
+---  
 layout: post  
 title:  "The Shockingly Simple Math Behind Early Retirement... and Why It's Less Risky in Canada."  
-—
+---
 
 Nearly thirteen years ago, Mr. Money Mustache wrote his iconic blog post, ["The Shockingly Simple Math Behind Early Retirement](https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/)." This post changed how I think about my career and is still relevant today. Although this article is written from an American perspective, I would argue that this equation is even simpler in Canada. 
 
@@ -18,7 +18,7 @@ To put it in perspective, Statistics Canada reported that the average savings ra
 | Savings Rate | Years to Retirement |  
 |--------------|---------------------|  
 | 5%           | 73                  |  
-| \<span style="color:\#cc0000;"\>6.1%\</span\> | \<span style="color:\#cc0000;"\>69\</span\> |  
+| 6.1%         | 69                  |  
 | 10%          | 57                  |  
 | 15%          | 47                  |  
 | 20%          | 40                  |  
@@ -44,11 +44,11 @@ When I consider my situation, I do not want to work or earn money until I am 65\
 
 While many fear early retirement due to health insurance costs or market volatility, Canada’s social systems reduce the risk. Below are a couple of examples of why retiring early in Canada can be less risky.
 
-\#\# Universal Healthcare
+## Universal Healthcare
 
 No need for private insurance or job-linked coverage. Doctor visits, emergency care, and surgeries are 100% covered. In the US, private health insurance costs vary widely, but on average, an individual pays about $7,739 annually, and a family pays around $22,221.
 
-\#\# Public Pensions (CPP & OAS)
+## Public Pensions (CPP & OAS)
 
 As mentioned, we have CPP and OAS in Canada, which have a couple of catches.
 
@@ -58,7 +58,7 @@ To qualify for the full OAS amount, you must have resided in Canada for at least
 
 If you have always paid the maximum into CPP and OAS, your maximum annual earnings will be ***$25,932 ($2,161 per month) in 2025***.
 
-\#\# Family Support if You’re a Young Parent
+## Family Support if You’re a Young Parent
 
 Canada Child Benefit (CCB) is incredibly generous and tax-free—your lower early retirement income \= higher CCB.  The maximum annual amount per child is **$7,437 per year** if they are under 6 years old, and it applies if your family's net income is under \~$34,863, and gradually reduces above that. These amounts are **not taxed** **or counted as income** for calculating other benefits. Just need to be a resident of Canada and file taxes annually.
 
@@ -68,226 +68,226 @@ As much as I love all of the math behind early retirement, I believe there are s
 
 With that all being said, feel free to take a look at where you land with this very simple and conservative early retirement calculator:
 
-\<\!DOCTYPE html\>  
-\<html lang="en"\>  
-\<head\>  
-  \<meta charset="UTF-8"\>  
-  \<title\>Years to Retirement Calculator\</title\>  
-  \<meta name="viewport" content="width=device-width, initial-scale=1.0"\>  
-  \<style\>  
-    :root {  
-      \--bg-color: \#f9f9f9;  
-      \--text-color: \#000;  
-      \--input-bg: \#fff;  
-      \--input-border: \#ccc;  
-      \--card-bg: \#fff;  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Years to Retirement Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #000;
+      --input-bg: #fff;
+      --input-border: #ccc;
+      --card-bg: #fff;
     }
 
-    @media (prefers-color-scheme: dark) {  
-      :root {  
-        \--bg-color: \#121212;  
-        \--text-color: \#eee;  
-        \--input-bg: \#1e1e1e;  
-        \--input-border: \#444;  
-        \--card-bg: \#1c1c1c;  
-      }  
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --text-color: #eee;
+        --input-bg: #1e1e1e;
+        --input-border: #444;
+        --card-bg: #1c1c1c;
+      }
     }
 
-    body {  
-      font-family: sans-serif;  
-      margin: 0;  
-      padding: 1rem;  
-      background-color: var(--bg-color);  
-      color: var(--text-color);  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      min-height: 100vh;  
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    .calculator {  
-      display: flex;  
-      flex-direction: column;  
-      gap: 1rem;  
-      padding: 2rem;  
-      background: var(--card-bg);  
-      border-radius: 8px;  
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);  
-      width: 100%;  
-      max-width: 400px;  
+    .calculator {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      width: 100%;
+      max-width: 400px;
     }
 
-    .calculator input {  
-      padding: 0.6rem;  
-      font-size: 1rem;  
-      border: 1px solid var(--input-border);  
-      border-radius: 5px;  
-      background: var(--input-bg);  
-      color: var(--text-color);  
+    .calculator input {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 1px solid var(--input-border);
+      border-radius: 5px;
+      background: var(--input-bg);
+      color: var(--text-color);
     }
 
-    .calculator input::placeholder {  
-      color: \#999;  
+    .calculator input::placeholder {
+      color: #999;
     }
 
-    .result {  
-      font-size: 1.2rem;  
-      font-weight: bold;  
-      text-align: center;  
+    .result {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
     }
 
-    @media (max-width: 500px) {  
-      .calculator {  
-        padding: 1.5rem 1rem;  
-      }  
-    }  
-  \</style\>  
-\</head\>  
-\<body\>  
-  \<div class="calculator"\>  
-    \<input type="number" id="age" placeholder="Current Age" min="0" step="1" /\>  
-    \<input type="text" id="income" placeholder="Annual Household Income (after-tax)" /\>  
-    \<input type="text" id="spending" placeholder="Annual Household Spending" /\>  
-    \<input type="text" id="networth" placeholder="Current Invested Assets" /\>  
-    \<div class="result" id="savingsRate"\>Savings Rate: —\</div\>  
-    \<div class="result" id="yearsToRetire"\>Years to Retirement: —\</div\>  
-    \<div class="result" id="retirementAge"\>Estimated Retirement Age: —\</div\>  
-  \</div\>
+    @media (max-width: 500px) {
+      .calculator {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="number" id="age" placeholder="Current Age" min="0" step="1" />
+    <input type="text" id="income" placeholder="Annual Household Income (after-tax)" />
+    <input type="text" id="spending" placeholder="Annual Household Spending" />
+    <input type="text" id="networth" placeholder="Current Invested Assets" />
+    <div class="result" id="savingsRate">Savings Rate: —</div>
+    <div class="result" id="yearsToRetire">Years to Retirement: —</div>
+    <div class="result" id="retirementAge">Estimated Retirement Age: —</div>
+  </div>
 
-  \<script\>  
-    const ageInput \= document.getElementById('age');  
-    const incomeInput \= document.getElementById('income');  
-    const spendingInput \= document.getElementById('spending');  
-    const networthInput \= document.getElementById('networth');  
-    const savingsRateEl \= document.getElementById('savingsRate');  
-    const yearsToRetireEl \= document.getElementById('yearsToRetire');  
-    const retirementAgeEl \= document.getElementById('retirementAge');  
-    const r \= 0.04;
+  <script>
+    const ageInput = document.getElementById('age');
+    const incomeInput = document.getElementById('income');
+    const spendingInput = document.getElementById('spending');
+    const networthInput = document.getElementById('networth');
+    const savingsRateEl = document.getElementById('savingsRate');
+    const yearsToRetireEl = document.getElementById('yearsToRetire');
+    const retirementAgeEl = document.getElementById('retirementAge');
+    const r = 0.04;
 
-    function formatNumber(value) {  
-      return value.toLocaleString('en-US');  
+    function formatNumber(value) {
+      return value.toLocaleString('en-US');
     }
 
-    function parseNumber(value) {  
-      return parseFloat(value.replace(/,/g, ''));  
+    function parseNumber(value) {
+      return parseFloat(value.replace(/,/g, ''));
     }
 
-    function formatInput(e) {  
-      const input \= e.target;  
-      const value \= input.value.replace(/,/g, '');  
-      if (\!isNaN(value) && value \!== '') {  
-        input.value \= formatNumber(Number(value));  
-      }  
-      calculate();  
+    function formatInput(e) {
+      const input = e.target;
+      const value = input.value.replace(/,/g, '');
+      if (!isNaN(value) && value !== '') {
+        input.value = formatNumber(Number(value));
+      }
+      calculate();
     }
 
-    function calculate() {  
-      const age \= parseInt(ageInput.value, 10);  
-      const income \= parseNumber(incomeInput.value);  
-      const spending \= parseNumber(spendingInput.value);  
-      const networth \= parseNumber(networthInput.value);
+    function calculate() {
+      const age = parseInt(ageInput.value, 10);
+      const income = parseNumber(incomeInput.value);
+      const spending = parseNumber(spendingInput.value);
+      const networth = parseNumber(networthInput.value);
 
-      if (isFinite(age) && isFinite(income) && isFinite(spending) && isFinite(networth) &&  
-          income \> 0 && spending \>= 0 && networth \>= 0 && income \> spending && age \>= 0\) {
+      if (isFinite(age) && isFinite(income) && isFinite(spending) && isFinite(networth) &&
+          income > 0 && spending >= 0 && networth >= 0 && income > spending && age >= 0) {
 
-        const savingsRate \= (income \- spending) / income;  
-        savingsRateEl.textContent \= \`Savings Rate: ${(savingsRate \* 100).toFixed(1)}%\`;
+        const savingsRate = (income - spending) / income;
+        savingsRateEl.textContent = `Savings Rate: ${(savingsRate * 100).toFixed(1)}%`;
 
-        const numerator \= Math.log(income / ((networth \* r) \+ income \- spending));  
-        const denominator \= Math.log(1 \+ r);  
-        const years \= numerator / denominator;
+        const numerator = Math.log(income / ((networth * r) + income - spending));
+        const denominator = Math.log(1 + r);
+        const years = numerator / denominator;
 
-        if (isFinite(years) && years \>= 0\) {  
-          const roundedYears \= Math.round(years);  
-          const estimatedAge \= age \+ roundedYears;  
-          yearsToRetireEl.textContent \= \`Years to Retirement: ${roundedYears}\`;  
-          retirementAgeEl.textContent \= \`Estimated Retirement Age: ${estimatedAge}\`;  
-        } else {  
-          yearsToRetireEl.textContent \= \`Years to Retirement: ∞\`;  
-          retirementAgeEl.textContent \= \`Estimated Retirement Age: ∞\`;  
+        if (isFinite(years) && years >= 0) {
+          const roundedYears = Math.round(years);
+          const estimatedAge = age + roundedYears;
+          yearsToRetireEl.textContent = `Years to Retirement: ${roundedYears}`;
+          retirementAgeEl.textContent = `Estimated Retirement Age: ${estimatedAge}`;
+        } else {
+          yearsToRetireEl.textContent = `Years to Retirement: ∞`;
+          retirementAgeEl.textContent = `Estimated Retirement Age: ∞`;
         }
 
-      } else {  
-        savingsRateEl.textContent \= \`Savings Rate: —\`;  
-        yearsToRetireEl.textContent \= \`Years to Retirement: —\`;  
-        retirementAgeEl.textContent \= \`Estimated Retirement Age: —\`;  
-      }  
+      } else {
+        savingsRateEl.textContent = `Savings Rate: —`;
+        yearsToRetireEl.textContent = `Years to Retirement: —`;
+        retirementAgeEl.textContent = `Estimated Retirement Age: —`;
+      }
     }
 
-    \[ageInput, incomeInput, spendingInput, networthInput\].forEach(input \=\> {  
-      input.addEventListener('input', input \=== ageInput ? calculate : formatInput);  
-    });  
-  \</script\>  
-\</body\>  
-\</html\>
+    [ageInput, incomeInput, spendingInput, networthInput].forEach(input => {
+      input.addEventListener('input', input === ageInput ? calculate : formatInput);
+    });
+  </script>
+</body>
+</html>
 
-\<style\>  
-  details {  
-    font-family: sans-serif;  
-    font-size: 0.95rem;  
-    max-width: 400px;  
-    margin: 2rem auto 0 auto;  
-    border: 1px solid \#ddd;  
-    border-radius: 6px;  
-    padding: 1rem;  
-    background: white;  
-    transition: background 0.3s;  
+<style>
+  details {
+    font-family: sans-serif;
+    font-size: 0.95rem;
+    max-width: 400px;
+    margin: 2rem auto 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem;
+    background: white;
+    transition: background 0.3s;
   }
 
-  details\[open\] {  
-    background: \#f9f9f9;  
+  details[open] {
+    background: #f9f9f9;
   }
 
-  summary {  
-    font-weight: bold;  
-    cursor: pointer;  
-    outline: none;  
-    list-style: none;  
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    list-style: none;
   }
 
-  summary::marker {  
-    display: none;  
+  summary::marker {
+    display: none;
   }
 
-  summary::after {  
-    content: "▸";  
-    float: right;  
-    transition: transform 0.3s ease;  
+  summary::after {
+    content: "▸";
+    float: right;
+    transition: transform 0.3s ease;
   }
 
-  details\[open\] summary::after {  
-    transform: rotate(90deg);  
+  details[open] summary::after {
+    transform: rotate(90deg);
   }
 
-  details \> \*:not(summary) {  
-    opacity: 0;  
-    max-height: 0;  
-    overflow: hidden;  
-    transition: opacity 0.3s ease, max-height 0.3s ease;  
+  details > *:not(summary) {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
   }
 
-  details\[open\] \> \*:not(summary) {  
-    opacity: 1;  
-    max-height: 1000px;  
+  details[open] > *:not(summary) {
+    opacity: 1;
+    max-height: 1000px;
   }
 
-  ul {  
-    margin-top: 1rem;  
-    padding-left: 1.2rem;  
-    line-height: 1.6;  
-  }  
-\</style\>
+  ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    line-height: 1.6;
+  }
+</style>
 
-\<details\>  
-  \<summary\>Assumptions\</summary\>  
-  \<ul\>  
-    \<li\>All values are after tax (income, spending, returns).\</li\>  
-    \<li\>Annual expenses remain constant through retirement.\</li\>  
-    \<li\>You will not draw down your principal — you live off investment returns.\</li\>  
-    \<li\>Investment returns are inflation-adjusted (4% real return).\</li\>  
-    \<li\>No windfalls, inheritances, or major lifestyle changes are included.\</li\>  
-    \<li\>You maintain consistent income and savings until retirement.\</li\>  
-    \<li\>Retirement means financial independence, not necessarily stopping work.\</li\>  
-  \</ul\>  
-\</details\>
+<details>
+  <summary>Assumptions</summary>
+  <ul>
+    <li>All values are after tax (income, spending, returns).</li>
+    <li>Annual expenses remain constant through retirement.</li>
+    <li>You will not draw down your principal — you live off investment returns.</li>
+    <li>Investment returns are inflation-adjusted (4% real return).</li>
+    <li>No windfalls, inheritances, or major lifestyle changes are included.</li>
+    <li>You maintain consistent income and savings until retirement.</li>
+    <li>Retirement means financial independence, not necessarily stopping work.</li>
+  </ul>
+</details>
 
