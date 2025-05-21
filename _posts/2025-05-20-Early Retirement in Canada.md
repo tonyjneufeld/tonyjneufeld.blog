@@ -68,82 +68,54 @@ As much as I love all of the math behind early retirement, I believe there are s
 
 With that all being said, feel free to take a look at where you land with this very simple and conservative early retirement calculator:
 
-<style>
-  /* Full page flex centering */
-  body {
-    margin: 0;
-    justify-content: center; /* horizontal center */
-    align-items: center;     /* vertical center */
-    background: #121212;     /* or your dark background */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  }
-
-  /* Container to hold calculator + assumptions */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* center children horizontally */
-    gap: 2rem; /* space between calculator and assumptions */
-  }
-</style>
-
-<body>
-  <div class="container">
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Years to Retirement Calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root {
-      --bg-color: #f9f9f9;
-      --text-color: #000;
-      --input-bg: #fff;
-      --input-border: #ccc;
-      --card-bg: #fff;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-color: #121212;
-        --text-color: #eee;
-        --input-bg: #1e1e1e;
-        --input-border: #444;
-        --card-bg: #1c1c1c;
-      }
-    }
-
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 1rem;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+    /* Reset and base */
+    html, body {
+      margin: 0; 
+      height: 100%;
+      background: #121212;
+      color: #eee;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 1rem;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 420px;
     }
 
     .calculator {
+      background: #1c1c1c;
+      border-radius: 8px;
+      padding: 2rem;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      padding: 2rem;
-      background: var(--card-bg);
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-      width: 100%;
-      max-width: 400px;
     }
 
     .calculator input {
       padding: 0.6rem;
       font-size: 1rem;
-      border: 1px solid var(--input-border);
+      border: 1px solid #444;
       border-radius: 5px;
-      background: var(--input-bg);
-      color: var(--text-color);
+      background: #1e1e1e;
+      color: #eee;
     }
 
     .calculator input::placeholder {
@@ -154,6 +126,75 @@ With that all being said, feel free to take a look at where you land with this v
       font-size: 1.2rem;
       font-weight: bold;
       text-align: center;
+      color: #ddd;
+    }
+
+    details {
+      font-size: 0.95rem;
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 0 20px rgba(255 255 255 / 0.05);
+      color: #eee;
+      width: 100%;
+      max-width: 400px;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+
+    details[open] {
+      background: #292929;
+    }
+
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      list-style: none;
+      position: relative;
+      padding-right: 1.5rem;
+    }
+
+    summary::marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "▸";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease;
+      color: #ccc;
+    }
+
+    details[open] summary::after {
+      transform: translateY(-50%) rotate(90deg);
+      color: #fff;
+    }
+
+    details > *:not(summary) {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+    }
+
+    details[open] > *:not(summary) {
+      opacity: 1;
+      max-height: 1000px;
+    }
+
+    ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
     }
 
     @media (max-width: 500px) {
@@ -164,14 +205,29 @@ With that all being said, feel free to take a look at where you land with this v
   </style>
 </head>
 <body>
-  <div class="calculator">
-    <input type="number" id="age" placeholder="Current Age" min="0" step="1" />
-    <input type="text" id="income" placeholder="Annual Household Income (after-tax)" />
-    <input type="text" id="spending" placeholder="Annual Household Spending" />
-    <input type="text" id="networth" placeholder="Current Invested Assets" />
-    <div class="result" id="savingsRate">Savings Rate: —</div>
-    <div class="result" id="yearsToRetire">Years to Retirement: —</div>
-    <div class="result" id="retirementAge">Estimated Retirement Age: —</div>
+  <div class="container">
+    <div class="calculator" role="form" aria-label="Years to Retirement Calculator">
+      <input type="number" id="age" placeholder="Current Age" min="0" step="1" aria-label="Current Age" />
+      <input type="text" id="income" placeholder="Annual Household Income (after-tax)" aria-label="Annual Household Income (after-tax)" />
+      <input type="text" id="spending" placeholder="Annual Household Spending" aria-label="Annual Household Spending" />
+      <input type="text" id="networth" placeholder="Current Invested Assets" aria-label="Current Invested Assets" />
+      <div class="result" id="savingsRate" aria-live="polite">Savings Rate: —</div>
+      <div class="result" id="yearsToRetire" aria-live="polite">Years to Retirement: —</div>
+      <div class="result" id="retirementAge" aria-live="polite">Estimated Retirement Age: —</div>
+    </div>
+
+    <details>
+      <summary>Assumptions</summary>
+      <ul>
+        <li>All values are after tax (income, spending, returns).</li>
+        <li>Annual expenses remain constant through retirement.</li>
+        <li>You will not draw down your principal — you live off investment returns.</li>
+        <li>Investment returns are inflation-adjusted (4% real return).</li>
+        <li>No windfalls, inheritances, or major lifestyle changes are included.</li>
+        <li>You maintain consistent income and savings until retirement.</li>
+        <li>Retirement means financial independence, not necessarily stopping work.</li>
+      </ul>
+    </details>
   </div>
 
   <script>
@@ -207,9 +263,10 @@ With that all being said, feel free to take a look at where you land with this v
       const spending = parseNumber(spendingInput.value);
       const networth = parseNumber(networthInput.value);
 
-      if (isFinite(age) && isFinite(income) && isFinite(spending) && isFinite(networth) &&
-          income > 0 && spending >= 0 && networth >= 0 && income > spending && age >= 0) {
-
+      if (
+        isFinite(age) && isFinite(income) && isFinite(spending) && isFinite(networth) &&
+        income > 0 && spending >= 0 && networth >= 0 && income > spending && age >= 0
+      ) {
         const savingsRate = (income - spending) / income;
         savingsRateEl.textContent = `Savings Rate: ${(savingsRate * 100).toFixed(1)}%`;
 
@@ -226,7 +283,6 @@ With that all being said, feel free to take a look at where you land with this v
           yearsToRetireEl.textContent = `Years to Retirement: ∞`;
           retirementAgeEl.textContent = `Estimated Retirement Age: ∞`;
         }
-
       } else {
         savingsRateEl.textContent = `Savings Rate: —`;
         yearsToRetireEl.textContent = `Years to Retirement: —`;
@@ -237,97 +293,10 @@ With that all being said, feel free to take a look at where you land with this v
     [ageInput, incomeInput, spendingInput, networthInput].forEach(input => {
       input.addEventListener('input', input === ageInput ? calculate : formatInput);
     });
+
+    // Initial calculation
+    calculate();
   </script>
 </body>
 </html>
-
-
-    <style>
-  /* Match calculator font and colors */
-  details {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 0.95rem;
-    max-width: 400px;
-    margin: 2rem auto 0 auto;
-    background: #1e1e1e;
-    border-radius: 8px;
-    padding: 1rem 1.2rem;
-    box-shadow: 0 0 20px rgba(255 255 255 / 0.05);
-    color: #eee;
-    transition: background 0.3s ease;
-  }
-
-  details[open] {
-    background: #292929;
-  }
-
-  summary {
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    list-style: none;
-    user-select: none;
-    position: relative;
-    padding-right: 1.5rem;
-  }
-
-  summary::marker {
-    display: none;
-  }
-
-  summary::after {
-    content: "▸";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease;
-    color: #ccc;
-  }
-
-  details[open] summary::after {
-    transform: translateY(-50%) rotate(90deg);
-    color: #fff;
-  }
-
-  details > *:not(summary) {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
-  }
-
-  details[open] > *:not(summary) {
-    opacity: 1;
-    max-height: 1000px;
-  }
-
-  ul {
-    margin-top: 1rem;
-    padding-left: 1.2rem;
-    line-height: 1.6;
-    color: #ddd;
-  }
-
-  ul li {
-    margin-bottom: 0.5rem;
-  }
-</style>
-
-<details>
-  <summary>Assumptions</summary>
-  <ul>
-    <li>All values are after tax (income, spending, returns).</li>
-    <li>Annual expenses remain constant through retirement.</li>
-    <li>You will not draw down your principal — you live off investment returns.</li>
-    <li>Investment returns are inflation-adjusted (4% real return).</li>
-    <li>No windfalls, inheritances, or major lifestyle changes are included.</li>
-    <li>You maintain consistent income and savings until retirement.</li>
-    <li>Retirement means financial independence, not necessarily stopping work.</li>
-  </ul>
-</details>
-
-  </div>
-</body>
 
