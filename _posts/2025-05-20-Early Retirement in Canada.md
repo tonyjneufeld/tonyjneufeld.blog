@@ -123,7 +123,6 @@ With that all being said, feel free to take a look at where you land with this v
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
     }
 
     .calculator {
