@@ -81,10 +81,12 @@ With that all being said, feel free to take a look at where you land with this v
       width: 100%;
       max-width: 600px;
       flex-direction: column;
+      display: flex;
       gap: 2rem;
     }
     .calculator {
       flex-direction: column;
+      display: flex;
       gap: 1rem;
       padding: 2rem;
       background: var(--card-bg);
