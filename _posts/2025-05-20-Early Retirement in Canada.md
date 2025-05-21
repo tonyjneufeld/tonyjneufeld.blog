@@ -72,8 +72,6 @@ With that all being said, feel free to take a look at where you land with this v
   /* Full page flex centering */
   body {
     margin: 0;
-    height: 100vh;
-    display: flex;
     justify-content: center; /* horizontal center */
     align-items: center;     /* vertical center */
     background: #121212;     /* or your dark background */
