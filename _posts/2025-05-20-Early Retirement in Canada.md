@@ -9,7 +9,6 @@ In its simplest form, your time to retire depends only on one factor:
 
 ---
 > "Your household savings rate, as a percentage of your take-home pay"  
->  
 > "Your savings rate is determined by **how much you** **take home each year** and **how much you can live on**."
 ---
 
@@ -20,7 +19,7 @@ To put it in perspective, Statistics Canada reported that the average savings ra
 | Savings Rate | Years to Retirement |  
 |--------------|---------------------|  
 | 5%           | 73                  |  
-| 6.1%         | 69                  |  
+| **6.1%**         | **69**                  |  
 | 10%          | 57                  |  
 | 15%          | 47                  |  
 | 20%          | 40                  |  
