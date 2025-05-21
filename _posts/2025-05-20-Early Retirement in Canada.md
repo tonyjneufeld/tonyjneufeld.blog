@@ -7,9 +7,11 @@ Nearly thirteen years ago, Mr. Money Mustache wrote his iconic blog post, ["The 
 
 In its simplest form, your time to retire depends only on one factor:
 
-> Your household savings rate, as a percentage of your take-home pay  
+---
+> "Your household savings rate, as a percentage of your take-home pay"  
 >  
-> Your savings rate is determined by **how much you** **take home each year** and **how much you can live on**.
+> "Your savings rate is determined by **how much you** **take home each year** and **how much you can live on**."
+---
 
 Simple right? 
 
@@ -68,6 +70,8 @@ As much as I love all of the math behind early retirement, I believe there are s
 
 With that all being said, feel free to take a look at where you land with this very simple and conservative early retirement calculator:
 
+---
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -88,7 +92,7 @@ With that all being said, feel free to take a look at where you land with this v
       padding: 2rem;
       background: var(--card-bg);
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(255 255 255 / 0.05);
     }
     .calculator input {
       padding: 0.6rem;
@@ -108,7 +112,7 @@ With that all being said, feel free to take a look at where you land with this v
     }
     details {
       font-size: 0.95rem;
-      background: #1e1e1e;
+      background: var(--card-bg);
       border-radius: 8px;
       padding: 1rem 1.2rem;
       box-shadow: 0 0 20px rgba(255 255 255 / 0.05);
@@ -116,7 +120,7 @@ With that all being said, feel free to take a look at where you land with this v
       transition: background 0.3s ease;
     }
     details[open] {
-      background: #292929;
+      background: var(--card-bg);
     }
     summary {
       font-weight: 600;
