@@ -8,8 +8,10 @@ Nearly thirteen years ago, Mr. Money Mustache wrote his iconic blog post, ["The 
 In its simplest form, your time to retire depends only on one factor:
 
 ---
+
 > "Your household savings rate, as a percentage of your take-home pay"  
 > "Your savings rate is determined by **how much you** **take home each year** and **how much you can live on**."
+
 ---
 
 Simple right? 
@@ -78,12 +80,10 @@ With that all being said, feel free to take a look at where you land with this v
     .container {
       width: 100%;
       max-width: 600px;
-      display: flex;
       flex-direction: column;
       gap: 2rem;
     }
     .calculator {
-      display: flex;
       flex-direction: column;
       gap: 1rem;
       padding: 2rem;
@@ -153,15 +153,6 @@ With that all being said, feel free to take a look at where you land with this v
     details[open] > *:not(summary) {
       opacity: 1;
       max-height: 1000px;
-    }
-    ul {
-      margin-top: 1rem;
-      padding-left: 1.2rem;
-      line-height: 1.6;
-      color: #ddd;
-    }
-    ul li {
-      margin-bottom: 0.5rem;
     }
   </style>
 </head>
