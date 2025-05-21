@@ -83,6 +83,7 @@ With that all being said, feel free to take a look at where you land with this v
       flex-direction: column;
       display: flex;
       gap: 2rem;
+      justify-content: center;
     }
     .calculator {
       flex-direction: column;
@@ -141,20 +142,24 @@ With that all being said, feel free to take a look at where you land with this v
       transform: translateY(-50%);
       transition: transform 0.3s ease;
       color: #ccc;
+      justify-content: center;
     }
     details[open] summary::after {
       transform: translateY(-50%) rotate(90deg);
       color: #fff;
+      justify-content: center;
     }
     details > *:not(summary) {
       opacity: 0;
       max-height: 0;
       overflow: hidden;
       transition: opacity 0.3s ease, max-height 0.3s ease;
+      justify-content: center;
     }
     details[open] > *:not(summary) {
       opacity: 1;
       max-height: 1000px;
+      justify-content: center;
     }
   </style>
 </head>
