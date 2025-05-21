@@ -93,6 +93,8 @@ With that all being said, feel free to take a look at where you land with this v
       background: var(--card-bg);
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(255 255 255 / 0.05);
+      color: var(--text-color); /* Set the text color */
+      border: 1px solid var(--text-color); /* Match border to text color */
     }
     .calculator input {
       padding: 0.6rem;
@@ -116,7 +118,7 @@ With that all being said, feel free to take a look at where you land with this v
       border-radius: 8px;
       padding: 1rem 1.2rem;
       box-shadow: 0 0 20px rgba(255 255 255 / 0.05);
-      color: #eee;
+      color: var(--text-color);
       transition: background 0.3s ease;
     }
     details[open] {
