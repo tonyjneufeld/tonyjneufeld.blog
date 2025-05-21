@@ -7,9 +7,9 @@ Nearly thirteen years ago, Mr. Money Mustache wrote his iconic blog post, ["The 
 
 In its simplest form, your time to retire depends only on one factor:
 
-\> Your household savings rate, as a percentage of your take-home pay  
-\>  
-\> Your savings rate is determined by **how much you** **take home each year** and **how much you can live on**.
+> Your household savings rate, as a percentage of your take-home pay  
+>  
+> Your savings rate is determined by **how much you** **take home each year** and **how much you can live on**.
 
 Simple right? 
 
@@ -62,7 +62,7 @@ If you have always paid the maximum into CPP and OAS, your maximum annual earnin
 
 Canada Child Benefit (CCB) is incredibly generous and tax-free—your lower early retirement income \= higher CCB.  The maximum annual amount per child is **$7,437 per year** if they are under 6 years old, and it applies if your family's net income is under \~$34,863, and gradually reduces above that. These amounts are **not taxed** **or counted as income** for calculating other benefits. Just need to be a resident of Canada and file taxes annually.
 
-—
+
 
 As much as I love all of the math behind early retirement, I believe there are steps that you must take as you embark on this journey to ensure that when you get there (and you will get there), you are left with a [fulfilling life that you love](https://tonyneufeld.blog/2025/04/28/Boulders/).
 
@@ -74,27 +74,6 @@ With that all being said, feel free to take a look at where you land with this v
   <title>Years to Retirement Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root {
-      --bg-color: #121212;
-      --text-color: #eee;
-      --input-bg: #1e1e1e;
-      --input-border: #444;
-      --card-bg: #1c1c1c;
-    }
-
-    body {
-      margin: 0;
-      padding: 2rem 1rem;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-
     .container {
       width: 100%;
       max-width: 600px;
@@ -102,7 +81,6 @@ With that all being said, feel free to take a look at where you land with this v
       flex-direction: column;
       gap: 2rem;
     }
-
     .calculator {
       display: flex;
       flex-direction: column;
@@ -112,7 +90,6 @@ With that all being said, feel free to take a look at where you land with this v
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
-
     .calculator input {
       padding: 0.6rem;
       font-size: 1rem;
@@ -121,17 +98,14 @@ With that all being said, feel free to take a look at where you land with this v
       background: var(--input-bg);
       color: var(--text-color);
     }
-
     .calculator input::placeholder {
       color: #999;
     }
-
     .result {
       font-size: 1.2rem;
       font-weight: bold;
       text-align: center;
     }
-
     details {
       font-size: 0.95rem;
       background: #1e1e1e;
@@ -141,11 +115,9 @@ With that all being said, feel free to take a look at where you land with this v
       color: #eee;
       transition: background 0.3s ease;
     }
-
     details[open] {
       background: #292929;
     }
-
     summary {
       font-weight: 600;
       cursor: pointer;
@@ -155,11 +127,9 @@ With that all being said, feel free to take a look at where you land with this v
       position: relative;
       padding-right: 1.5rem;
     }
-
     summary::marker {
       display: none;
     }
-
     summary::after {
       content: "▸";
       position: absolute;
@@ -169,31 +139,26 @@ With that all being said, feel free to take a look at where you land with this v
       transition: transform 0.3s ease;
       color: #ccc;
     }
-
     details[open] summary::after {
       transform: translateY(-50%) rotate(90deg);
       color: #fff;
     }
-
     details > *:not(summary) {
       opacity: 0;
       max-height: 0;
       overflow: hidden;
       transition: opacity 0.3s ease, max-height 0.3s ease;
     }
-
     details[open] > *:not(summary) {
       opacity: 1;
       max-height: 1000px;
     }
-
     ul {
       margin-top: 1rem;
       padding-left: 1.2rem;
       line-height: 1.6;
       color: #ddd;
     }
-
     ul li {
       margin-bottom: 0.5rem;
     }
@@ -210,7 +175,6 @@ With that all being said, feel free to take a look at where you land with this v
       <div class="result" id="yearsToRetire">Years to Retirement: —</div>
       <div class="result" id="retirementAge">Estimated Retirement Age: —</div>
     </div>
-
     <details>
       <summary>Assumptions</summary>
       <ul>
@@ -291,5 +255,7 @@ With that all being said, feel free to take a look at where you land with this v
   </script>
 </body>
 </html>
+
+---
 
 
