@@ -77,7 +77,7 @@ With that all being said, feel free to take a look at where you land with this v
 <head>
   <title>Years to Retirement Calculator</title>
   <style>
-    .container {
+    .calculator-container {
       width: 100%;
       max-width: 600px;
       flex-direction: column;
@@ -159,7 +159,7 @@ With that all being said, feel free to take a look at where you land with this v
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="calculator-container">
     <div class="calculator">
       <input type="number" id="age" placeholder="Current Age" min="0" step="1" />
       <input type="text" id="income" placeholder="Annual Household Income (after-tax)" />
