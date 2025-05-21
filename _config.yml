@@ -45,7 +45,7 @@ permalink: /:year/:month/:day/:title/
 footer-links:
   email: tonyjneufeld@gmail.com
   facebook:
-  github: tonyjneufeld
+  github:
   instagram: 
   linkedin: tony-neufeld-050a0685
   rss: test_rss_tonyneufeld_blog
