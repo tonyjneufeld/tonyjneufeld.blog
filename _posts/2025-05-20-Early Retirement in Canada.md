@@ -68,8 +68,31 @@ As much as I love all of the math behind early retirement, I believe there are s
 
 With that all being said, feel free to take a look at where you land with this very simple and conservative early retirement calculator:
 
-<!DOCTYPE html>
-<html lang="en">
+<style>
+  /* Full page flex centering */
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    background: #121212;     /* or your dark background */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+
+  /* Container to hold calculator + assumptions */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center children horizontally */
+    gap: 2rem; /* space between calculator and assumptions */
+  }
+</style>
+
+<body>
+  <div class="container">
+    <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Years to Retirement Calculator</title>
@@ -221,28 +244,35 @@ With that all being said, feel free to take a look at where you land with this v
 </body>
 </html>
 
-<style>
+
+    <style>
+  /* Match calculator font and colors */
   details {
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 0.95rem;
     max-width: 400px;
     margin: 2rem auto 0 auto;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 1rem;
-    background: white;
-    transition: background 0.3s;
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 0 20px rgba(255 255 255 / 0.05);
+    color: #eee;
+    transition: background 0.3s ease;
   }
 
   details[open] {
-    background: #f9f9f9;
+    background: #292929;
   }
 
   summary {
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
     outline: none;
     list-style: none;
+    user-select: none;
+    position: relative;
+    padding-right: 1.5rem;
   }
 
   summary::marker {
@@ -251,12 +281,17 @@ With that all being said, feel free to take a look at where you land with this v
 
   summary::after {
     content: "▸";
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     transition: transform 0.3s ease;
+    color: #ccc;
   }
 
   details[open] summary::after {
-    transform: rotate(90deg);
+    transform: translateY(-50%) rotate(90deg);
+    color: #fff;
   }
 
   details > *:not(summary) {
@@ -275,6 +310,11 @@ With that all being said, feel free to take a look at where you land with this v
     margin-top: 1rem;
     padding-left: 1.2rem;
     line-height: 1.6;
+    color: #ddd;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
   }
 </style>
 
@@ -290,4 +330,7 @@ With that all being said, feel free to take a look at where you land with this v
     <li>Retirement means financial independence, not necessarily stopping work.</li>
   </ul>
 </details>
+
+  </div>
+</body>
 
