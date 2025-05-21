@@ -73,9 +73,7 @@ With that all being said, feel free to take a look at where you land with this v
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
   <title>Years to Retirement Calculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     .container {
       width: 100%;
@@ -96,7 +94,7 @@ With that all being said, feel free to take a look at where you land with this v
     .calculator input {
       padding: 0.6rem;
       font-size: 1rem;
-      border: 1px solid var(--input-border);
+      border: 1px solid var(--text-color);
       border-radius: 5px;
       background: var(--input-bg);
       color: var(--text-color);
