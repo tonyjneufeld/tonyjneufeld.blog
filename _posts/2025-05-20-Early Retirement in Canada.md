@@ -68,54 +68,58 @@ As much as I love all of the math behind early retirement, I believe there are s
 
 With that all being said, feel free to take a look at where you land with this very simple and conservative early retirement calculator:
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Years to Retirement Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Reset and base */
-    html, body {
-      margin: 0; 
-      height: 100%;
-      background: #121212;
-      color: #eee;
+    :root {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --input-bg: #1e1e1e;
+      --input-border: #444;
+      --card-bg: #1c1c1c;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding: 1rem;
+      min-height: 100vh;
     }
 
     .container {
+      width: 100%;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 2rem;
-      width: 100%;
-      max-width: 420px;
     }
 
     .calculator {
-      background: #1c1c1c;
-      border-radius: 8px;
-      padding: 2rem;
-      width: 100%;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
     .calculator input {
       padding: 0.6rem;
       font-size: 1rem;
-      border: 1px solid #444;
+      border: 1px solid var(--input-border);
       border-radius: 5px;
-      background: #1e1e1e;
-      color: #eee;
+      background: var(--input-bg);
+      color: var(--text-color);
     }
 
     .calculator input::placeholder {
@@ -126,7 +130,6 @@ With that all being said, feel free to take a look at where you land with this v
       font-size: 1.2rem;
       font-weight: bold;
       text-align: center;
-      color: #ddd;
     }
 
     details {
@@ -136,10 +139,7 @@ With that all being said, feel free to take a look at where you land with this v
       padding: 1rem 1.2rem;
       box-shadow: 0 0 20px rgba(255 255 255 / 0.05);
       color: #eee;
-      width: 100%;
-      max-width: 400px;
       transition: background 0.3s ease;
-      user-select: none;
     }
 
     details[open] {
@@ -151,6 +151,7 @@ With that all being said, feel free to take a look at where you land with this v
       cursor: pointer;
       outline: none;
       list-style: none;
+      user-select: none;
       position: relative;
       padding-right: 1.5rem;
     }
@@ -196,24 +197,18 @@ With that all being said, feel free to take a look at where you land with this v
     ul li {
       margin-bottom: 0.5rem;
     }
-
-    @media (max-width: 500px) {
-      .calculator {
-        padding: 1.5rem 1rem;
-      }
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="calculator" role="form" aria-label="Years to Retirement Calculator">
-      <input type="number" id="age" placeholder="Current Age" min="0" step="1" aria-label="Current Age" />
-      <input type="text" id="income" placeholder="Annual Household Income (after-tax)" aria-label="Annual Household Income (after-tax)" />
-      <input type="text" id="spending" placeholder="Annual Household Spending" aria-label="Annual Household Spending" />
-      <input type="text" id="networth" placeholder="Current Invested Assets" aria-label="Current Invested Assets" />
-      <div class="result" id="savingsRate" aria-live="polite">Savings Rate: —</div>
-      <div class="result" id="yearsToRetire" aria-live="polite">Years to Retirement: —</div>
-      <div class="result" id="retirementAge" aria-live="polite">Estimated Retirement Age: —</div>
+    <div class="calculator">
+      <input type="number" id="age" placeholder="Current Age" min="0" step="1" />
+      <input type="text" id="income" placeholder="Annual Household Income (after-tax)" />
+      <input type="text" id="spending" placeholder="Annual Household Spending" />
+      <input type="text" id="networth" placeholder="Current Invested Assets" />
+      <div class="result" id="savingsRate">Savings Rate: —</div>
+      <div class="result" id="yearsToRetire">Years to Retirement: —</div>
+      <div class="result" id="retirementAge">Estimated Retirement Age: —</div>
     </div>
 
     <details>
@@ -263,10 +258,9 @@ With that all being said, feel free to take a look at where you land with this v
       const spending = parseNumber(spendingInput.value);
       const networth = parseNumber(networthInput.value);
 
-      if (
-        isFinite(age) && isFinite(income) && isFinite(spending) && isFinite(networth) &&
-        income > 0 && spending >= 0 && networth >= 0 && income > spending && age >= 0
-      ) {
+      if (isFinite(age) && isFinite(income) && isFinite(spending) && isFinite(networth) &&
+          income > 0 && spending >= 0 && networth >= 0 && income > spending && age >= 0) {
+
         const savingsRate = (income - spending) / income;
         savingsRateEl.textContent = `Savings Rate: ${(savingsRate * 100).toFixed(1)}%`;
 
@@ -283,6 +277,7 @@ With that all being said, feel free to take a look at where you land with this v
           yearsToRetireEl.textContent = `Years to Retirement: ∞`;
           retirementAgeEl.textContent = `Estimated Retirement Age: ∞`;
         }
+
       } else {
         savingsRateEl.textContent = `Savings Rate: —`;
         yearsToRetireEl.textContent = `Years to Retirement: —`;
@@ -293,10 +288,8 @@ With that all being said, feel free to take a look at where you land with this v
     [ageInput, incomeInput, spendingInput, networthInput].forEach(input => {
       input.addEventListener('input', input === ageInput ? calculate : formatInput);
     });
-
-    // Initial calculation
-    calculate();
   </script>
 </body>
 </html>
+
 
