@@ -43,11 +43,11 @@ permalink: /:year/:month/:day/:title/
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  email: tonyjneufeld@gmail.com
+  email: 
   facebook:
   github:
   instagram: 
-  linkedin: tony-neufeld-050a0685
+  linkedin: 
   rss: test_rss_tonyneufeld_blog
   twitter: 
 
