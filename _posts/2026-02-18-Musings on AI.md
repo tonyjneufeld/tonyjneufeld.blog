@@ -1,8 +1,7 @@
-\---  
+---  
 layout: post  
 title:  "Musings on AI"  
-—
-
+---
 Self-doubt. The moment I started click-clacking on my keyboard I had the feeling of self-doubt. That what I write won’t be good enough. That what I write I will have to plug through whatever LLM is the best at the moment. But what if I just wrote. In my own voice for once. Deeply, authentically, and most of all human writing.
 
 I don’t typically share my thoughts and emotions. I don’t have any social media, I try to stay detached from the news, and I do my best to be present. This blog is giving me an outlet to write. 
