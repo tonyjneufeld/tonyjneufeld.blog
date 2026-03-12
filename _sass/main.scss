@@ -206,3 +206,109 @@ a:hover {
   .subscribe-box p a:hover {
     text-decoration: underline;
   }
+
+// Resource cards (lead magnets)
+.resource-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #2ecc71;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #555;
+  }
+}
+
+.resource-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.resource-badge {
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.btn-resource {
+  display: inline-block;
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #27ae60;
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+// Book recommendation cards
+.book-card {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  li {
+    margin-bottom: 0.6rem;
+    font-size: 0.93rem;
+    line-height: 1.5;
+  }
+}
+
+// Dark mode for resource and book cards
+@media (prefers-color-scheme: dark) {
+  .resource-card {
+    background: #2a2a2a;
+    border-color: #444;
+    border-left-color: #2ecc71;
+
+    p {
+      color: #bbb;
+    }
+  }
+
+  .book-card {
+    background: #2a2a2a;
+    border-color: #444;
+
+    li {
+      color: #ccc;
+    }
+  }
+}
