@@ -1,3 +1,30 @@
+// Modern gradient background
+body {
+  background: linear-gradient(
+    170deg,
+    #fefefe 0%,
+    #f7f4f0 25%,
+    #f0ebe4 50%,
+    #f7f4f0 75%,
+    #fefefe 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(
+      170deg,
+      #1a1a1a 0%,
+      #1e1c19 25%,
+      #22201a 50%,
+      #1e1c19 75%,
+      #1a1a1a 100%
+    );
+  }
+}
+
 table {
   @extend .table;
   @extend .table-striped;
@@ -573,6 +600,102 @@ a:hover {
     p {
       color: #bbb;
     }
+  }
+}
+
+// About page cards
+.about-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #38250E;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+}
+
+.about-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.about-timeline {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+// Contact page cards
+.contact-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  height: 100%;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+}
+
+.contact-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-disclaimer {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Dark mode for about and contact cards
+@media (prefers-color-scheme: dark) {
+  .about-card {
+    background: #2a2a2a;
+    border-color: #444;
+    border-left-color: #38250E;
+
+    p {
+      color: #bbb;
+    }
+  }
+
+  .contact-card {
+    background: #2a2a2a;
+    border-color: #444;
+
+    p {
+      color: #bbb;
+    }
+  }
+
+  .about-timeline {
+    color: #aaa;
   }
 }
 
