@@ -291,6 +291,291 @@ a:hover {
   }
 }
 
+// Services page — pricing cards
+.service-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+
+  h3 {
+    font-size: 1.3rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-featured {
+  border: 2px solid #38250E;
+  position: relative;
+}
+
+.service-price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.service-price-period {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.service-features {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+
+  li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+}
+
+.service-ideal {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+.service-badge {
+  background-color: #38250E;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.service-badge-featured {
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.btn-service {
+  display: inline-block;
+  background-color: #38250E;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  margin-top: auto;
+
+  &:hover {
+    background-color: #5a3d1a;
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+.btn-service-featured {
+  @extend .btn-service;
+  background-color: #2ecc71;
+
+  &:hover {
+    background-color: #27ae60;
+    color: #fff;
+  }
+}
+
+// Services intake form
+.get-started-section {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+}
+
+.services-form {
+  text-align: left;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 8px;
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+  }
+
+  select {
+    appearance: auto;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #38250E;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #5a3d1a;
+    }
+  }
+
+  .form-note {
+    font-size: 0.8rem;
+    color: #777;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+// Services FAQ
+.services-faq {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+
+  summary {
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    list-style: revert;
+  }
+
+  p {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+  }
+}
+
+// Dark mode for services
+@media (prefers-color-scheme: dark) {
+  .service-card {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  .service-card-featured {
+    border-color: #2ecc71;
+  }
+
+  .service-description,
+  .service-ideal {
+    color: #bbb;
+  }
+
+  .service-features li {
+    color: #ccc;
+  }
+
+  .service-price-period {
+    color: #aaa;
+  }
+
+  .services-form {
+    background: #2a2a2a;
+    border-color: #444;
+
+    label {
+      color: #ddd;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      background: #333;
+      border-color: #555;
+      color: #eee;
+    }
+  }
+
+  .get-started-section p {
+    color: #bbb;
+  }
+
+  .faq-item {
+    border-color: #444;
+
+    p {
+      color: #bbb;
+    }
+  }
+}
+
 // Dark mode for resource and book cards
 @media (prefers-color-scheme: dark) {
   .resource-card {
