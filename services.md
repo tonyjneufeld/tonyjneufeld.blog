@@ -60,11 +60,11 @@ permalink: /services/
     <div class="service-card">
       <span class="badge service-badge">Ongoing</span>
       <h3>The Co-Pilot</h3>
-      <div class="service-price">$175<span class="service-price-period">/month</span></div>
+      <div class="service-price">$100<span class="service-price-period">/month</span></div>
       <p class="service-description">Monthly coaching for people who want ongoing accountability, someone in their corner, and a partner who grows with them.</p>
       <ul class="service-features">
         <li>Free 60-minute discovery session</li>
-        <li>Two 45-minute sessions per month</li>
+        <li>Two 30-minute sessions per month</li>
         <li>Ongoing priority & roadmap updates</li>
         <li>Unlimited email support</li>
         <li>Quarterly progress reviews</li>
@@ -146,7 +146,7 @@ permalink: /services/
 
   <details class="faq-item">
     <summary>Are you a financial advisor?</summary>
-    <p>No — and that's by design. I don't sell products, earn commissions, or manage your investments. I'm a coach and educator who helps you build the habits, systems, and clarity to make your own confident financial decisions.</p>
+    <p>No. I don't sell products, earn commissions, or manage your investments. I'm a coach and educator who helps you build the habits, systems, and clarity to make your own confident financial decisions.</p>
   </details>
 
   <details class="faq-item">
@@ -161,7 +161,7 @@ permalink: /services/
 
   <details class="faq-item">
     <summary>Is this only for people in Saskatchewan?</summary>
-    <p>I'm based in Saskatchewan, but all sessions happen over Zoom. I work with Canadians across the country.</p>
+    <p>I'm based in Saskatoon, and would love to meet locally with people who are in town. I will work with Canadians across the country virtually.</p>
   </details>
 
   <details class="faq-item">
