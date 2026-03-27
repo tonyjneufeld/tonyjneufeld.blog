@@ -32,7 +32,7 @@ permalink: /services/
         <li>Two weeks of email follow-up support</li>
       </ul>
       <p class="service-ideal"><strong>Ideal for:</strong> You have a specific question or decision and want a sounding board who will be honest with you.</p>
-      <a href="#get-started" class="btn btn-service">Get Started Free</a>
+      <a href="https://calendly.com/tonyneufeld" class="btn btn-service" target="_blank" rel="noopener">Get Started Free</a>
     </div>
   </div>
 
@@ -51,7 +51,7 @@ permalink: /services/
         <li>30 days of email support between sessions</li>
       </ul>
       <p class="service-ideal"><strong>Ideal for:</strong> You're ready to get serious but need a partner to cut through the noise and build a real plan.</p>
-      <a href="#get-started" class="btn btn-service-featured">Get Started Free</a>
+      <a href="https://calendly.com/tonyneufeld" class="btn btn-service-featured" target="_blank" rel="noopener">Get Started Free</a>
     </div>
   </div>
 
@@ -63,7 +63,7 @@ permalink: /services/
       <div class="service-price">$100<span class="service-price-period">/month</span></div>
       <p class="service-description">Monthly coaching for people who want ongoing accountability, someone in their corner, and a partner who grows with them.</p>
       <ul class="service-features">
-        <li>Free 60-minute discovery session</li>
+        <li>Free 30-minute discovery call</li>
         <li>Two 30-minute sessions per month</li>
         <li>Ongoing priority & roadmap updates</li>
         <li>Unlimited email support</li>
@@ -71,7 +71,7 @@ permalink: /services/
         <li>Cancel anytime — no contracts</li>
       </ul>
       <p class="service-ideal"><strong>Ideal for:</strong> You want a long-term partner to keep you accountable and help you adapt as life changes.</p>
-      <a href="#get-started" class="btn btn-service">Get Started Free</a>
+      <a href="https://calendly.com/tonyneufeld" class="btn btn-service" target="_blank" rel="noopener">Get Started Free</a>
     </div>
   </div>
 
@@ -80,59 +80,8 @@ permalink: /services/
 <!-- Get Started Section -->
 <div id="get-started" class="get-started-section mt-5">
   <h2>Let's Start With a Conversation</h2>
-  <p>No commitment, no credit card, no awkward sales pitch. Just tell me a little about yourself and I'll reach out to book a free call.</p>
-
-  <form
-    action="https://buttondown.com/api/emails/embed-subscribe/tonyneufeldblog"
-    method="post"
-    target="popupwindow"
-    onsubmit="window.open('https://buttondown.com/tonyneufeldblog', 'popupwindow')"
-    class="services-form"
-  >
-    <input type="hidden" name="tag" value="services-intake" />
-
-    <div class="form-group">
-      <label for="email">Your email *</label>
-      <input type="email" name="email" id="email" placeholder="you@example.com" required />
-    </div>
-
-    <div class="form-group">
-      <label for="name-field">Your first name</label>
-      <input type="text" id="name-field" name="metadata__name" placeholder="First name" />
-    </div>
-
-    <div class="form-group">
-      <label for="life-stage">What best describes you?</label>
-      <select id="life-stage" name="metadata__life_stage">
-        <option value="" disabled selected>Select one...</option>
-        <option value="student-or-new-grad">Student or new grad</option>
-        <option value="young-professional">Young professional</option>
-        <option value="new-parent">New or expecting parent</option>
-        <option value="growing-family">Growing family</option>
-        <option value="mid-career">Mid-career, re-evaluating</option>
-        <option value="other">Something else</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="biggest-stress">What's the one money thing that stresses you out most?</label>
-      <textarea id="biggest-stress" name="metadata__biggest_stress" rows="3" placeholder="No wrong answers — just whatever is on your mind."></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="interest">Which service interests you?</label>
-      <select id="interest" name="metadata__interest">
-        <option value="" disabled selected>Select one...</option>
-        <option value="check-up">The Check-Up ($150)</option>
-        <option value="game-plan">The Game Plan ($500)</option>
-        <option value="co-pilot">The Co-Pilot ($175/mo)</option>
-        <option value="not-sure">Not sure yet — let's chat</option>
-      </select>
-    </div>
-
-    <input type="submit" value="Book My Free Call" />
-    <p class="form-note">I'll reply within 48 hours to find a time that works. No spam, ever.</p>
-  </form>
+  <p>No commitment, no credit card, no awkward sales pitch. Book a free 30-minute discovery call and we'll talk about where you are, where you want to be, and whether working together makes sense.</p>
+  <a href="https://calendly.com/tonyneufeld" class="btn btn-service-featured" target="_blank" rel="noopener" style="font-size: 1.15rem; padding: 0.85rem 2rem;">Book a Free Discovery Call</a>
 </div>
 
 <!-- FAQ Section -->
