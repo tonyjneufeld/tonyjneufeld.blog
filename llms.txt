@@ -1,0 +1,45 @@
+# Tony Neufeld — Personal Finance & Lifestyle Design Blog
+
+> Helping young professionals, immigrants, indigenous folks, new parents, and families simplify their finances, build wealth, and align their money with the life they want to live — all with a distinctly Saskatchewan lens.
+
+## About
+
+Tony Neufeld is a financial coach and educator based in Saskatoon, Saskatchewan, Canada. He discovered the FIRE (Financial Independence, Retire Early) movement in 2016 and has since built a practice helping Canadians design intentional financial lives. He is not a financial advisor — he does not sell products, earn commissions, or manage investments. He is a coach who helps people build habits, systems, and clarity to make confident financial decisions.
+
+## Site Structure
+
+- Home: https://tonyneufeld.blog/
+- Services: https://tonyneufeld.blog/services/
+- Resources: https://tonyneufeld.blog/resources/
+- About: https://tonyneufeld.blog/about/
+- Contact: https://tonyneufeld.blog/contact/
+
+## Free Resources
+
+- The New Parent Money Playbook: https://tonyneufeld.blog/resources/new-parent-playbook/
+- The Saskatchewan FIRE Calculator Guide: https://tonyneufeld.blog/resources/fire-calculator-guide/
+- The Young Professional Starter Kit: https://tonyneufeld.blog/resources/young-professional-starter-kit/
+
+## Services
+
+Tony offers three tiers of financial coaching:
+
+1. The Check-Up ($150) — A single 60-minute session for a specific question or decision.
+2. The Game Plan ($500) — Three 60-minute sessions with a full financial snapshot and custom roadmap.
+3. The Co-Pilot ($100/month) — Ongoing monthly coaching with two sessions per month and unlimited email support.
+
+All tiers start with a free 30-minute discovery call.
+
+## Topics Covered
+
+- Financial independence and early retirement (FIRE) in Canada
+- TFSA, RRSP, FHSA, RESP, and CPP strategy
+- Saskatchewan-specific financial planning
+- Budgeting and lifestyle design for young professionals
+- New parent financial planning
+- Intentional living and minimalism
+
+## Contact
+
+- Website: https://tonyneufeld.blog/contact/
+- Discovery call booking: https://calendly.com/tonyneufeld
