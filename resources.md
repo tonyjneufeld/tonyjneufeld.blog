@@ -18,7 +18,7 @@ permalink: /resources/
       <span class="badge resource-badge">Free Guide</span>
       <h3>The New Parent Money Playbook</h3>
       <p>A Saskatchewan family financial checklist covering everything from pregnancy to baby's first year — benefits, budgeting, and planning for your growing family.</p>
-      <a href="https://buttondown.com/tonyneufeldblog?tag=new-parent-playbook" class="btn btn-resource" target="_blank" rel="noopener">Download Free</a>
+      <a href="/resources/new-parent-playbook/" class="btn btn-resource">View Checklist</a>
     </div>
   </div>
   <div class="col-md-4 mb-4">
@@ -26,7 +26,7 @@ permalink: /resources/
       <span class="badge resource-badge">Free Guide</span>
       <h3>The Saskatchewan FIRE Calculator Guide</h3>
       <p>How to calculate your financial independence number using Canadian-specific numbers — TFSA, RRSP, CPP, and Saskatchewan cost of living.</p>
-      <a href="https://buttondown.com/tonyneufeldblog?tag=fire-calculator-guide" class="btn btn-resource" target="_blank" rel="noopener">Download Free</a>
+      <a href="/resources/fire-calculator-guide/" class="btn btn-resource">View Checklist</a>
     </div>
   </div>
   <div class="col-md-4 mb-4">
@@ -34,7 +34,7 @@ permalink: /resources/
       <span class="badge resource-badge">Free Guide</span>
       <h3>The Young Professional Starter Kit</h3>
       <p>A first-job money checklist for Saskatchewan grads — TFSA vs RRSP, workplace benefits, and building your first budget.</p>
-      <a href="https://buttondown.com/tonyneufeldblog?tag=young-professional-starter-kit" class="btn btn-resource" target="_blank" rel="noopener">Download Free</a>
+      <a href="/resources/young-professional-starter-kit/" class="btn btn-resource">View Checklist</a>
     </div>
   </div>
 </div>

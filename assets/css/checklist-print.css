@@ -1,0 +1,125 @@
+/* Print-only styles for checklist pages */
+@page {
+  size: letter;
+  margin: 0.6in 0.75in;
+}
+
+body {
+  background: white !important;
+  color: #000 !important;
+  font-size: 11pt;
+  line-height: 1.4;
+}
+
+/* Hide non-print elements */
+.no-print,
+.navbar,
+.footer,
+footer,
+.calendly-badge-widget,
+.calendly-badge-content {
+  display: none !important;
+}
+
+.container {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Checklist page */
+.checklist-page {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: white !important;
+}
+
+/* Header */
+.checklist-header {
+  text-align: center;
+  margin-bottom: 0.3in;
+  padding-bottom: 0.15in;
+  border-bottom: 2pt solid #38250E;
+}
+
+.checklist-header h1 {
+  font-size: 18pt;
+  margin-bottom: 4pt;
+  color: #000 !important;
+}
+
+.checklist-subtitle {
+  font-size: 10pt;
+  color: #555 !important;
+  margin: 0;
+}
+
+/* Sections */
+.checklist-section {
+  margin-bottom: 0.2in;
+  page-break-inside: avoid;
+}
+
+.checklist-section h2 {
+  font-size: 13pt;
+  border-bottom: 1pt solid #ccc;
+  padding-bottom: 3pt;
+  margin-bottom: 6pt;
+  color: #000 !important;
+}
+
+/* Checklist items */
+ul.checklist {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0;
+}
+
+ul.checklist li {
+  padding: 3pt 0 3pt 24pt;
+  position: relative;
+  font-size: 10pt;
+  line-height: 1.4;
+  color: #000 !important;
+  border-bottom: 0.5pt dotted #ddd;
+}
+
+.check-box {
+  position: absolute;
+  left: 0;
+  top: 5pt;
+  display: inline-block;
+  width: 12pt;
+  height: 12pt;
+  border: 1.5pt solid #333;
+  border-radius: 2pt;
+}
+
+/* Sub-lists */
+ol.checklist-sub {
+  margin: 4pt 0 4pt 18pt;
+  padding-left: 0;
+  font-size: 9.5pt;
+}
+
+ol.checklist-sub li {
+  padding: 2pt 0;
+  border-bottom: none;
+}
+
+/* Footer */
+.checklist-footer {
+  margin-top: 0.25in;
+  padding-top: 0.1in;
+  border-top: 1pt solid #ccc;
+  text-align: center;
+}
+
+.checklist-footer p {
+  font-size: 8pt;
+  color: #999 !important;
+  margin: 0;
+}

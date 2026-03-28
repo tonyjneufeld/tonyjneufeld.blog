@@ -15,10 +15,17 @@ description: "Helping Canadians design a life of freedom, purpose, and financial
 <div class="row align-items-center mb-5">
   <div class="col-md-8">
     <h2>Hi there, I'm Tony!</h2>
-    <p>My journey started like many Canadians. Student loans, big dreams, and the question of whether I could build for my future in Canada while still enjoying my 20s. In 2016, I found out about FIRE after I stumbled upon a <a href="https://www.youtube.com/watch?v=8-Li_sFNc4Q">video by Mr Money Mustache</a>. After watching that video and reading his blog, I was hooked!</p>
+    <p>My journey started like many Canadians. Student loans, big dreams, and the question of whether I could build for my future in Canada while still enjoying my 20s. In 2016, I found out about FIRE after I stumbled upon a video by Mr Money Mustache. After watching that video and reading his blog, I was hooked!</p>
   </div>
   <div class="col-md-4 text-center">
     <img src="/me.png" alt="Tony Neufeld" class="responsive-portrait">
+  </div>
+</div>
+
+<div class="video-embed mb-5">
+  <h3 style="text-align: center; margin-bottom: 1rem;">The Video That Started It All</h3>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube-nocookie.com/embed/8-Li_sFNc4Q" title="Mr Money Mustache" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 
