@@ -16,6 +16,41 @@ permalink: /services/
   <p>Every engagement starts with a <strong>free discovery call</strong> — no strings, no sales pitch. We'll talk about where you are, where you want to be, and whether working together makes sense. From there, you pick the level of support that fits your life.</p>
 </div>
 
+<!-- Discovery Call Plan of Action -->
+<div class="discovery-steps mt-4 mb-5">
+  <h2 style="text-align: center; margin-bottom: 1.5rem;">Your Discovery Call, Step by Step</h2>
+  <div class="row">
+
+    <div class="col-md-4 mb-4">
+      <div class="discovery-step">
+        <div class="discovery-step-number">1</div>
+        <h3>Get to Know You</h3>
+        <p>We start with the basics: what's going on in your financial life, what's keeping you up at night, and what "good" looks like for you. No spreadsheets, no judgment — just a real conversation.</p>
+        <span class="discovery-step-time">~10 minutes</span>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="discovery-step">
+        <div class="discovery-step-number">2</div>
+        <h3>Find the Root Cause</h3>
+        <p>Most people come in thinking they have one problem, but the real blocker is usually something deeper. We'll dig past the surface and pinpoint what's actually holding you back.</p>
+        <span class="discovery-step-time">~10 minutes</span>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="discovery-step">
+        <div class="discovery-step-number">3</div>
+        <h3>Map Out Next Steps</h3>
+        <p>You'll leave with clarity on your situation and a recommendation for the path forward — whether that's working together or a resource I can point you to. No pressure either way.</p>
+        <span class="discovery-step-time">~10 minutes</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div class="row">
 
   <!-- Tier 1 -->

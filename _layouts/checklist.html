@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>{{ page.title }} – {{ site.name }}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+    <link rel="icon" href="{{ '/coffeecup.png' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/checklist-print.css' | relative_url }}" media="print" />
+    {% seo %}
+  </head>
+  <body class="d-flex flex-column h-100">
+    <div class="container">
+      {% include navigation.html %}
+      <div class="body">
+        <div class="checklist-toolbar no-print">
+          <a href="/resources/" class="btn btn-service btn-sm">&larr; Back to Resources</a>
+          <button onclick="window.print()" class="btn btn-service-featured btn-sm">Print / Save as PDF</button>
+        </div>
+        <div class="checklist-page">
+          {{ content }}
+          <div class="checklist-footer">
+            <p>tonyjneufeld.blog &mdash; Free tools for Canadians building wealth on the Prairies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include footer.html %}
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
