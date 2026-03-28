@@ -1,0 +1,1001 @@
+---
+layout: default
+title: "Vacation Cost Calculator"
+description: "Compare the real cost of driving vs flying to popular vacation destinations from Saskatchewan. Plan your next trip with a clear budget."
+permalink: /vacation-calculator/
+---
+
+<div class="welcome-section" style="text-align: center;">
+  <h1>Vacation Cost Calculator</h1>
+  <p>Compare the real cost of getting away — from Saskatchewan to anywhere</p>
+</div>
+
+<p class="mt-4" style="max-width: 720px; margin-left: auto; margin-right: auto; text-align: center; color: #555;">
+  Pick a destination, choose how you're getting there, and see what the trip actually costs.
+  No hidden fees, no wishful thinking — just honest numbers so you can plan with confidence.
+</p>
+
+<div class="vacation-calc" id="vacationCalc">
+
+  <!-- STEP 1: Trip Setup -->
+  <div class="calc-section">
+    <h2>1. Where are you headed?</h2>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="departure">Departing from</label>
+        <select id="departure" onchange="calculate()">
+          <option value="saskatoon">Saskatoon, SK</option>
+          <option value="regina">Regina, SK</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="destination">Destination</label>
+        <select id="destination" onchange="onDestinationChange()">
+          <optgroup label="🚗 Drive-Friendly (Under 12 Hours)">
+            <option value="banff">Banff / Lake Louise, AB</option>
+            <option value="calgary">Calgary, AB</option>
+            <option value="edmonton">Edmonton, AB</option>
+            <option value="winnipeg">Winnipeg, MB</option>
+            <option value="blackhills">Black Hills, SD (Rapid City)</option>
+          </optgroup>
+          <optgroup label="🚗 Long Drive or ✈️ Fly">
+            <option value="vancouver">Vancouver, BC</option>
+            <option value="kelowna">Kelowna, BC</option>
+            <option value="minneapolis">Minneapolis, MN</option>
+          </optgroup>
+          <optgroup label="✈️ Fly">
+            <option value="cancun">Cancun, Mexico</option>
+            <option value="puertovallarta">Puerto Vallarta, Mexico</option>
+            <option value="phoenix">Phoenix / Scottsdale, AZ</option>
+            <option value="lasvegas">Las Vegas, NV</option>
+            <option value="orlando">Orlando, FL</option>
+            <option value="maui">Maui, HI</option>
+            <option value="puntacana">Punta Cana, DR</option>
+            <option value="losangeles">Los Angeles, CA</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="travellers">Number of travellers</label>
+        <select id="travellers" onchange="calculate()">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="nights">Number of nights</label>
+        <select id="nights" onchange="calculate()">
+          <option value="2">2 nights</option>
+          <option value="3">3 nights</option>
+          <option value="4">4 nights</option>
+          <option value="5" selected>5 nights</option>
+          <option value="7">7 nights (1 week)</option>
+          <option value="10">10 nights</option>
+          <option value="14">14 nights (2 weeks)</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="season">Season</label>
+        <select id="season" onchange="calculate()">
+          <option value="winter">Winter (Dec–Feb)</option>
+          <option value="spring">Spring (Mar–May)</option>
+          <option value="summer" selected>Summer (Jun–Aug)</option>
+          <option value="fall">Fall (Sep–Nov)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Travel Mode -->
+  <div class="calc-section">
+    <h2>2. How are you getting there?</h2>
+
+    <div class="travel-toggle">
+      <button id="btnDrive" class="toggle-btn active" onclick="setMode('drive')">🚗 Drive</button>
+      <button id="btnFly" class="toggle-btn" onclick="setMode('fly')">✈️ Fly</button>
+    </div>
+
+    <!-- Driving inputs -->
+    <div id="driveInputs" class="mode-inputs">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="fuelPrice">Gas price ($/L)</label>
+          <input type="number" id="fuelPrice" value="1.55" step="0.05" min="0.50" max="3.00" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">SK average: ~$1.50–1.60/L</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="fuelEfficiency">Fuel consumption (L/100km)</label>
+          <input type="number" id="fuelEfficiency" value="10" step="0.5" min="4" max="25" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Sedan: ~8 | SUV: ~11 | Truck: ~14</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="driveMeals">Road meals per person</label>
+          <input type="number" id="driveMeals" value="25" step="5" min="0" max="100" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Per travel day (each way)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flying inputs -->
+    <div id="flyInputs" class="mode-inputs" style="display:none;">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="flightCost">Flight cost per person ($)</label>
+          <input type="number" id="flightCost" value="400" step="25" min="100" max="5000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint" id="flightHint">Round trip, taxes included</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="checkedBags">Checked bags per person ($)</label>
+          <input type="number" id="checkedBags" value="60" step="10" min="0" max="200" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">~$30 each way on most airlines</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="rentalCar">Rental car per day ($)</label>
+          <input type="number" id="rentalCar" value="55" step="5" min="0" max="300" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Set to $0 if using transit/shuttles</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="rentalGas">Rental car gas total ($)</label>
+          <input type="number" id="rentalGas" value="60" step="10" min="0" max="500" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Estimated fuel for the rental</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="parking">Airport parking total ($)</label>
+          <input type="number" id="parking" value="0" step="10" min="0" max="500" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Or rideshare/shuttle to airport</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: Accommodations -->
+  <div class="calc-section">
+    <h2>3. Where are you sleeping?</h2>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="accomType">Accommodation type</label>
+        <select id="accomType" onchange="onAccomChange()">
+          <option value="hotel">Hotel</option>
+          <option value="airbnb">Airbnb / Vacation Rental</option>
+          <option value="camping">Camping / RV Site</option>
+          <option value="hostel">Hostel</option>
+          <option value="allinclusive">All-Inclusive Resort</option>
+          <option value="custom">Custom (enter your own)</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="accomCost">Nightly rate ($)</label>
+        <input type="number" id="accomCost" value="180" step="10" min="0" max="2000" onchange="calculate()" oninput="calculate()">
+        <span class="input-hint" id="accomHint">Per room/site per night</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="rooms">Number of rooms/sites</label>
+        <select id="rooms" onchange="calculate()">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: Daily Expenses -->
+  <div class="calc-section">
+    <h2>4. While you're there</h2>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="foodDaily">Food per person per day ($)</label>
+        <input type="number" id="foodDaily" value="60" step="5" min="0" max="500" onchange="calculate()" oninput="calculate()">
+        <span class="input-hint">Restaurants: ~$60 | Groceries: ~$30</span>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="activitiesDaily">Activities per person per day ($)</label>
+        <input type="number" id="activitiesDaily" value="25" step="5" min="0" max="500" onchange="calculate()" oninput="calculate()">
+        <span class="input-hint">Excursions, parks, tours, etc.</span>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="miscDaily">Misc per day (total group) ($)</label>
+        <input type="number" id="miscDaily" value="15" step="5" min="0" max="500" onchange="calculate()" oninput="calculate()">
+        <span class="input-hint">Tips, souvenirs, coffee, transit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weather Panel -->
+  <div class="calc-section weather-panel" id="weatherPanel">
+    <h2>🌤️ What's the weather like?</h2>
+    <div id="weatherInfo" class="weather-info">
+      <p>Select a destination to see seasonal weather.</p>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="calc-section results-section" id="results">
+    <h2>Your Trip Estimate</h2>
+
+    <div class="result-destination" id="resultDestination"></div>
+
+    <div class="result-breakdown">
+      <div class="result-row">
+        <span class="result-label" id="travelLabel">🚗 Driving (fuel)</span>
+        <span class="result-value" id="travelCost">$0</span>
+      </div>
+      <div class="result-row" id="roadMealsRow">
+        <span class="result-label">🍔 Road meals</span>
+        <span class="result-value" id="roadMealsCost">$0</span>
+      </div>
+      <div class="result-row" id="bagsRow" style="display:none;">
+        <span class="result-label">🧳 Checked bags</span>
+        <span class="result-value" id="bagsCost">$0</span>
+      </div>
+      <div class="result-row" id="rentalRow" style="display:none;">
+        <span class="result-label">🚙 Rental car + gas</span>
+        <span class="result-value" id="rentalCost">$0</span>
+      </div>
+      <div class="result-row" id="parkingRow" style="display:none;">
+        <span class="result-label">🅿️ Airport parking</span>
+        <span class="result-value" id="parkingCost">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">🏨 Accommodations</span>
+        <span class="result-value" id="accomTotal">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">🍽️ Food</span>
+        <span class="result-value" id="foodTotal">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">🎯 Activities</span>
+        <span class="result-value" id="activitiesTotal">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">💳 Misc expenses</span>
+        <span class="result-value" id="miscTotal">$0</span>
+      </div>
+      <div class="result-row result-total">
+        <span class="result-label">Total Trip Cost</span>
+        <span class="result-value" id="grandTotal">$0</span>
+      </div>
+      <div class="result-row result-per-person">
+        <span class="result-label">Per person</span>
+        <span class="result-value" id="perPerson">$0</span>
+      </div>
+      <div class="result-row result-per-night">
+        <span class="result-label">Per night (total)</span>
+        <span class="result-value" id="perNight">$0</span>
+      </div>
+    </div>
+
+    <div class="drive-details" id="driveDetails">
+      <p><strong>🛣️ Drive details:</strong> <span id="driveDistance"></span> each way · <span id="driveTime"></span> driving · <span id="driveFuelUsed"></span> of fuel round trip</p>
+    </div>
+
+    <details class="mt-3">
+      <summary><strong>Assumptions & tips</strong></summary>
+      <div style="padding: 0.75rem 0; font-size: 0.9rem; line-height: 1.6;">
+        <ul>
+          <li>Driving distances are approximate from city centre to city centre.</li>
+          <li>Flight costs are rough round-trip estimates — check <a href="https://www.google.com/travel/flights" target="_blank">Google Flights</a> for real prices.</li>
+          <li>Accommodation rates vary hugely by season, booking lead time, and location. These are starting estimates.</li>
+          <li>All-inclusive rates include food and drinks — the calculator zeros out your food cost when you pick that option.</li>
+          <li>This calculator uses Canadian dollars (CAD).</li>
+          <li>Travel insurance is not included — budget an extra $50–$150/person for international trips.</li>
+          <li><strong>Pro tip:</strong> Track the real cost of your next vacation and compare it to this estimate. That's how you build a travel budget you can trust.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- Compare mode hint -->
+  <div class="calc-section" style="text-align: center; padding: 1rem;">
+    <p style="font-size: 0.95rem; color: #666; margin: 0;">
+      💡 <strong>Tip:</strong> Change the travel mode between Drive and Fly to instantly compare costs for the same trip.
+    </p>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="post-cta mt-4">
+  <h3>Want help building a vacation fund into your financial plan?</h3>
+  <p>A good financial plan doesn't skip the fun stuff — it accounts for it.</p>
+  <a href="/services/" class="btn btn-service">Let's Talk</a>
+</div>
+
+<script>
+// ============================================================
+// DESTINATION DATA
+// ============================================================
+const destinations = {
+  // --- Drive-friendly ---
+  banff: {
+    name: "Banff / Lake Louise, AB",
+    distances: { saskatoon: 620, regina: 760 },
+    driveHours: { saskatoon: 6.5, regina: 8 },
+    flightEstimate: { saskatoon: 350, regina: 350 },
+    flightCity: "Calgary (YYC) + 1.5hr drive",
+    accom: { hotel: 220, airbnb: 180, camping: 45, hostel: 50, allinclusive: 0 },
+    weather: {
+      winter: { temp: "-10 to -5°C", desc: "World-class skiing. Cold and snowy — pack layers. Peak season pricing.", icon: "❄️" },
+      spring: { temp: "0 to 12°C", desc: "Shoulder season. Some trails still snowy. Great deals on hotels.", icon: "🌱" },
+      summer: { temp: "15 to 25°C", desc: "Peak season. Hiking, lakes, wildlife. Book far in advance.", icon: "☀️" },
+      fall: { temp: "0 to 12°C", desc: "Stunning larch season (late Sept). Fewer crowds, cooler temps.", icon: "🍂" }
+    }
+  },
+  calgary: {
+    name: "Calgary, AB",
+    distances: { saskatoon: 620, regina: 760 },
+    driveHours: { saskatoon: 6, regina: 7.5 },
+    flightEstimate: { saskatoon: 250, regina: 250 },
+    flightCity: "Calgary (YYC)",
+    accom: { hotel: 150, airbnb: 130, camping: 35, hostel: 40, allinclusive: 0 },
+    weather: {
+      winter: { temp: "-12 to 0°C", desc: "Cold but chinooks bring random warm days. Stampede Park events.", icon: "❄️" },
+      spring: { temp: "2 to 15°C", desc: "Unpredictable. Can snow in May. Good hotel deals.", icon: "🌱" },
+      summer: { temp: "15 to 25°C", desc: "Stampede in July is the big draw. Beautiful weather.", icon: "☀️" },
+      fall: { temp: "2 to 15°C", desc: "Crisp and clear. Great for day trips to the mountains.", icon: "🍂" }
+    }
+  },
+  edmonton: {
+    name: "Edmonton, AB",
+    distances: { saskatoon: 525, regina: 780 },
+    driveHours: { saskatoon: 5, regina: 7.5 },
+    flightEstimate: { saskatoon: 250, regina: 280 },
+    flightCity: "Edmonton (YEG)",
+    accom: { hotel: 140, airbnb: 120, camping: 35, hostel: 40, allinclusive: 0 },
+    weather: {
+      winter: { temp: "-18 to -8°C", desc: "Genuinely cold. West Edmonton Mall is the winter attraction.", icon: "❄️" },
+      spring: { temp: "0 to 15°C", desc: "Thaws slowly. River valley opens up. Budget-friendly.", icon: "🌱" },
+      summer: { temp: "15 to 25°C", desc: "Festival city — Fringe, Folk Fest, K-Days. Long sunny days.", icon: "☀️" },
+      fall: { temp: "0 to 12°C", desc: "Beautiful river valley colours. Elk Island NP nearby.", icon: "🍂" }
+    }
+  },
+  winnipeg: {
+    name: "Winnipeg, MB",
+    distances: { saskatoon: 800, regina: 575 },
+    driveHours: { saskatoon: 8, regina: 5.5 },
+    flightEstimate: { saskatoon: 300, regina: 280 },
+    flightCity: "Winnipeg (YWG)",
+    accom: { hotel: 130, airbnb: 110, camping: 30, hostel: 35, allinclusive: 0 },
+    weather: {
+      winter: { temp: "-22 to -12°C", desc: "Brutally cold. Festival du Voyageur in Feb is worth it though.", icon: "❄️" },
+      spring: { temp: "-2 to 15°C", desc: "Muddy and unpredictable. The Forks comes alive.", icon: "🌱" },
+      summer: { temp: "18 to 28°C", desc: "Surprisingly hot. Folk Fest, Assiniboine Park, great food scene.", icon: "☀️" },
+      fall: { temp: "2 to 14°C", desc: "Short but pretty. Good restaurant season.", icon: "🍂" }
+    }
+  },
+  blackhills: {
+    name: "Black Hills / Rapid City, SD",
+    distances: { saskatoon: 1100, regina: 950 },
+    driveHours: { saskatoon: 10.5, regina: 9 },
+    flightEstimate: { saskatoon: 500, regina: 500 },
+    flightCity: "Rapid City (RAP) — limited flights",
+    accom: { hotel: 130, airbnb: 120, camping: 30, hostel: 35, allinclusive: 0 },
+    weather: {
+      winter: { temp: "-8 to 2°C", desc: "Quiet season. Some attractions closed. Affordable.", icon: "❄️" },
+      spring: { temp: "5 to 18°C", desc: "Warming up. Wildflowers in the Hills. Shoulder pricing.", icon: "🌱" },
+      summer: { temp: "20 to 32°C", desc: "Peak season. Rushmore, Custer SP, Badlands. Book ahead.", icon: "☀️" },
+      fall: { temp: "5 to 18°C", desc: "Gorgeous foliage. Fewer crowds. Great driving weather.", icon: "🍂" }
+    }
+  },
+  // --- Long drive or fly ---
+  vancouver: {
+    name: "Vancouver, BC",
+    distances: { saskatoon: 1500, regina: 1700 },
+    driveHours: { saskatoon: 14, regina: 16 },
+    flightEstimate: { saskatoon: 350, regina: 350 },
+    flightCity: "Vancouver (YVR)",
+    accom: { hotel: 220, airbnb: 170, camping: 40, hostel: 45, allinclusive: 0 },
+    weather: {
+      winter: { temp: "3 to 8°C", desc: "Rainy but mild. Ski Whistler (2hrs). Cheapest hotel season.", icon: "🌧️" },
+      spring: { temp: "8 to 16°C", desc: "Cherry blossoms. Less rain. Beautiful shoulder season.", icon: "🌸" },
+      summer: { temp: "18 to 25°C", desc: "Perfect weather. Beaches, Stanley Park, hiking. Peak pricing.", icon: "☀️" },
+      fall: { temp: "8 to 15°C", desc: "Rain returns. Great food/culture season. Good deals.", icon: "🍂" }
+    }
+  },
+  kelowna: {
+    name: "Kelowna, BC",
+    distances: { saskatoon: 1050, regina: 1200 },
+    driveHours: { saskatoon: 10, regina: 12 },
+    flightEstimate: { saskatoon: 350, regina: 380 },
+    flightCity: "Kelowna (YLW)",
+    accom: { hotel: 180, airbnb: 160, camping: 40, hostel: 40, allinclusive: 0 },
+    weather: {
+      winter: { temp: "-3 to 2°C", desc: "Ski Big White. Wine touring year-round. Quiet and affordable.", icon: "❄️" },
+      spring: { temp: "8 to 18°C", desc: "Orchards blooming. Lake still cold. Great wine touring.", icon: "🌱" },
+      summer: { temp: "22 to 32°C", desc: "Hot! Lake days, wineries, beaches. Peak pricing.", icon: "☀️" },
+      fall: { temp: "8 to 18°C", desc: "Harvest season. Best wine touring. Beautiful colours.", icon: "🍂" }
+    }
+  },
+  minneapolis: {
+    name: "Minneapolis, MN",
+    distances: { saskatoon: 1200, regina: 1000 },
+    driveHours: { saskatoon: 11, regina: 9.5 },
+    flightEstimate: { saskatoon: 400, regina: 380 },
+    flightCity: "Minneapolis (MSP)",
+    accom: { hotel: 150, airbnb: 130, camping: 30, hostel: 35, allinclusive: 0 },
+    weather: {
+      winter: { temp: "-15 to -5°C", desc: "Cold as home. But great indoor attractions — Mall of America, skyways.", icon: "❄️" },
+      spring: { temp: "5 to 18°C", desc: "Thawing. Lakes open up. Baseball season starts.", icon: "🌱" },
+      summer: { temp: "20 to 30°C", desc: "Beautiful. Lake culture, food scene, concerts. Minnesota State Fair in Aug.", icon: "☀️" },
+      fall: { temp: "5 to 18°C", desc: "Stunning foliage. Football season. Great shoulder pricing.", icon: "🍂" }
+    }
+  },
+  // --- Fly-only ---
+  cancun: {
+    name: "Cancun, Mexico",
+    distances: { saskatoon: 4000, regina: 4000 },
+    driveHours: { saskatoon: 0, regina: 0 },
+    flightEstimate: { saskatoon: 600, regina: 600 },
+    flightCity: "Cancun (CUN) — direct charters in winter",
+    accom: { hotel: 150, airbnb: 100, camping: 0, hostel: 30, allinclusive: 250 },
+    weather: {
+      winter: { temp: "22 to 30°C", desc: "Peak season. Perfect beach weather. Dry. Highest prices.", icon: "☀️" },
+      spring: { temp: "24 to 32°C", desc: "Hot. Spring break crowds early. Prices dropping by May.", icon: "☀️" },
+      summer: { temp: "26 to 34°C", desc: "Hot and humid. Hurricane season starts. Cheapest prices.", icon: "🌴" },
+      fall: { temp: "24 to 32°C", desc: "Hurricane season. Some rain. Deep discounts available.", icon: "🌧️" }
+    }
+  },
+  puertovallarta: {
+    name: "Puerto Vallarta, Mexico",
+    distances: { saskatoon: 3800, regina: 3800 },
+    driveHours: { saskatoon: 0, regina: 0 },
+    flightEstimate: { saskatoon: 600, regina: 600 },
+    flightCity: "Puerto Vallarta (PVR)",
+    accom: { hotel: 130, airbnb: 90, camping: 0, hostel: 25, allinclusive: 220 },
+    weather: {
+      winter: { temp: "20 to 30°C", desc: "Perfect. Dry season, beach weather. Peak pricing.", icon: "☀️" },
+      spring: { temp: "22 to 32°C", desc: "Getting hot. Still dry. Good value before summer.", icon: "☀️" },
+      summer: { temp: "25 to 33°C", desc: "Rainy season starts. Humid. Budget-friendly.", icon: "🌧️" },
+      fall: { temp: "24 to 32°C", desc: "Wettest months. Fewer tourists. Deep discounts.", icon: "🌧️" }
+    }
+  },
+  phoenix: {
+    name: "Phoenix / Scottsdale, AZ",
+    distances: { saskatoon: 2800, regina: 2800 },
+    driveHours: { saskatoon: 0, regina: 0 },
+    flightEstimate: { saskatoon: 450, regina: 450 },
+    flightCity: "Phoenix (PHX)",
+    accom: { hotel: 170, airbnb: 140, camping: 25, hostel: 35, allinclusive: 0 },
+    weather: {
+      winter: { temp: "10 to 22°C", desc: "Snowbird season. Perfect escape from SK winter. Peak pricing.", icon: "☀️" },
+      spring: { temp: "18 to 32°C", desc: "Heating up. Spring training baseball. Still peak.", icon: "☀️" },
+      summer: { temp: "32 to 45°C", desc: "Dangerously hot. Cheapest rates but you'll melt.", icon: "🔥" },
+      fall: { temp: "22 to 35°C", desc: "Cooling off. Good value. Pool weather.", icon: "☀️" }
+    }
+  },
+  lasvegas: {
+    name: "Las Vegas, NV",
+    distances: { saskatoon: 2500, regina: 2500 },
+    driveHours: { saskatoon: 0, regina: 0 },
+    flightEstimate: { saskatoon: 400, regina: 400 },
+    flightCity: "Las Vegas (LAS)",
+    accom: { hotel: 140, airbnb: 130, camping: 0, hostel: 35, allinclusive: 0 },
+    weather: {
+      winter: { temp: "5 to 15°C", desc: "Cool but sunny. Cheapest room rates. Great off-peak value.", icon: "☀️" },
+      spring: { temp: "15 to 30°C", desc: "Perfect weather. Pool season opens. Moderate pricing.", icon: "☀️" },
+      summer: { temp: "30 to 42°C", desc: "Extremely hot. Cheap rooms. Pool and AC life.", icon: "🔥" },
+      fall: { temp: "15 to 30°C", desc: "Cooling down. Convention season. Moderate pricing.", icon: "☀️" }
+    }
+  },
+  orlando: {
+    name: "Orlando, FL",
+    distances: { saskatoon: 3500, regina: 3500 },
+    driveHours: { saskatoon: 0, regina: 0 },
+    flightEstimate: { saskatoon: 500, regina: 500 },
+    flightCity: "Orlando (MCO)",
+    accom: { hotel: 160, airbnb: 140, camping: 35, hostel: 35, allinclusive: 0 },
+    weather: {
+      winter: { temp: "12 to 24°C", desc: "Warm escape. Holiday crowds at parks. Busy but nice weather.", icon: "☀️" },
+      spring: { temp: "18 to 30°C", desc: "Spring break madness at parks. Hot. Plan for crowds.", icon: "☀️" },
+      summer: { temp: "24 to 34°C", desc: "Hot, humid, afternoon thunderstorms daily. Park deals exist.", icon: "⛈️" },
+      fall: { temp: "20 to 30°C", desc: "Hurricane season but good park deals. Halloween events.", icon: "🎃" }
+    }
+  },
+  maui: {
+    name: "Maui, HI",
+    distances: { saskatoon: 5500, regina: 5500 },
+    driveHours: { saskatoon: 0, regina: 0 },
+    flightEstimate: { saskatoon: 800, regina: 800 },
+    flightCity: "Kahului (OGG) — usually 1-2 stops",
+    accom: { hotel: 300, airbnb: 250, camping: 30, hostel: 50, allinclusive: 500 },
+    weather: {
+      winter: { temp: "20 to 27°C", desc: "Whale season! Slightly wetter. Peak pricing. Worth it.", icon: "🐋" },
+      spring: { temp: "21 to 28°C", desc: "Drying out. Fewer crowds. Great shoulder season.", icon: "☀️" },
+      summer: { temp: "23 to 30°C", desc: "Dry and warm. Families and peak pricing.", icon: "☀️" },
+      fall: { temp: "22 to 29°C", desc: "Cheapest season. Warm. Occasional rain. Best value.", icon: "🌴" }
+    }
+  },
+  puntacana: {
+    name: "Punta Cana, DR",
+    distances: { saskatoon: 5000, regina: 5000 },
+    driveHours: { saskatoon: 0, regina: 0 },
+    flightEstimate: { saskatoon: 700, regina: 700 },
+    flightCity: "Punta Cana (PUJ) — charters in winter",
+    accom: { hotel: 130, airbnb: 80, camping: 0, hostel: 25, allinclusive: 200 },
+    weather: {
+      winter: { temp: "22 to 30°C", desc: "Peak season. Dry, sunny, perfect. Highest prices.", icon: "☀️" },
+      spring: { temp: "23 to 31°C", desc: "Getting warmer. Some rain by May. Good value.", icon: "☀️" },
+      summer: { temp: "25 to 33°C", desc: "Hot and humid. Hurricane season. Cheapest all-inclusives.", icon: "🌴" },
+      fall: { temp: "24 to 32°C", desc: "Wettest months. Deep discounts. Roll the dice on weather.", icon: "🌧️" }
+    }
+  },
+  losangeles: {
+    name: "Los Angeles, CA",
+    distances: { saskatoon: 2700, regina: 2700 },
+    driveHours: { saskatoon: 0, regina: 0 },
+    flightEstimate: { saskatoon: 450, regina: 450 },
+    flightCity: "Los Angeles (LAX)",
+    accom: { hotel: 200, airbnb: 160, camping: 35, hostel: 40, allinclusive: 0 },
+    weather: {
+      winter: { temp: "10 to 20°C", desc: "Mild and sunny. Tourist off-season. Good hotel deals.", icon: "☀️" },
+      spring: { temp: "14 to 22°C", desc: "Perfect weather. Some \"May gray\" marine layer.", icon: "🌤️" },
+      summer: { temp: "20 to 30°C", desc: "Hot inland, beautiful coast. Peak tourism.", icon: "☀️" },
+      fall: { temp: "16 to 28°C", desc: "Warmest beach weather actually. Great shoulder season.", icon: "☀️" }
+    }
+  }
+};
+
+let currentMode = 'drive';
+
+function setMode(mode) {
+  currentMode = mode;
+  document.getElementById('btnDrive').classList.toggle('active', mode === 'drive');
+  document.getElementById('btnFly').classList.toggle('active', mode === 'fly');
+  document.getElementById('driveInputs').style.display = mode === 'drive' ? 'block' : 'none';
+  document.getElementById('flyInputs').style.display = mode === 'fly' ? 'block' : 'none';
+  calculate();
+}
+
+function onDestinationChange() {
+  const dest = destinations[document.getElementById('destination').value];
+  const accomType = document.getElementById('accomType').value;
+
+  // Update accommodation estimate
+  if (accomType !== 'custom') {
+    const rate = dest.accom[accomType] || 0;
+    if (rate > 0) {
+      document.getElementById('accomCost').value = rate;
+    }
+  }
+
+  // Update flight estimate
+  const departure = document.getElementById('departure').value;
+  document.getElementById('flightCost').value = dest.flightEstimate[departure] || dest.flightEstimate.saskatoon;
+  document.getElementById('flightHint').textContent = dest.flightCity;
+
+  // If destination has no driving option, switch to fly
+  if (dest.driveHours.saskatoon === 0 && dest.driveHours.regina === 0) {
+    setMode('fly');
+  }
+
+  calculate();
+}
+
+function onAccomChange() {
+  const dest = destinations[document.getElementById('destination').value];
+  const accomType = document.getElementById('accomType').value;
+
+  if (accomType === 'allinclusive') {
+    document.getElementById('accomHint').textContent = "Per person per night (food & drinks included)";
+  } else if (accomType === 'camping') {
+    document.getElementById('accomHint').textContent = "Per campsite per night";
+  } else if (accomType === 'hostel') {
+    document.getElementById('accomHint').textContent = "Per bed per night";
+  } else {
+    document.getElementById('accomHint').textContent = "Per room/site per night";
+  }
+
+  if (accomType !== 'custom') {
+    const rate = dest.accom[accomType] || 0;
+    if (rate > 0) {
+      document.getElementById('accomCost').value = rate;
+    }
+  }
+
+  calculate();
+}
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('en-CA');
+}
+
+function calculate() {
+  const destKey = document.getElementById('destination').value;
+  const dest = destinations[destKey];
+  const departure = document.getElementById('departure').value;
+  const travellers = parseInt(document.getElementById('travellers').value);
+  const nights = parseInt(document.getElementById('nights').value);
+  const season = document.getElementById('season').value;
+  const accomType = document.getElementById('accomType').value;
+  const accomRate = parseFloat(document.getElementById('accomCost').value) || 0;
+  const rooms = parseInt(document.getElementById('rooms').value);
+  const foodDaily = parseFloat(document.getElementById('foodDaily').value) || 0;
+  const activitiesDaily = parseFloat(document.getElementById('activitiesDaily').value) || 0;
+  const miscDaily = parseFloat(document.getElementById('miscDaily').value) || 0;
+
+  let travelCost = 0;
+  let roadMealsCost = 0;
+  let bagsCost = 0;
+  let rentalCost = 0;
+  let parkingCost = 0;
+
+  if (currentMode === 'drive') {
+    const distanceOneWay = dest.distances[departure] || 0;
+    const fuelPrice = parseFloat(document.getElementById('fuelPrice').value) || 1.55;
+    const fuelEff = parseFloat(document.getElementById('fuelEfficiency').value) || 10;
+    const driveMeals = parseFloat(document.getElementById('driveMeals').value) || 0;
+
+    const fuelRoundTrip = (distanceOneWay * 2 * fuelEff / 100) * fuelPrice;
+    travelCost = fuelRoundTrip;
+
+    // Drive days (each way): rough estimate
+    const hoursOneWay = dest.driveHours[departure] || 0;
+    const driveDays = hoursOneWay > 8 ? 2 : 1; // If over 8hrs, assume 2 travel days each way
+    roadMealsCost = driveMeals * travellers * driveDays * 2; // * 2 for round trip
+
+    // Show drive details
+    document.getElementById('driveDistance').textContent = distanceOneWay.toLocaleString() + ' km';
+    document.getElementById('driveTime').textContent = hoursOneWay + ' hours';
+    document.getElementById('driveFuelUsed').textContent = Math.round(distanceOneWay * 2 * fuelEff / 100) + 'L';
+    document.getElementById('driveDetails').style.display = 'block';
+
+    // Show/hide rows
+    document.getElementById('travelLabel').textContent = '🚗 Fuel (round trip)';
+    document.getElementById('roadMealsRow').style.display = 'flex';
+    document.getElementById('bagsRow').style.display = 'none';
+    document.getElementById('rentalRow').style.display = 'none';
+    document.getElementById('parkingRow').style.display = 'none';
+  } else {
+    const flightPerPerson = parseFloat(document.getElementById('flightCost').value) || 0;
+    const bagsPerPerson = parseFloat(document.getElementById('checkedBags').value) || 0;
+    const rentalPerDay = parseFloat(document.getElementById('rentalCar').value) || 0;
+    const rentalGas = parseFloat(document.getElementById('rentalGas').value) || 0;
+    const parkingTotal = parseFloat(document.getElementById('parking').value) || 0;
+
+    travelCost = flightPerPerson * travellers;
+    bagsCost = bagsPerPerson * travellers;
+    rentalCost = (rentalPerDay * nights) + rentalGas;
+    parkingCost = parkingTotal;
+
+    document.getElementById('driveDetails').style.display = 'none';
+    document.getElementById('travelLabel').textContent = '✈️ Flights';
+    document.getElementById('roadMealsRow').style.display = 'none';
+    document.getElementById('bagsRow').style.display = 'flex';
+    document.getElementById('rentalRow').style.display = rentalCost > 0 ? 'flex' : 'none';
+    document.getElementById('parkingRow').style.display = parkingCost > 0 ? 'flex' : 'none';
+  }
+
+  // Accommodations
+  let accomTotal;
+  if (accomType === 'allinclusive') {
+    accomTotal = accomRate * travellers * nights;
+  } else if (accomType === 'hostel') {
+    accomTotal = accomRate * travellers * nights;
+  } else {
+    accomTotal = accomRate * rooms * nights;
+  }
+
+  // Food (zero out if all-inclusive)
+  const foodTotal = accomType === 'allinclusive' ? 0 : foodDaily * travellers * nights;
+
+  // Activities & misc
+  const activitiesTotal = activitiesDaily * travellers * nights;
+  const miscTotal = miscDaily * nights;
+
+  // Grand total
+  const grandTotal = travelCost + roadMealsCost + bagsCost + rentalCost + parkingCost + accomTotal + foodTotal + activitiesTotal + miscTotal;
+
+  // Update display
+  document.getElementById('resultDestination').textContent =
+    dest.name + ' · ' + travellers + (travellers === 1 ? ' person' : ' people') + ' · ' + nights + ' nights';
+
+  document.getElementById('travelCost').textContent = fmt(travelCost);
+  document.getElementById('roadMealsCost').textContent = fmt(roadMealsCost);
+  document.getElementById('bagsCost').textContent = fmt(bagsCost);
+  document.getElementById('rentalCost').textContent = fmt(rentalCost);
+  document.getElementById('parkingCost').textContent = fmt(parkingCost);
+  document.getElementById('accomTotal').textContent = fmt(accomTotal);
+  document.getElementById('foodTotal').textContent = fmt(foodTotal);
+  document.getElementById('activitiesTotal').textContent = fmt(activitiesTotal);
+  document.getElementById('miscTotal').textContent = fmt(miscTotal);
+  document.getElementById('grandTotal').textContent = fmt(grandTotal);
+  document.getElementById('perPerson').textContent = fmt(grandTotal / travellers);
+  document.getElementById('perNight').textContent = fmt(grandTotal / nights);
+
+  // Weather
+  const weather = dest.weather[season];
+  document.getElementById('weatherInfo').innerHTML =
+    '<div class="weather-icon">' + weather.icon + '</div>' +
+    '<div><strong>' + dest.name + ' in ' + season.charAt(0).toUpperCase() + season.slice(1) + '</strong><br>' +
+    '<span class="weather-temp">' + weather.temp + '</span><br>' +
+    weather.desc + '</div>';
+}
+
+// Init
+onDestinationChange();
+calculate();
+</script>
+
+<style>
+.vacation-calc {
+  max-width: 860px;
+  margin: 2rem auto;
+}
+
+.calc-section {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.calc-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #2ecc71;
+}
+
+.calc-section label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.calc-section select,
+.calc-section input[type="number"] {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  appearance: auto;
+}
+
+.input-hint {
+  display: block;
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 0.2rem;
+}
+
+/* Travel mode toggle */
+.travel-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.toggle-btn:hover {
+  border-color: #2ecc71;
+}
+
+.toggle-btn.active {
+  border-color: #2ecc71;
+  background: #2ecc71;
+  color: #fff;
+}
+
+/* Weather panel */
+.weather-panel {
+  background: #f0faf0;
+  border-left: 4px solid #2ecc71;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.weather-icon {
+  font-size: 2.5rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.weather-temp {
+  font-weight: 700;
+  color: #2ecc71;
+}
+
+/* Results */
+.results-section {
+  border: 2px solid #38250E;
+  background: #faf8f5;
+}
+
+.results-section h2 {
+  border-bottom-color: #38250E;
+}
+
+.result-destination {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #38250E;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.result-breakdown {
+  margin-bottom: 1rem;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e8e4de;
+  font-size: 0.95rem;
+}
+
+.result-value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-total {
+  border-bottom: 2px solid #38250E;
+  border-top: 2px solid #38250E;
+  padding: 0.75rem 0;
+  margin-top: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.result-total .result-value {
+  color: #38250E;
+  font-size: 1.3rem;
+}
+
+.result-per-person,
+.result-per-night {
+  font-size: 0.9rem;
+  color: #666;
+  border-bottom: none;
+}
+
+.drive-details {
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.drive-details p {
+  margin: 0;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .calc-section {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  .calc-section label {
+    color: #ddd;
+  }
+
+  .calc-section select,
+  .calc-section input[type="number"] {
+    background: #333;
+    border-color: #555;
+    color: #eee;
+  }
+
+  .input-hint {
+    color: #999;
+  }
+
+  .toggle-btn {
+    background: #333;
+    border-color: #555;
+    color: #ddd;
+  }
+
+  .toggle-btn.active {
+    background: #2ecc71;
+    border-color: #2ecc71;
+    color: #fff;
+  }
+
+  .weather-panel {
+    background: #1e2e1e;
+    border-left-color: #2ecc71;
+  }
+
+  .results-section {
+    background: #2a2520;
+    border-color: #5a3d1a;
+  }
+
+  .result-destination {
+    color: #d4a96a;
+  }
+
+  .result-row {
+    border-bottom-color: #444;
+  }
+
+  .result-total {
+    border-color: #5a3d1a;
+  }
+
+  .result-total .result-value {
+    color: #d4a96a;
+  }
+
+  .result-per-person,
+  .result-per-night {
+    color: #999;
+  }
+
+  .drive-details {
+    background: #333;
+    color: #bbb;
+  }
+
+  .weather-temp {
+    color: #2ecc71;
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .vacation-calc {
+    margin: 1rem auto;
+  }
+
+  .calc-section {
+    padding: 1rem;
+  }
+
+  .weather-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .weather-icon {
+    min-width: auto;
+  }
+}
+</style>

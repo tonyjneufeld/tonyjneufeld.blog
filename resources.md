@@ -10,7 +10,28 @@ permalink: /resources/
   <p>For Saskatchewan families building wealth on the Prairies</p>
 </div>
 
-<h2 class="mt-5 mb-4">Free Downloads</h2>
+<h2 class="mt-5 mb-4">Free Tools</h2>
+
+<div class="row mb-4">
+  <div class="col-md-6 mb-4">
+    <div class="resource-card">
+      <span class="badge resource-badge">Calculator</span>
+      <h3>Vacation Cost Calculator</h3>
+      <p>Compare the real cost of driving vs flying to popular destinations from Saskatchewan. Fuel, flights, hotels, food — see the full picture before you book.</p>
+      <a href="/vacation-calculator/" class="btn btn-resource">Try It Free</a>
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="resource-card">
+      <span class="badge resource-badge">Calculator</span>
+      <h3>Retirement Savings Calculator</h3>
+      <p>Track your monthly spending, plug it in, and find out how much you actually need to retire — based on the simple math behind the 4% rule.</p>
+      <a href="/2025/05/20/the-shockingly-simple-math-behind-early-retirement/" class="btn btn-resource">Try It Free</a>
+    </div>
+  </div>
+</div>
+
+<h2 class="mt-4 mb-4">Free Downloads</h2>
 
 <div class="row">
   <div class="col-md-4 mb-4">
