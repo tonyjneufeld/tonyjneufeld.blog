@@ -31,6 +31,19 @@ permalink: /resources/
   </div>
 </div>
 
+<h2 class="mt-4 mb-4">Guides</h2>
+
+<div class="row mb-4">
+  <div class="col-md-6 mb-4">
+    <div class="resource-card">
+      <span class="badge resource-badge">Guide</span>
+      <h3>Saskatoon Neighbourhood Guide</h3>
+      <p>Moving to Saskatoon? A local's honest take on the top 10 neighbourhoods — vibes, things to do, schools, cost of living, and tips for newcomers.</p>
+      <a href="/resources/saskatoon-neighbourhood-guide/" class="btn btn-resource">Read the Guide</a>
+    </div>
+  </div>
+</div>
+
 <h2 class="mt-4 mb-4">Free Downloads</h2>
 
 <div class="row">
