@@ -12,17 +12,15 @@ body {
   min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(
-      170deg,
-      #1a1a1a 0%,
-      #1e1c19 25%,
-      #22201a 50%,
-      #1e1c19 75%,
-      #1a1a1a 100%
-    );
-  }
+[data-bs-theme="dark"] body {
+  background: linear-gradient(
+    170deg,
+    #1a1a1a 0%,
+    #1e1c19 25%,
+    #22201a 50%,
+    #1e1c19 75%,
+    #1a1a1a 100%
+  );
 }
 
 table {
@@ -100,7 +98,7 @@ pre.highlight {
   margin-right: 0.25rem !important;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   .footer-icon-links {
     text-decoration: none;
     color: #e1e1e1;
@@ -314,7 +312,7 @@ a:hover {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   .post-cta {
     background: #2a2a2a;
     border-color: #444;
@@ -627,7 +625,7 @@ a:hover {
 }
 
 // Dark mode for services
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   .service-card {
     background: #2a2a2a;
     border-color: #444;
@@ -787,7 +785,7 @@ a:hover {
 }
 
 // Dark mode for about and contact cards
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   .about-card {
     background: #2a2a2a;
     border-color: #444;
@@ -908,7 +906,7 @@ ol.checklist-sub {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   .checklist-page {
     background: #2a2a2a;
     border-color: #444;
@@ -941,7 +939,7 @@ ol.checklist-sub {
 }
 
 // Dark mode for resource and book cards
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   .resource-card {
     background: #2a2a2a;
     border-color: #444;
@@ -959,5 +957,20 @@ ol.checklist-sub {
     li {
       color: #ccc;
     }
+  }
+}
+
+// Theme toggle button
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.7;
   }
 }
