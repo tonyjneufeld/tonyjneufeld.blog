@@ -3,7 +3,7 @@ layout: post
 title: "Surviving Parental Leave Finances in Saskatchewan: What Nobody Tells You"
 date: 2026-03-31 09:00:00 -0600
 categories: [Personal Finance, Parenting]
-tags: [parental leave, maternity leave, EI benefits, Saskatchewan, budgeting, CCB, RESP, new parents, generated with the assistance of Claude]
+tags: [parental leave, maternity leave, EI benefits, Saskatchewan, budgeting, CCB, RESP, new parents]
 description: "EI pays 55% of your salary. Here's how to budget for parental leave in Saskatchewan without blowing up your finances or your relationship."
 ---
 
