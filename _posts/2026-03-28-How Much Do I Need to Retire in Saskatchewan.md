@@ -3,7 +3,7 @@ layout: post
 title: "How Much Do I Need to Retire in Saskatchewan?"
 date: 2026-03-28 09:00:00 -0600
 categories: [Personal Finance, Retirement]
-tags: [saskatchewan, retirement, fire, 4% rule, calculator, generated with the assistance of Claude]
+tags: [saskatchewan, retirement, fire, 4% rule, calculator]
 description: "A simple calculator to find your Saskatchewan retirement number. Track your spending for one month, plug it in, and find out how much you actually need."
 ---
 
