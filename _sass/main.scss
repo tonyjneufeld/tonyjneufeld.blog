@@ -1048,7 +1048,7 @@ ol.checklist-sub {
   margin-bottom: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   .neighbourhood-card {
     background: #2a2a2a;
     border-color: #444;
