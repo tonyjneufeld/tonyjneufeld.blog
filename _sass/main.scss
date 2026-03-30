@@ -23,17 +23,9 @@ body {
   );
 }
 
-table {
-  @extend .table;
-  @extend .table-striped;
-}
-
-blockquote {
-  @extend .blockquote;
-}
-
 img {
-  @extend .img-fluid;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 1rem;
 }
 
@@ -1056,7 +1048,7 @@ ol.checklist-sub {
   margin-bottom: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-bs-theme="dark"] {
   .neighbourhood-card {
     background: #2a2a2a;
     border-color: #444;
