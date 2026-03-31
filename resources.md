@@ -10,6 +10,12 @@ permalink: /resources/
   <p>For Saskatchewan families building wealth on the Prairies</p>
 </div>
 
+<div class="quiz-start-card mt-5">
+  <h2>Start Here: How's Your Money Really Doing?</h2>
+  <p>Take the free 2-minute Canadian Financial Health Quiz. Get your score, see where you stand, and find out exactly what to work on next.</p>
+  <a href="/resources/financial-health-quiz/" class="btn-quiz-start-light">Take the Quiz</a>
+</div>
+
 <h2 class="mt-5 mb-4">Free Tools</h2>
 
 <div class="row mb-4">
