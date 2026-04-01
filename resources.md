@@ -31,8 +31,8 @@ permalink: /resources/
     <div class="resource-card">
       <span class="badge resource-badge">Calculator</span>
       <h3>Retirement Savings Calculator</h3>
-      <p>Track your monthly spending, plug it in, and find out how much you actually need to retire — based on the simple math behind the 4% rule.</p>
-      <a href="/2025/05/20/the-shockingly-simple-math-behind-early-retirement/" class="btn btn-resource">Try It Free</a>
+      <p>Design the life you want to live, then find out what it takes to fund it — a retirement calculator that starts with living, not just saving.</p>
+      <a href="/retirement-calculator/" class="btn btn-resource">Try It Free</a>
     </div>
   </div>
 </div>
