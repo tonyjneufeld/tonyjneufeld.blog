@@ -61,6 +61,17 @@ permalink: /resources/
   </div>
 </div>
 
+<div class="row mb-4">
+  <div class="col-md-6 mb-4">
+    <div class="resource-card">
+      <span class="badge resource-badge">Calculator</span>
+      <h3>Mindless Scrolling Calculator</h3>
+      <p>Find out how much of your life you've spent scrolling social media — and how much ad revenue you've generated for platforms that profit from your attention.</p>
+      <a href="/scrolling-calculator/" class="btn btn-resource">Try It Free</a>
+    </div>
+  </div>
+</div>
+
 <h2 class="mt-4 mb-4">Free Downloads</h2>
 
 <div class="row">

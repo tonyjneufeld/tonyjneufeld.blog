@@ -1,0 +1,300 @@
+---
+layout: default
+title: "Mindless Scrolling Calculator"
+description: "Find out how much of your life you've spent scrolling social media — and what you could have done instead. A sobering, honest calculator."
+permalink: /scrolling-calculator/
+---
+
+<div class="welcome-section" style="text-align: center;">
+  <h1>The Mindless Scrolling Calculator</h1>
+  <p>How much of your life are you giving away to the scroll?</p>
+</div>
+
+<p class="mt-4" style="max-width: 720px; margin-left: auto; margin-right: auto; text-align: center; color: #555;">
+  Check your phone's screen time settings, plug in your real numbers, and see what your scrolling habit
+  is actually costing you — in time, in potential, and in dollars you're making for someone else.
+</p>
+
+<div class="vacation-calc" id="scrollingCalc">
+
+  <!-- STEP 1: Your Usage -->
+  <div class="calc-section">
+    <h2>1. How much do you scroll?</h2>
+    <p style="color:#666; font-size:0.9rem;">Check your screen time settings: <strong>iPhone</strong> (Settings > Screen Time) or <strong>Android</strong> (Settings > Digital Wellbeing)</p>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="s-daily">Daily social media (hours)</label>
+        <input type="text" id="s-daily" placeholder="e.g. 2.5" oninput="calcScrolling()" />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="s-age">Your current age</label>
+        <input type="number" id="s-age" placeholder="e.g. 30" min="10" max="100" oninput="calcScrolling()" />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="s-start">Age you started social media</label>
+        <input type="number" id="s-start" placeholder="e.g. 14" min="5" max="100" oninput="calcScrolling()" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="s-life">Life expectancy</label>
+        <input type="number" id="s-life" value="80" min="30" max="120" oninput="calcScrolling()" />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="s-platforms">Primary platforms used</label>
+        <select id="s-platforms" onchange="calcScrolling()" multiple size="4" style="height:auto;">
+          <option value="meta" selected>Instagram / Facebook</option>
+          <option value="tiktok" selected>TikTok</option>
+          <option value="youtube">YouTube</option>
+          <option value="twitter">X (Twitter)</option>
+          <option value="reddit">Reddit</option>
+          <option value="snapchat">Snapchat</option>
+        </select>
+        <p style="font-size:0.75rem; color:#888; margin-top:0.25rem;">Hold Ctrl/Cmd to select multiple. Affects ad revenue estimate.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: The Damage -->
+  <div class="calc-section" id="results-section" style="display:none;">
+    <h2>2. The Damage Report</h2>
+
+    <div style="padding:1.25rem; background:var(--card-bg); border-radius:8px; border-left:4px solid #e74c3c; margin-bottom:1rem;">
+      <h3 style="margin:0 0 0.75rem 0; color:#e74c3c; font-size:1.05rem;">Time Already Gone</h3>
+      <div class="scroll-result" id="r-hours-past"></div>
+      <div class="scroll-result" id="r-days-past"></div>
+      <div class="scroll-result" id="r-years-past"></div>
+    </div>
+
+    <div style="padding:1.25rem; background:var(--card-bg); border-radius:8px; border-left:4px solid #e67e22; margin-bottom:1rem;">
+      <h3 style="margin:0 0 0.75rem 0; color:#e67e22; font-size:1.05rem;">If You Don't Change Anything</h3>
+      <div class="scroll-result" id="r-hours-future"></div>
+      <div class="scroll-result" id="r-hours-total"></div>
+      <div class="scroll-result" id="r-days-total"></div>
+      <div class="scroll-result" id="r-years-total"></div>
+    </div>
+
+    <div style="padding:1.25rem; background:var(--card-bg); border-radius:8px; border-left:4px solid #8e44ad; margin-bottom:1rem;">
+      <h3 style="margin:0 0 0.75rem 0; color:#8e44ad; font-size:1.05rem;">What You're Worth to the Platforms</h3>
+      <div class="scroll-result" id="r-rev-past"></div>
+      <div class="scroll-result" id="r-rev-total"></div>
+      <div class="scroll-result" id="r-rev-hourly"></div>
+      <p style="font-size:0.85rem; color:#888; margin:0.5rem 0 0 0;">They get paid. You get a dopamine hit that fades before your thumb stops moving.</p>
+    </div>
+
+    <div style="padding:1.25rem; background:var(--card-bg); border-radius:8px; border-left:4px solid #2ecc71;">
+      <h3 style="margin:0 0 0.75rem 0; color:#2ecc71; font-size:1.05rem;">What You Could Do With That Time Instead</h3>
+      <div class="scroll-result" id="r-books"></div>
+      <div class="scroll-result" id="r-languages"></div>
+      <div class="scroll-result" id="r-degrees"></div>
+      <div class="scroll-result" id="r-marathons"></div>
+      <div class="scroll-result" id="r-instruments"></div>
+      <div class="scroll-result" id="r-novels"></div>
+      <div class="scroll-result" id="r-businesses"></div>
+      <div class="scroll-result" id="r-meals"></div>
+    </div>
+  </div>
+
+  <!-- STEP 3: What If You Cut Back -->
+  <div class="calc-section" id="reclaim-section" style="display:none;">
+    <h2>3. Take Your Time Back</h2>
+    <p style="color:#666; font-size:0.9rem;">What if you cut your daily scrolling? See how much time you'd reclaim.</p>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="s-target">New daily target (hours)</label>
+        <input type="text" id="s-target" placeholder="e.g. 0.5" oninput="calcScrolling()" />
+      </div>
+    </div>
+
+    <div id="reclaim-results" style="display:none; padding:1.25rem; background:var(--card-bg); border-radius:8px; border-left:4px solid #3498db;">
+      <h3 style="margin:0 0 0.75rem 0; color:#3498db; font-size:1.05rem;">Time Reclaimed</h3>
+      <div class="scroll-result" id="r-saved-daily"></div>
+      <div class="scroll-result" id="r-saved-weekly"></div>
+      <div class="scroll-result" id="r-saved-yearly"></div>
+      <div class="scroll-result" id="r-saved-lifetime"></div>
+      <div class="scroll-result" id="r-saved-books" style="margin-top:0.75rem;"></div>
+      <div class="scroll-result" id="r-saved-languages"></div>
+    </div>
+  </div>
+
+  <!-- Average usage reference -->
+  <div class="calc-section">
+    <h2>Average Daily Usage by Platform</h2>
+    <p style="color:#666; font-size:0.9rem;">How does your usage compare? These are 2024/2025 averages.</p>
+    <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
+      <thead>
+        <tr style="border-bottom:2px solid var(--text-color);">
+          <th style="text-align:left; padding:0.5rem;">Platform</th>
+          <th style="text-align:right; padding:0.5rem;">Avg. Daily Use</th>
+          <th style="text-align:right; padding:0.5rem;">Annual Ad Revenue / User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #ddd;"><td style="padding:0.5rem;">TikTok</td><td style="text-align:right; padding:0.5rem;">58 min</td><td style="text-align:right; padding:0.5rem;">~$35 USD</td></tr>
+        <tr style="border-bottom:1px solid #ddd;"><td style="padding:0.5rem;">YouTube</td><td style="text-align:right; padding:0.5rem;">48 min</td><td style="text-align:right; padding:0.5rem;">~$45 USD</td></tr>
+        <tr style="border-bottom:1px solid #ddd;"><td style="padding:0.5rem;">Instagram</td><td style="text-align:right; padding:0.5rem;">33 min</td><td style="text-align:right; padding:0.5rem;">~$75 USD*</td></tr>
+        <tr style="border-bottom:1px solid #ddd;"><td style="padding:0.5rem;">Facebook</td><td style="text-align:right; padding:0.5rem;">31 min</td><td style="text-align:right; padding:0.5rem;">~$75 USD*</td></tr>
+        <tr style="border-bottom:1px solid #ddd;"><td style="padding:0.5rem;">X (Twitter)</td><td style="text-align:right; padding:0.5rem;">24 min</td><td style="text-align:right; padding:0.5rem;">~$15 USD</td></tr>
+        <tr style="border-bottom:1px solid #ddd;"><td style="padding:0.5rem;">Reddit</td><td style="text-align:right; padding:0.5rem;">24 min</td><td style="text-align:right; padding:0.5rem;">~$5 USD</td></tr>
+        <tr><td style="padding:0.5rem;">Snapchat</td><td style="text-align:right; padding:0.5rem;">21 min</td><td style="text-align:right; padding:0.5rem;">~$10 USD</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem; color:#888; margin-top:0.5rem;">*Meta reports combined ARPU for Facebook + Instagram. North American figures from 2024 investor reports.</p>
+  </div>
+
+</div>
+
+<details style="max-width:720px; margin:1.5rem auto;">
+  <summary>Assumptions & Sources</summary>
+  <ul>
+    <li>Ad revenue per user based on 2024/2025 North American ARPU from Meta, Alphabet, Snap, and Reddit investor reports.</li>
+    <li>Platform ARPU estimates: Meta ~$75, YouTube ~$45, TikTok ~$35, X ~$15, Snapchat ~$10, Reddit ~$5 (USD/year).</li>
+    <li>Book reading time: ~6 hours average (250 pages at ~2 min/page).</li>
+    <li>Language fluency: ~600 hours (FSI Category I languages).</li>
+    <li>University degree: ~4,800 hours (120 credit hours x 40 hours/credit).</li>
+    <li>Marathon training: ~200 hours (16-week beginner program).</li>
+    <li>Musical instrument to intermediate: ~600 hours.</li>
+    <li>Writing a novel: ~300 hours (first draft through revision).</li>
+    <li>Building a side business: ~500 hours in the first year.</li>
+    <li>Cooking from scratch: ~2 hours per new meal to learn.</li>
+    <li>Waking year = 16 hours/day x 365 days = 5,840 hours.</li>
+  </ul>
+</details>
+
+<style>
+  .scroll-result {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.2rem 0;
+    color: var(--text-color);
+  }
+  #scrollingCalc select[multiple] {
+    padding: 0.4rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    background: var(--input-bg);
+    color: var(--text-color);
+  }
+</style>
+
+<script>
+(function() {
+  // Platform ARPU data (USD/year, North America)
+  var platformARPU = {
+    meta: 75,
+    tiktok: 35,
+    youtube: 45,
+    twitter: 15,
+    reddit: 5,
+    snapchat: 10
+  };
+
+  function fmt(n) { return Math.round(n).toLocaleString('en-CA'); }
+  function fmtDec(n, d) { return n.toLocaleString('en-CA', {minimumFractionDigits: d, maximumFractionDigits: d}); }
+  function fmtMoney(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+
+  function calcScrolling() {
+    var daily = parseFloat(document.getElementById('s-daily').value) || 0;
+    var age = parseInt(document.getElementById('s-age').value, 10);
+    var startAge = parseInt(document.getElementById('s-start').value, 10);
+    var lifeExpect = parseInt(document.getElementById('s-life').value, 10) || 80;
+
+    var platformSelect = document.getElementById('s-platforms');
+    var selectedPlatforms = [];
+    for (var i = 0; i < platformSelect.options.length; i++) {
+      if (platformSelect.options[i].selected) {
+        selectedPlatforms.push(platformSelect.options[i].value);
+      }
+    }
+
+    var resultsSection = document.getElementById('results-section');
+    var reclaimSection = document.getElementById('reclaim-section');
+
+    if (daily <= 0 || !age || !startAge || startAge >= age) {
+      resultsSection.style.display = 'none';
+      reclaimSection.style.display = 'none';
+      return;
+    }
+
+    resultsSection.style.display = '';
+    reclaimSection.style.display = '';
+
+    var yearsPast = age - startAge;
+    var hoursPast = yearsPast * daily * 365;
+    var daysPast = hoursPast / 24;
+    var wakingYearsPast = hoursPast / 5840;
+
+    var yearsFuture = Math.max(0, lifeExpect - age);
+    var hoursFuture = yearsFuture * daily * 365;
+    var hoursTotal = hoursPast + hoursFuture;
+    var daysTotal = hoursTotal / 24;
+    var wakingYearsTotal = hoursTotal / 5840;
+
+    // Ad revenue: weighted average ARPU based on selected platforms
+    var totalARPU = 0;
+    var platformCount = selectedPlatforms.length || 1;
+    for (var j = 0; j < selectedPlatforms.length; j++) {
+      totalARPU += (platformARPU[selectedPlatforms[j]] || 0);
+    }
+    if (totalARPU === 0) totalARPU = 75; // default fallback
+    // Estimate annual hours to derive per-hour rate
+    var annualHours = daily * 365;
+    var revenuePerHour = totalARPU / annualHours;
+
+    var revPast = hoursPast * revenuePerHour;
+    var revTotal = hoursTotal * revenuePerHour;
+
+    // Past
+    document.getElementById('r-hours-past').textContent = fmt(hoursPast) + ' hours spent scrolling so far';
+    document.getElementById('r-days-past').textContent = fmt(daysPast) + ' full days (24hr) of your life';
+    document.getElementById('r-years-past').textContent = fmtDec(wakingYearsPast, 1) + ' waking years (16hr days)';
+
+    // Future
+    document.getElementById('r-hours-future').textContent = fmt(hoursFuture) + ' more hours of scrolling ahead';
+    document.getElementById('r-hours-total').textContent = fmt(hoursTotal) + ' total lifetime hours';
+    document.getElementById('r-days-total').textContent = fmt(daysTotal) + ' full days (' + fmtDec(daysTotal / 365, 1) + ' years)';
+    document.getElementById('r-years-total').textContent = fmtDec(wakingYearsTotal, 1) + ' waking years of your conscious life';
+
+    // Revenue
+    document.getElementById('r-rev-past').textContent = 'Ad revenue you\'ve generated so far: ' + fmtMoney(revPast) + ' USD';
+    document.getElementById('r-rev-total').textContent = 'Lifetime ad revenue: ' + fmtMoney(revTotal) + ' USD';
+    document.getElementById('r-rev-hourly').textContent = 'Your "hourly wage" for scrolling: ' + fmtMoney(revenuePerHour) + ' USD/hr';
+
+    // What you could do
+    document.getElementById('r-books').textContent = fmt(Math.floor(hoursTotal / 6)) + ' books you could read';
+    document.getElementById('r-languages').textContent = fmt(Math.floor(hoursTotal / 600)) + ' languages you could learn';
+    document.getElementById('r-degrees').textContent = fmt(Math.floor(hoursTotal / 4800)) + ' university degrees you could earn';
+    document.getElementById('r-marathons').textContent = fmt(Math.floor(hoursTotal / 200)) + ' marathons you could train for and run';
+    document.getElementById('r-instruments').textContent = fmt(Math.floor(hoursTotal / 600)) + ' musical instruments you could learn';
+    document.getElementById('r-novels').textContent = fmt(Math.floor(hoursTotal / 300)) + ' novels you could write';
+    document.getElementById('r-businesses').textContent = fmt(Math.floor(hoursTotal / 500)) + ' side businesses you could build';
+    document.getElementById('r-meals').textContent = fmt(Math.floor(hoursTotal / 2)) + ' meals you could learn to cook from scratch';
+
+    // Reclaim section
+    var target = parseFloat(document.getElementById('s-target').value);
+    var reclaimResults = document.getElementById('reclaim-results');
+    if (!isNaN(target) && target >= 0 && target < daily) {
+      reclaimResults.style.display = '';
+      var savedDaily = daily - target;
+      var savedWeekly = savedDaily * 7;
+      var savedYearly = savedDaily * 365;
+      var savedLifetime = savedYearly * yearsFuture;
+
+      document.getElementById('r-saved-daily').textContent = fmtDec(savedDaily, 1) + ' hours reclaimed per day';
+      document.getElementById('r-saved-weekly').textContent = fmtDec(savedWeekly, 1) + ' hours reclaimed per week';
+      document.getElementById('r-saved-yearly').textContent = fmt(savedYearly) + ' hours reclaimed per year';
+      document.getElementById('r-saved-lifetime').textContent = fmt(savedLifetime) + ' hours reclaimed over your remaining lifetime';
+      document.getElementById('r-saved-books').textContent = 'That\'s ' + fmt(Math.floor(savedYearly / 6)) + ' books per year';
+      document.getElementById('r-saved-languages').textContent = 'Or a new language every ' + fmtDec(600 / savedYearly, 1) + ' years';
+    } else {
+      reclaimResults.style.display = 'none';
+    }
+  }
+
+  window.calcScrolling = calcScrolling;
+})();
+</script>
