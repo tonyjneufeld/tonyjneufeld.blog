@@ -1,0 +1,1189 @@
+---
+layout: default
+title: "Career Break Calculator"
+description: "Find out how much you need to save for a career break or mini-retirement — or how long your savings will last. A free calculator for Canadians planning time off."
+permalink: /career-break-calculator/
+---
+
+<div class="welcome-section" style="text-align: center;">
+  <h1>Career Break Calculator</h1>
+  <p>Figure out the real cost of hitting pause — and how to make it happen</p>
+</div>
+
+<p class="mt-4" style="max-width: 720px; margin-left: auto; margin-right: auto; text-align: center; color: #555;">
+  Whether it's a 3-month reset or a full year off, this calculator helps you see exactly what it takes.
+  No guessing, no spreadsheets — just honest numbers so you can plan your break with confidence.
+</p>
+
+<div class="break-calc" id="breakCalc">
+
+  <!-- MODE TOGGLE -->
+  <div class="calc-section" style="text-align: center;">
+    <h2>What do you want to find out?</h2>
+    <div class="travel-toggle" style="max-width: 500px; margin: 0 auto;">
+      <button id="btnNeed" class="toggle-btn active" onclick="setMode('need')">How much do I need?</button>
+      <button id="btnLong" class="toggle-btn" onclick="setMode('long')">How long can I take?</button>
+    </div>
+  </div>
+
+  <!-- SECTION 1: Break Details -->
+  <div class="calc-section">
+    <h2>1. Your break</h2>
+
+    <!-- Mode: How much do I need? -->
+    <div id="needInputs">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="breakDuration">Break duration</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="number" id="breakDuration" value="6" min="1" max="120" step="1" oninput="calculate()" onchange="calculate()" style="flex: 1;">
+            <div class="unit-toggle">
+              <button id="btnMonths" class="unit-btn active" onclick="setUnit('months')">Months</button>
+              <button id="btnYears" class="unit-btn" onclick="setUnit('years')">Years</button>
+            </div>
+          </div>
+          <span class="input-hint">How long do you want to step away?</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode: How long can I take? -->
+    <div id="longInputs" style="display: none;">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="availableSavings">Savings available for the break</label>
+          <input type="text" id="availableSavings" value="30,000" oninput="calculate()" onchange="calculate()">
+          <span class="input-hint">What you've set aside (or could set aside) for this</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Monthly Costs -->
+  <div class="calc-section">
+    <h2>2. Monthly costs during your break</h2>
+
+    <div class="travel-toggle" style="max-width: 400px; margin-bottom: 1rem;">
+      <button id="btnSimple" class="toggle-btn active" onclick="setCostMode('simple')">Simple</button>
+      <button id="btnDetailed" class="toggle-btn" onclick="setCostMode('detailed')">Detailed</button>
+    </div>
+
+    <!-- Simple mode -->
+    <div id="simpleInputs">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="monthlyCost">Total monthly living cost</label>
+          <input type="text" id="monthlyCost" value="3,000" oninput="calculate()" onchange="calculate()">
+          <span class="input-hint">Rent, food, transport, everything — what it costs you to live each month</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed mode -->
+    <div id="detailedInputs" style="display: none;">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="costHousing">Housing (rent/mortgage, utilities, insurance)</label>
+          <input type="text" id="costHousing" value="1,400" oninput="calculate()" onchange="calculate()">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="costFood">Groceries & dining</label>
+          <input type="text" id="costFood" value="500" oninput="calculate()" onchange="calculate()">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="costTransport">Transportation (car, insurance, gas, transit)</label>
+          <input type="text" id="costTransport" value="400" oninput="calculate()" onchange="calculate()">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="costHealth">Health & dental insurance</label>
+          <input type="text" id="costHealth" value="200" oninput="calculate()" onchange="calculate()">
+          <span class="input-hint">No employer coverage during a break — budget for private plans</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="costTravel">Travel & experiences</label>
+          <input type="text" id="costTravel" value="300" oninput="calculate()" onchange="calculate()">
+          <span class="input-hint">If you're planning to travel during your break</span>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="costPersonal">Subscriptions & personal</label>
+          <input type="text" id="costPersonal" value="100" oninput="calculate()" onchange="calculate()">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="costOther">Everything else</label>
+          <input type="text" id="costOther" value="100" oninput="calculate()" onchange="calculate()">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: Hidden Costs -->
+  <div class="calc-section">
+    <h2>3. The costs people forget</h2>
+    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+      These are the expenses that catch people off guard. Toggle them on or off and adjust the amounts.
+    </p>
+
+    <div class="hidden-cost-row">
+      <div class="hidden-cost-toggle">
+        <label class="switch">
+          <input type="checkbox" id="toggleEmergency" checked onchange="calculate()">
+          <span class="slider"></span>
+        </label>
+        <div>
+          <strong>Emergency buffer</strong>
+          <span class="input-hint" style="display: block;">Unexpected expenses — car repair, medical, etc.</span>
+        </div>
+      </div>
+      <div class="hidden-cost-input">
+        <label for="emergencyMonths">Months of expenses</label>
+        <select id="emergencyMonths" onchange="calculate()">
+          <option value="1">1 month</option>
+          <option value="2">2 months</option>
+          <option value="3" selected>3 months</option>
+          <option value="4">4 months</option>
+          <option value="6">6 months</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="hidden-cost-row">
+      <div class="hidden-cost-toggle">
+        <label class="switch">
+          <input type="checkbox" id="toggleReturnBuffer" checked onchange="calculate()">
+          <span class="slider"></span>
+        </label>
+        <div>
+          <strong>Return-to-work buffer</strong>
+          <span class="input-hint" style="display: block;">Living expenses while you job search after the break</span>
+        </div>
+      </div>
+      <div class="hidden-cost-input">
+        <label for="returnMonths">Months of expenses</label>
+        <select id="returnMonths" onchange="calculate()">
+          <option value="1">1 month</option>
+          <option value="2" selected>2 months</option>
+          <option value="3">3 months</option>
+          <option value="4">4 months</option>
+          <option value="6">6 months</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="hidden-cost-row">
+      <div class="hidden-cost-toggle">
+        <label class="switch">
+          <input type="checkbox" id="toggleSavings" onchange="calculate()">
+          <span class="slider"></span>
+        </label>
+        <div>
+          <strong>Keep investing (RRSP/TFSA)</strong>
+          <span class="input-hint" style="display: block;">Optional — continue retirement contributions during the break</span>
+        </div>
+      </div>
+      <div class="hidden-cost-input">
+        <label for="savingsAmount">Monthly contribution</label>
+        <input type="text" id="savingsAmount" value="500" oninput="calculate()" onchange="calculate()">
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: Income During Break -->
+  <div class="calc-section">
+    <h2>4. Income during your break (optional)</h2>
+    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+      Will you have any money coming in? Even a little income stretches your break significantly.
+    </p>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="incomeFreelance">Freelance / part-time (monthly)</label>
+        <input type="text" id="incomeFreelance" value="0" oninput="calculate()" onchange="calculate()">
+        <span class="input-hint">Consulting, contract work, gig income</span>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="incomeEI">EI benefits (monthly)</label>
+        <input type="text" id="incomeEI" value="0" oninput="calculate()" onchange="calculate()">
+        <span class="input-hint">If eligible — max ~$2,500/mo (2025)</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="incomePartner">Partner covering shared costs (%)</label>
+        <input type="number" id="incomePartner" value="0" min="0" max="100" step="5" oninput="calculate()" onchange="calculate()">
+        <span class="input-hint">Percentage of your monthly costs covered by a partner</span>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="incomeOther">Other income (monthly)</label>
+        <input type="text" id="incomeOther" value="0" oninput="calculate()" onchange="calculate()">
+        <span class="input-hint">Rental income, dividends, side projects</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="calc-section results-section" id="results">
+    <h2 id="resultsTitle">Your Career Break Number</h2>
+
+    <!-- Mode 1: How much do I need? -->
+    <div id="needResults">
+      <div class="big-number" id="totalNeeded">$0</div>
+      <div class="big-number-label">total savings needed</div>
+
+      <div class="result-breakdown">
+        <div class="result-row">
+          <span class="result-label">Living costs during break</span>
+          <span class="result-value" id="resultLivingCosts">$0</span>
+        </div>
+        <div class="result-row" id="rowEmergency">
+          <span class="result-label">Emergency buffer</span>
+          <span class="result-value" id="resultEmergency">$0</span>
+        </div>
+        <div class="result-row" id="rowReturn">
+          <span class="result-label">Return-to-work buffer</span>
+          <span class="result-value" id="resultReturn">$0</span>
+        </div>
+        <div class="result-row" id="rowInvesting">
+          <span class="result-label">Continued investing</span>
+          <span class="result-value" id="resultInvesting">$0</span>
+        </div>
+        <div class="result-row" id="rowIncomeOffset" style="display: none;">
+          <span class="result-label">Income during break</span>
+          <span class="result-value" id="resultIncomeOffset" style="color: #2ecc71;">-$0</span>
+        </div>
+        <div class="result-row result-total">
+          <span class="result-label">Total Needed</span>
+          <span class="result-value" id="resultTotal">$0</span>
+        </div>
+      </div>
+
+      <div class="burn-rate">
+        <span>Monthly burn rate: </span><strong id="needBurnRate">$0/mo</strong>
+        <span class="input-hint" style="display: inline;"> (after income)</span>
+      </div>
+
+      <div class="save-up-box" id="saveUpBox">
+        <p>If you save <strong id="saveUpAmount">$1,000/mo</strong>, you could take this break in <strong id="saveUpTime">—</strong>.</p>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <label for="monthlySaveRate">Monthly savings toward the break</label>
+            <input type="text" id="monthlySaveRate" value="1,000" oninput="calculate()" onchange="calculate()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode 2: How long can I take? -->
+    <div id="longResults" style="display: none;">
+      <div class="big-number" id="maxDuration">0 months</div>
+      <div class="big-number-label">maximum break duration</div>
+
+      <div class="depletion-bar-container">
+        <div class="depletion-bar" id="depletionBar">
+          <div class="depletion-fill" id="depletionFill"></div>
+          <div class="depletion-labels">
+            <span>Start</span>
+            <span id="depletionEnd">0 months</span>
+          </div>
+        </div>
+        <div class="depletion-note" id="depletionNote"></div>
+      </div>
+
+      <div class="result-breakdown" style="margin-top: 1.5rem;">
+        <div class="result-row">
+          <span class="result-label">Available savings</span>
+          <span class="result-value" id="resultSavingsAvail">$0</span>
+        </div>
+        <div class="result-row" id="rowEmergency2">
+          <span class="result-label">Less: emergency buffer</span>
+          <span class="result-value" id="resultEmergency2">-$0</span>
+        </div>
+        <div class="result-row" id="rowReturn2">
+          <span class="result-label">Less: return-to-work buffer</span>
+          <span class="result-value" id="resultReturn2">-$0</span>
+        </div>
+        <div class="result-row result-total">
+          <span class="result-label">Spendable on the break</span>
+          <span class="result-value" id="resultSpendable">$0</span>
+        </div>
+      </div>
+
+      <div class="burn-rate">
+        <span>Monthly burn rate: </span><strong id="longBurnRate">$0/mo</strong>
+        <span class="input-hint" style="display: inline;"> (after income)</span>
+      </div>
+
+      <div class="thin-warning" id="thinWarning" style="display: none;">
+        Your savings leave very little room for surprises. Consider building a larger buffer before taking the leap.
+      </div>
+    </div>
+
+    <!-- What Moves the Needle -->
+    <div class="needle-section" id="needleSection">
+      <h3>What moves the needle</h3>
+      <div class="needle-row" id="needle1"></div>
+      <div class="needle-row" id="needle2"></div>
+      <div class="needle-row" id="needle3"></div>
+    </div>
+
+    <details class="mt-3">
+      <summary><strong>Assumptions & methodology</strong></summary>
+      <div style="padding: 0.75rem 0; font-size: 0.9rem; line-height: 1.6;">
+        <ul>
+          <li>No investment returns are assumed on your break savings — this is conservative by design.</li>
+          <li>Health & dental insurance costs vary widely across Canada. Budget $150–$350/mo for a private plan without employer coverage.</li>
+          <li>EI eligibility depends on your situation — you may not qualify if you quit voluntarily. Check <a href="https://www.canada.ca/en/services/benefits/ei.html" target="_blank">Service Canada</a> for details.</li>
+          <li>The emergency buffer is separate from your break spending — it's a safety net for genuine surprises.</li>
+          <li>The return-to-work buffer covers living costs while you're job hunting. The average Canadian job search takes 1–3 months.</li>
+          <li>All amounts are in Canadian dollars (CAD).</li>
+          <li><strong>This calculator is a planning tool, not financial advice.</strong> Talk to a financial planner before making major changes.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- Tip -->
+  <div class="calc-section" style="text-align: center; padding: 1rem;">
+    <p style="font-size: 0.95rem; color: #666; margin: 0;">
+      <strong>Tip:</strong> Try both modes — figure out your number, then check how long your current savings would actually last.
+    </p>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="post-cta mt-4">
+  <h3>Thinking about a career break?</h3>
+  <p>A good financial plan makes bold moves possible — let's figure out your timeline together.</p>
+  <a href="/services/" class="btn btn-service">Let's Talk</a>
+</div>
+
+<script>
+// ============================================================
+// STATE
+// ============================================================
+let mode = 'need';       // 'need' or 'long'
+let costMode = 'simple'; // 'simple' or 'detailed'
+let durationUnit = 'months'; // 'months' or 'years'
+
+// ============================================================
+// HELPERS
+// ============================================================
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('en-CA');
+}
+
+function parse(v) {
+  if (typeof v === 'number') return v;
+  return parseFloat(String(v).replace(/[,$\s]/g, '')) || 0;
+}
+
+function formatInput(el) {
+  const raw = parse(el.value);
+  if (raw > 0) {
+    el.value = raw.toLocaleString('en-CA', { maximumFractionDigits: 0 });
+  }
+}
+
+// Add blur formatting to all text inputs (currency fields)
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.break-calc input[type="text"]').forEach(function(el) {
+    el.addEventListener('blur', function() { formatInput(this); });
+  });
+  calculate();
+});
+
+// ============================================================
+// MODE SWITCHING
+// ============================================================
+function setMode(m) {
+  mode = m;
+  document.getElementById('btnNeed').classList.toggle('active', m === 'need');
+  document.getElementById('btnLong').classList.toggle('active', m === 'long');
+  document.getElementById('needInputs').style.display = m === 'need' ? '' : 'none';
+  document.getElementById('longInputs').style.display = m === 'long' ? '' : 'none';
+  document.getElementById('needResults').style.display = m === 'need' ? '' : 'none';
+  document.getElementById('longResults').style.display = m === 'long' ? '' : 'none';
+  document.getElementById('resultsTitle').textContent = m === 'need' ? 'Your Career Break Number' : 'How Long Can You Take?';
+  calculate();
+}
+
+function setCostMode(m) {
+  costMode = m;
+  document.getElementById('btnSimple').classList.toggle('active', m === 'simple');
+  document.getElementById('btnDetailed').classList.toggle('active', m === 'detailed');
+  document.getElementById('simpleInputs').style.display = m === 'simple' ? '' : 'none';
+  document.getElementById('detailedInputs').style.display = m === 'detailed' ? '' : 'none';
+  calculate();
+}
+
+function setUnit(u) {
+  durationUnit = u;
+  document.getElementById('btnMonths').classList.toggle('active', u === 'months');
+  document.getElementById('btnYears').classList.toggle('active', u === 'years');
+  // Convert value
+  var input = document.getElementById('breakDuration');
+  var val = parseFloat(input.value) || 0;
+  if (u === 'years') {
+    input.value = Math.round((val / 12) * 10) / 10;
+    input.step = '0.5';
+    input.max = '10';
+  } else {
+    input.value = Math.round(val * 12);
+    input.step = '1';
+    input.max = '120';
+  }
+  calculate();
+}
+
+// ============================================================
+// CALCULATIONS
+// ============================================================
+function getMonthlyLivingCost() {
+  if (costMode === 'simple') {
+    return parse(document.getElementById('monthlyCost').value);
+  }
+  return parse(document.getElementById('costHousing').value)
+       + parse(document.getElementById('costFood').value)
+       + parse(document.getElementById('costTransport').value)
+       + parse(document.getElementById('costHealth').value)
+       + parse(document.getElementById('costTravel').value)
+       + parse(document.getElementById('costPersonal').value)
+       + parse(document.getElementById('costOther').value);
+}
+
+function getBreakMonths() {
+  var val = parseFloat(document.getElementById('breakDuration').value) || 0;
+  return durationUnit === 'years' ? Math.round(val * 12) : val;
+}
+
+function getMonthlyIncome() {
+  var freelance = parse(document.getElementById('incomeFreelance').value);
+  var ei = parse(document.getElementById('incomeEI').value);
+  var other = parse(document.getElementById('incomeOther').value);
+  var partnerPct = parseFloat(document.getElementById('incomePartner').value) || 0;
+  var partnerOffset = getMonthlyLivingCost() * (partnerPct / 100);
+  return freelance + ei + other + partnerOffset;
+}
+
+function getNetMonthlyBurn() {
+  var cost = getMonthlyLivingCost();
+  var investing = 0;
+  if (document.getElementById('toggleSavings').checked) {
+    investing = parse(document.getElementById('savingsAmount').value);
+  }
+  var income = getMonthlyIncome();
+  return Math.max(0, cost + investing - income);
+}
+
+function formatDuration(months) {
+  months = Math.round(months);
+  if (months < 1) return 'less than a month';
+  if (months < 12) return months + (months === 1 ? ' month' : ' months');
+  var years = Math.floor(months / 12);
+  var rem = months % 12;
+  var str = years + (years === 1 ? ' year' : ' years');
+  if (rem > 0) str += ' and ' + rem + (rem === 1 ? ' month' : ' months');
+  return str;
+}
+
+function calculate() {
+  var monthlyCost = getMonthlyLivingCost();
+  var monthlyIncome = getMonthlyIncome();
+  var investingMonthly = document.getElementById('toggleSavings').checked ? parse(document.getElementById('savingsAmount').value) : 0;
+  var netBurn = Math.max(0, monthlyCost + investingMonthly - monthlyIncome);
+
+  var emergencyOn = document.getElementById('toggleEmergency').checked;
+  var emergencyMonths = parseInt(document.getElementById('emergencyMonths').value);
+  var emergencyAmount = emergencyOn ? monthlyCost * emergencyMonths : 0;
+
+  var returnOn = document.getElementById('toggleReturnBuffer').checked;
+  var returnMonths = parseInt(document.getElementById('returnMonths').value);
+  var returnAmount = returnOn ? monthlyCost * returnMonths : 0;
+
+  if (mode === 'need') {
+    calculateNeed(monthlyCost, monthlyIncome, investingMonthly, netBurn, emergencyAmount, returnAmount);
+  } else {
+    calculateLong(monthlyCost, monthlyIncome, investingMonthly, netBurn, emergencyAmount, returnAmount);
+  }
+
+  calculateNeedle(monthlyCost, monthlyIncome, investingMonthly, netBurn, emergencyAmount, returnAmount);
+}
+
+function calculateNeed(monthlyCost, monthlyIncome, investingMonthly, netBurn, emergencyAmount, returnAmount) {
+  var breakMonths = getBreakMonths();
+  var livingCosts = netBurn * breakMonths;
+  var totalIncome = monthlyIncome * breakMonths;
+  var investingTotal = investingMonthly * breakMonths;
+  var totalNeeded = livingCosts + emergencyAmount + returnAmount;
+
+  // Display
+  document.getElementById('totalNeeded').textContent = fmt(totalNeeded);
+  document.getElementById('resultLivingCosts').textContent = fmt(monthlyCost * breakMonths);
+
+  var rowEmergency = document.getElementById('rowEmergency');
+  rowEmergency.style.display = emergencyAmount > 0 ? '' : 'none';
+  document.getElementById('resultEmergency').textContent = fmt(emergencyAmount);
+
+  var rowReturn = document.getElementById('rowReturn');
+  rowReturn.style.display = returnAmount > 0 ? '' : 'none';
+  document.getElementById('resultReturn').textContent = fmt(returnAmount);
+
+  var rowInvesting = document.getElementById('rowInvesting');
+  rowInvesting.style.display = investingMonthly > 0 ? '' : 'none';
+  document.getElementById('resultInvesting').textContent = fmt(investingTotal);
+
+  var rowIncome = document.getElementById('rowIncomeOffset');
+  if (totalIncome > 0) {
+    rowIncome.style.display = '';
+    document.getElementById('resultIncomeOffset').textContent = '-' + fmt(totalIncome);
+  } else {
+    rowIncome.style.display = 'none';
+  }
+
+  document.getElementById('resultTotal').textContent = fmt(totalNeeded);
+  document.getElementById('needBurnRate').textContent = fmt(netBurn) + '/mo';
+
+  // Save-up calculation
+  var saveRate = parse(document.getElementById('monthlySaveRate').value);
+  document.getElementById('saveUpAmount').textContent = fmt(saveRate) + '/mo';
+  if (saveRate > 0 && totalNeeded > 0) {
+    var saveMonths = Math.ceil(totalNeeded / saveRate);
+    document.getElementById('saveUpTime').textContent = formatDuration(saveMonths);
+  } else {
+    document.getElementById('saveUpTime').textContent = '\u2014';
+  }
+}
+
+function calculateLong(monthlyCost, monthlyIncome, investingMonthly, netBurn, emergencyAmount, returnAmount) {
+  var savings = parse(document.getElementById('availableSavings').value);
+  var spendable = Math.max(0, savings - emergencyAmount - returnAmount);
+  var maxMonths = netBurn > 0 ? Math.floor(spendable / netBurn) : 0;
+
+  // Display
+  document.getElementById('maxDuration').textContent = formatDuration(maxMonths);
+  document.getElementById('resultSavingsAvail').textContent = fmt(savings);
+
+  var rowEmergency2 = document.getElementById('rowEmergency2');
+  rowEmergency2.style.display = emergencyAmount > 0 ? '' : 'none';
+  document.getElementById('resultEmergency2').textContent = '-' + fmt(emergencyAmount);
+
+  var rowReturn2 = document.getElementById('rowReturn2');
+  rowReturn2.style.display = returnAmount > 0 ? '' : 'none';
+  document.getElementById('resultReturn2').textContent = '-' + fmt(returnAmount);
+
+  document.getElementById('resultSpendable').textContent = fmt(spendable);
+  document.getElementById('longBurnRate').textContent = fmt(netBurn) + '/mo';
+  document.getElementById('depletionEnd').textContent = formatDuration(maxMonths);
+
+  // Depletion bar
+  var fill = document.getElementById('depletionFill');
+  var maxDisplay = Math.max(maxMonths, 1);
+  // Show as a percentage of 24 months (2 years) for visual scale
+  var pct = Math.min(100, (maxMonths / 24) * 100);
+  fill.style.width = pct + '%';
+
+  if (maxMonths >= 12) {
+    fill.style.background = '#2ecc71';
+  } else if (maxMonths >= 6) {
+    fill.style.background = '#f39c12';
+  } else {
+    fill.style.background = '#e74c3c';
+  }
+
+  // Thin warning
+  var warning = document.getElementById('thinWarning');
+  if (spendable <= 0) {
+    warning.style.display = '';
+    warning.textContent = 'After setting aside buffers, there\'s nothing left for the break itself. You\'ll need more savings or to reduce your buffers.';
+  } else if (maxMonths <= 1) {
+    warning.style.display = '';
+    warning.textContent = 'Your savings would last about a month or less. Consider building up more before taking the plunge.';
+  } else if (emergencyAmount === 0 && returnAmount === 0) {
+    warning.style.display = '';
+    warning.textContent = 'You have no emergency or return-to-work buffer. This leaves zero margin for surprises — consider enabling at least one buffer above.';
+  } else {
+    warning.style.display = 'none';
+  }
+
+  // Depletion note
+  var note = document.getElementById('depletionNote');
+  if (netBurn > 0 && maxMonths > 0) {
+    var used = netBurn * maxMonths;
+    var leftover = spendable - used;
+    note.textContent = 'After ' + formatDuration(maxMonths) + ', you\'d have ' + fmt(emergencyAmount + returnAmount + leftover) + ' remaining in buffers.';
+  } else {
+    note.textContent = '';
+  }
+}
+
+function calculateNeedle(monthlyCost, monthlyIncome, investingMonthly, netBurn, emergencyAmount, returnAmount) {
+  var needle1 = document.getElementById('needle1');
+  var needle2 = document.getElementById('needle2');
+  var needle3 = document.getElementById('needle3');
+
+  if (mode === 'need') {
+    var breakMonths = getBreakMonths();
+    var totalNeeded = netBurn * breakMonths + emergencyAmount + returnAmount;
+
+    // Cut spending by $300/mo
+    var reducedBurn = Math.max(0, netBurn - 300);
+    var reducedTotal = reducedBurn * breakMonths + Math.max(0, emergencyAmount - 300 * (emergencyAmount > 0 ? parseInt(document.getElementById('emergencyMonths').value) : 0)) + Math.max(0, returnAmount - 300 * (returnAmount > 0 ? parseInt(document.getElementById('returnMonths').value) : 0));
+    // Simpler: just show savings on the total
+    var cutSaving = totalNeeded - (Math.max(0, (monthlyCost - 300 + investingMonthly - monthlyIncome)) * breakMonths + (emergencyAmount > 0 ? (monthlyCost - 300) * parseInt(document.getElementById('emergencyMonths').value) : 0) + (returnAmount > 0 ? (monthlyCost - 300) * parseInt(document.getElementById('returnMonths').value) : 0));
+    needle1.innerHTML = 'Cut spending by <strong>$300/mo</strong> &rarr; save <strong>' + fmt(Math.abs(cutSaving)) + '</strong> off your target';
+
+    // Add freelance income
+    var freelanceExtra = 1000;
+    var freelanceSaving = freelanceExtra * breakMonths;
+    needle2.innerHTML = 'Earn <strong>' + fmt(freelanceExtra) + '/mo</strong> freelancing &rarr; need <strong>' + fmt(freelanceSaving) + '</strong> less';
+
+    // Shorter break
+    var shorterMonths = Math.max(1, breakMonths - 3);
+    var shorterTotal = netBurn * shorterMonths + emergencyAmount + returnAmount;
+    var shorterSaving = totalNeeded - shorterTotal;
+    needle3.innerHTML = 'Take <strong>' + formatDuration(shorterMonths) + '</strong> instead &rarr; save <strong>' + fmt(shorterSaving) + '</strong>';
+  } else {
+    var savings = parse(document.getElementById('availableSavings').value);
+    var spendable = Math.max(0, savings - emergencyAmount - returnAmount);
+    var maxMonths = netBurn > 0 ? Math.floor(spendable / netBurn) : 0;
+
+    // Cut spending by $300/mo
+    var reducedBurn2 = Math.max(0, monthlyCost - 300 + investingMonthly - monthlyIncome);
+    var reducedSpendable = Math.max(0, savings - (emergencyAmount > 0 ? (monthlyCost - 300) * parseInt(document.getElementById('emergencyMonths').value) : 0) - (returnAmount > 0 ? (monthlyCost - 300) * parseInt(document.getElementById('returnMonths').value) : 0));
+    var extraMonths1 = reducedBurn2 > 0 ? Math.floor(reducedSpendable / reducedBurn2) - maxMonths : 0;
+    needle1.innerHTML = 'Cut spending by <strong>$300/mo</strong> &rarr; <strong>' + Math.max(0, extraMonths1) + '</strong> more months of freedom';
+
+    // Add freelance income
+    var burnWithFreelance = Math.max(0, netBurn - 1000);
+    var monthsWithFreelance = burnWithFreelance > 0 ? Math.floor(spendable / burnWithFreelance) : 999;
+    var extraMonths2 = monthsWithFreelance - maxMonths;
+    if (burnWithFreelance <= 0) {
+      needle2.innerHTML = 'Earn <strong>$1,000/mo</strong> freelancing &rarr; your savings could last <strong>indefinitely</strong>';
+    } else {
+      needle2.innerHTML = 'Earn <strong>$1,000/mo</strong> freelancing &rarr; <strong>' + extraMonths2 + '</strong> more months';
+    }
+
+    // Reduce emergency buffer
+    if (emergencyAmount > 0) {
+      var reducedEmergency = monthlyCost * 2;
+      var extraSpendable = emergencyAmount - reducedEmergency;
+      var extraMonths3 = netBurn > 0 ? Math.floor(extraSpendable / netBurn) : 0;
+      needle3.innerHTML = 'Reduce emergency buffer to <strong>2 months</strong> &rarr; frees up <strong>' + fmt(extraSpendable) + '</strong>';
+    } else {
+      needle3.innerHTML = 'Add <strong>$5,000</strong> more savings &rarr; <strong>' + (netBurn > 0 ? Math.floor(5000 / netBurn) : 0) + '</strong> more months';
+    }
+  }
+}
+</script>
+
+<style>
+.break-calc {
+  max-width: 860px;
+  margin: 2rem auto;
+}
+
+.calc-section {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.calc-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #2ecc71;
+}
+
+.calc-section label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.calc-section select,
+.calc-section input[type="number"],
+.calc-section input[type="text"] {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  appearance: auto;
+}
+
+.input-hint {
+  display: block;
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 0.2rem;
+}
+
+/* Toggles */
+.travel-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.toggle-btn:hover {
+  border-color: #2ecc71;
+}
+
+.toggle-btn.active {
+  border-color: #2ecc71;
+  background: #2ecc71;
+  color: #fff;
+}
+
+/* Unit toggle (months/years) */
+.unit-toggle {
+  display: flex;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.unit-btn {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #e0e0e0;
+  background: #f9f9f9;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.unit-btn:first-child {
+  border-radius: 6px 0 0 6px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.unit-btn:last-child {
+  border-radius: 0 6px 6px 0;
+  border-left: 1px solid #e0e0e0;
+}
+
+.unit-btn.active {
+  border-color: #2ecc71;
+  background: #2ecc71;
+  color: #fff;
+}
+
+.unit-btn:hover {
+  border-color: #2ecc71;
+}
+
+/* Hidden cost rows */
+.hidden-cost-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.hidden-cost-row:last-child {
+  border-bottom: none;
+}
+
+.hidden-cost-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.hidden-cost-input {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.hidden-cost-input label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.hidden-cost-input select,
+.hidden-cost-input input {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #fff;
+}
+
+/* Toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #ccc;
+  transition: 0.2s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: #fff;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background: #2ecc71;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Results */
+.results-section {
+  border: 2px solid #38250E;
+  background: #faf8f5;
+}
+
+.results-section h2 {
+  border-bottom-color: #38250E;
+}
+
+.big-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #38250E;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.big-number-label {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.result-breakdown {
+  margin-bottom: 1rem;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e8e4de;
+  font-size: 0.95rem;
+}
+
+.result-value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-total {
+  border-bottom: 2px solid #38250E;
+  border-top: 2px solid #38250E;
+  padding: 0.75rem 0;
+  margin-top: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.result-total .result-value {
+  color: #38250E;
+  font-size: 1.3rem;
+}
+
+.burn-rate {
+  text-align: center;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.save-up-box {
+  background: #f0faf0;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.save-up-box p {
+  margin: 0 0 0.5rem 0;
+}
+
+/* Depletion bar */
+.depletion-bar-container {
+  margin-top: 1rem;
+}
+
+.depletion-bar {
+  position: relative;
+  height: 32px;
+  background: #e8e4de;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.depletion-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.4s ease, background 0.4s ease;
+  min-width: 2px;
+}
+
+.depletion-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.depletion-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Thin warning */
+.thin-warning {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #856404;
+}
+
+/* What moves the needle */
+.needle-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e8e4de;
+}
+
+.needle-section h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: #38250E;
+}
+
+.needle-row {
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .calc-section {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  .calc-section label {
+    color: #ddd;
+  }
+
+  .calc-section select,
+  .calc-section input[type="number"],
+  .calc-section input[type="text"] {
+    background: #333;
+    border-color: #555;
+    color: #eee;
+  }
+
+  .input-hint {
+    color: #999;
+  }
+
+  .toggle-btn {
+    background: #333;
+    border-color: #555;
+    color: #ddd;
+  }
+
+  .toggle-btn.active {
+    background: #2ecc71;
+    border-color: #2ecc71;
+    color: #fff;
+  }
+
+  .unit-btn {
+    background: #333;
+    border-color: #555;
+    color: #ddd;
+  }
+
+  .unit-btn.active {
+    background: #2ecc71;
+    border-color: #2ecc71;
+    color: #fff;
+  }
+
+  .hidden-cost-row {
+    border-bottom-color: #444;
+  }
+
+  .hidden-cost-toggle strong {
+    color: #ddd;
+  }
+
+  .hidden-cost-input select,
+  .hidden-cost-input input {
+    background: #333;
+    border-color: #555;
+    color: #eee;
+  }
+
+  .slider {
+    background: #555;
+  }
+
+  .results-section {
+    background: #2a2520;
+    border-color: #5a3d1a;
+  }
+
+  .big-number {
+    color: #d4a96a;
+  }
+
+  .big-number-label {
+    color: #999;
+  }
+
+  .result-row {
+    border-bottom-color: #444;
+  }
+
+  .result-total {
+    border-color: #5a3d1a;
+  }
+
+  .result-total .result-value {
+    color: #d4a96a;
+  }
+
+  .burn-rate {
+    color: #ccc;
+  }
+
+  .save-up-box {
+    background: #1e2e1e;
+    border-color: #2a4a2a;
+    color: #ccc;
+  }
+
+  .depletion-bar {
+    background: #444;
+  }
+
+  .depletion-labels {
+    color: #999;
+  }
+
+  .depletion-note {
+    color: #999;
+  }
+
+  .thin-warning {
+    background: #3a3020;
+    border-color: #5a4a20;
+    color: #d4a96a;
+  }
+
+  .needle-section {
+    border-top-color: #444;
+  }
+
+  .needle-section h3 {
+    color: #d4a96a;
+  }
+
+  .needle-row {
+    color: #bbb;
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .break-calc {
+    margin: 1rem auto;
+  }
+
+  .calc-section {
+    padding: 1rem;
+  }
+
+  .hidden-cost-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .hidden-cost-input {
+    width: 100%;
+    padding-left: 3.25rem;
+  }
+
+  .big-number {
+    font-size: 2rem;
+  }
+}
+</style>
