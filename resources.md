@@ -22,11 +22,22 @@ permalink: /resources/
   <div class="col-md-6 mb-4">
     <div class="resource-card">
       <span class="badge resource-badge">Calculator</span>
+      <h3>Career Break Calculator</h3>
+      <p>Find out how much you need to save for a career break — or how long your savings will last. Plan your mini-retirement with real numbers.</p>
+      <a href="/career-break-calculator/" class="btn btn-resource">Try It Free</a>
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="resource-card">
+      <span class="badge resource-badge">Calculator</span>
       <h3>Vacation Cost Calculator</h3>
       <p>Compare the real cost of driving vs flying to popular destinations from Saskatchewan. Fuel, flights, hotels, food — see the full picture before you book.</p>
       <a href="/vacation-calculator/" class="btn btn-resource">Try It Free</a>
     </div>
   </div>
+</div>
+
+<div class="row mb-4">
   <div class="col-md-6 mb-4">
     <div class="resource-card">
       <span class="badge resource-badge">Calculator</span>
