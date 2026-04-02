@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://tonyneufeld.blog/sitemap.xml
+
+# LLM content files
+# llms.txt: https://tonyneufeld.blog/llms.txt
+# llms-full.txt: https://tonyneufeld.blog/llms-full.txt

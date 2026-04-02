@@ -5,6 +5,9 @@ date: 2026-03-31 09:00:00 -0600
 categories: [Personal Finance, Parenting]
 tags: [parental leave, maternity leave, EI benefits, Saskatchewan, budgeting, CCB, RESP, new parents]
 description: "EI pays 55% of your salary. Here's how to budget for parental leave in Saskatchewan without blowing up your finances or your relationship."
+redirect_from:
+  - /2026/03/31/Surviving Parental Leave Finances in Saskatchewan/
+toc: true
 ---
 
 *The day your EI cheque arrives and you realize it's 45% less than your paycheque is a rude awakening. Here's how to plan for it before the baby arrives.*
@@ -212,5 +215,10 @@ Do those five things, and you'll handle parental leave finances better than 80% 
 The first year is expensive and exhausting. But it doesn't have to be financially chaotic.
 
 ---
+
+### Keep Reading
+- [How Much Do I Need to Retire in Saskatchewan?](/How-Much-Do-I-Need-to-Retire-in-Saskatchewan/) — Once parental leave is behind you, figure out your long-term retirement number.
+- [The Shockingly Simple Math Behind Early Retirement](/The-Shockingly-Simple-Math-Behind-Early-Retirement-and-Why-Its-Less-Risky-in-Canada/) — The savings rate math and why Canada's safety net makes early retirement realistic for families.
+- [Life Lessons in My 20s](/Boulders/) — The philosophy behind being present with your family and finding enough.
 
 *Saskatchewan-specific resources: [EI maternity and parental benefits calculator](https://www.canada.ca/en/services/benefits/ei/ei-maternity-parental/benefit-amount.html) — [Canada Child Benefit amounts](https://www.canada.ca/en/revenue-agency/services/child-family-benefits/canada-child-benefit/how-much.html) — [Saskatchewan childcare information](https://www.saskatchewan.ca/residents/family-and-social-support/child-care/child-care-in-saskatchewan)*

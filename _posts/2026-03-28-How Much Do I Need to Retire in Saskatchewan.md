@@ -5,6 +5,9 @@ date: 2026-03-28 09:00:00 -0600
 categories: [Personal Finance, Retirement]
 tags: [saskatchewan, retirement, fire, 4% rule, calculator]
 description: "A simple calculator to find your Saskatchewan retirement number. Track your spending for one month, plug it in, and find out how much you actually need."
+redirect_from:
+  - /2026/03/28/How Much Do I Need to Retire in Saskatchewan/
+toc: true
 ---
 
 *You don't need a financial advisor to answer this question. You need a pen, a month of patience, and about five minutes with the calculator below.*
@@ -301,5 +304,12 @@ Track your spending for the next 30 days. That's it. Don't optimize, don't cut a
 At the end of the month, plug your monthly number into the calculator above. You'll know your retirement number in five seconds. And from there, everything gets clearer — what to save, which accounts to use, and how long the road actually is.
 
 Most people are closer than they think. Especially here on the Prairies.
+
+---
+
+### Keep Reading
+- [The Shockingly Simple Math Behind Early Retirement](/The-Shockingly-Simple-Math-Behind-Early-Retirement-and-Why-Its-Less-Risky-in-Canada/) — The foundational savings rate equation and why Canada makes early retirement less risky.
+- [Retiring on the Prairies: A Simple Guide to Your Next Chapter](/Retiring-on-the-Prairies-A-Simple-Guide-to-Your-Next-Chapter/) — A practical guide for Saskatchewan residents approaching 60.
+- [Surviving Parental Leave Finances in Saskatchewan](/Surviving-Parental-Leave-Finances-in-Saskatchewan-What-Nobody-Tells-You/) — Planning for the biggest financial shift young families face.
 
 *If you want help building a plan around your number, [book a free discovery call](/services/) and we'll figure it out together.*
