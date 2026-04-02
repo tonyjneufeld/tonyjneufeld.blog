@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "How a Saskatchewan Winter and a Concussion Helped Me Refocus"
+title: "How a Saskatchewan Winter and a Concussion Helped Me Refocus"
+redirect_from:
+  - /2025/05/12/Focus on What You Can Control/
 ---
-As you may have already read in my previous post about [why I am writing this blog](https://tonyneufeld.blog/2025/05/05/Why-am-I-starting-this-Blog/), I like to try new things, especially when it comes to sports. This winter, it was Flag Football. Flag Football is traditionally a non-contact sport, but sometimes things get heated when it comes to playoffs. 
+As you may have already read in my previous post about [why I am writing this blog](#), I like to try new things, especially when it comes to sports. This winter, it was Flag Football. Flag Football is traditionally a non-contact sport, but sometimes things get heated when it comes to playoffs. 
 
 So let's set the stage. Week 2 of the playoffs, our team is playing against one of the top teams in the league with a birth in the finals at stake. We are down a touchdown late in the first half, and we have the ball. The play call is a WR bubble screen to me, and I catch the ball, make the first guy miss, go to juke the second guy, and… we crash head-on-head. Both of us have a huge gash right above our eyes, in the **exact same spot**. 
 
@@ -17,9 +19,16 @@ In the past few years, gosh there have been many days where I have felt like cra
 So during that time off, I thought deeply about my why and tried to boil it down to what has made me tick in my 20s. I landed on five reasonably simple tenets, and they are as follows:
 
 1. Think deeply about the rhythms and flows that you desire in life.  
-2. Find what is enough for you (or your [Boulders](https://tonyneufeld.blog/2025/04/28/Boulders/)).  
+2. Find what is enough for you (or your [Boulders](/Boulders/)).  
 3. Build the life that you want to live.  
 4. Stop caring about what other people think.  
 5. Focus on what you can control.
 
 I want to highlight that, depending on who you are and where you are in life, these tenets will be unique to you. And in ten years (*or maybe even in a year lol*), when I reflect back on this post, I have a feeling that I will have a different world view, and I may not even agree with myself. What I do know for certain is that I will be proud of the fact that I spent the time in my 20s thinking about and trying to set my family up for the future. I want to go deep on each of these Tenets in future posts, but that's it for today, blog post \#3 in the books\!
+
+---
+
+### Keep Reading
+- [Life Lessons in My 20s](/Boulders/) — Where these tenets started: figuring out my boulders before turning 30.
+- [Ferriss, Adeney, and Newport: A New Framework for Financial Independence](/Ferriss-Adeney-and-Newport-A-New-Framework-for-Financial-Independence/) — Deep work, savings rate, and lifestyle design as a system.
+- [The Shockingly Simple Math Behind Early Retirement](/The-Shockingly-Simple-Math-Behind-Early-Retirement-and-Why-Its-Less-Risky-in-Canada/) — The math behind "build the life you want."

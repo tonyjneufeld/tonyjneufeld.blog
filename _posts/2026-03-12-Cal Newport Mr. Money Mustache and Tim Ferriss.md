@@ -1,9 +1,12 @@
----  
-layout: post  
-title: "Ferriss, Adeney, and Newport: A New Framework for Financial Independence"  
-date: 2026-03-12 09:00:00 -0600  
-categories: [Personal Finance, Retirement]  
-tags: [saskatchewan, retirement, lifestyle design]  
+---
+layout: post
+title: "Ferriss, Adeney, and Newport: A New Framework for Financial Independence"
+date: 2026-03-12 09:00:00 -0600
+categories: [Personal Finance, Retirement]
+tags: [saskatchewan, retirement, lifestyle design]
+redirect_from:
+  - /2026/03/12/Cal Newport Mr. Money Mustache and Tim Ferriss/
+toc: true
 ---  
 
 *What happens when you combine radical frugality, lifestyle design, and deep work? You get something more powerful than any of them alone.*
@@ -101,5 +104,10 @@ If there's a single sentence that captures what Tim Ferriss, Mr. Money Mustache,
 You don't have to choose between them. You just have to start.
 
 ---
+
+### Keep Reading
+- [The Shockingly Simple Math Behind Early Retirement](/The-Shockingly-Simple-Math-Behind-Early-Retirement-and-Why-Its-Less-Risky-in-Canada/) — The savings rate math in detail, plus why Canada gives you an edge.
+- [How Much Do I Need to Retire in Saskatchewan?](/How-Much-Do-I-Need-to-Retire-in-Saskatchewan/) — Put the framework into practice with a Saskatchewan-specific calculator.
+- [Life Lessons in My 20s](/Boulders/) — The origin of my "enough" philosophy that ties these frameworks together.
 
 *What's your current lever? Are you building depth, widening the gap, or designing the life? I'd love to hear where you are in the process.*

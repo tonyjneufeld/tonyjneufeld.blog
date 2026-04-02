@@ -1,6 +1,9 @@
----  
-layout: post  
-title:  "The Shockingly Simple Math Behind Early Retirement... and Why It's Less Risky in Canada."  
+---
+layout: post
+title: "The Shockingly Simple Math Behind Early Retirement... and Why It's Less Risky in Canada."
+redirect_from:
+  - /2025/05/20/Early Retirement in Canada/
+toc: true
 ---
 
 Nearly thirteen years ago, Mr. Money Mustache wrote his iconic blog post, ["The Shockingly Simple Math Behind Early Retirement](https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/)." This post changed how I think about my career and is still relevant today. Although this article is written from an American perspective, I would argue that this equation is even simpler in Canada. 
@@ -67,7 +70,7 @@ Canada Child Benefit (CCB) is incredibly generous and tax-free—your lower earl
 
 
 
-As much as I love all of the math behind early retirement, I believe there are steps that you must take as you embark on this journey to ensure that when you get there (and you will get there), you are left with a [fulfilling life that you love](https://tonyneufeld.blog/2025/04/28/Boulders/).
+As much as I love all of the math behind early retirement, I believe there are steps that you must take as you embark on this journey to ensure that when you get there (and you will get there), you are left with a [fulfilling life that you love](/Boulders/).
 
 With that all being said, feel free to take a look at where you land with this very simple and conservative early retirement calculator:
 
@@ -259,4 +262,7 @@ With that all being said, feel free to take a look at where you land with this v
 
 ---
 
-
+### Keep Reading
+- [How Much Do I Need to Retire in Saskatchewan?](/How-Much-Do-I-Need-to-Retire-in-Saskatchewan/) — Plug in your actual spending and get your personal retirement number.
+- [Retiring on the Prairies: A Simple Guide to Your Next Chapter](/Retiring-on-the-Prairies-A-Simple-Guide-to-Your-Next-Chapter/) — Practical retirement planning for Saskatchewan residents approaching 60.
+- [Ferriss, Adeney, and Newport: A New Framework for Financial Independence](/Ferriss-Adeney-and-Newport-A-New-Framework-for-Financial-Independence/) — The ideas behind the savings rate, taken further.

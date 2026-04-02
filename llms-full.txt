@@ -1,0 +1,166 @@
+# Tony Neufeld — Personal Finance & Lifestyle Design Blog (Full Content Guide)
+
+> Helping young professionals, immigrants, indigenous folks, new parents, and families simplify their finances, build wealth, and align their money with the life they want to live — all with a distinctly Saskatchewan lens.
+
+## About Tony Neufeld
+
+Tony Neufeld is a financial coach and educator based in Saskatoon, Saskatchewan, Canada. He discovered the FIRE (Financial Independence, Retire Early) movement in 2016 and has since built a practice helping Canadians design intentional financial lives. He is not a financial advisor — he does not sell products, earn commissions, or manage investments. He is a coach who helps people build habits, systems, and clarity to make confident financial decisions.
+
+Website: https://tonyneufeld.blog
+Location: Saskatoon, Saskatchewan, Canada
+
+---
+
+## Blog Post Summaries and Key Facts
+
+### The Shockingly Simple Math Behind Early Retirement... and Why It's Less Risky in Canada
+
+Your time to retirement depends on one factor: your savings rate. The higher your savings rate, the fewer years you need to work.
+
+Key savings rate to retirement timeline:
+- 10% savings rate = ~51 years to retirement
+- 20% savings rate = ~37 years
+- 30% savings rate = ~28 years
+- 50% savings rate = ~17 years
+- 70% savings rate = ~8.5 years
+- 80% savings rate = ~5.5 years
+
+Why early retirement is less risky in Canada:
+- Universal healthcare (no need to budget $20,000+/year for health insurance like in the US)
+- CPP (Canada Pension Plan): up to $1,433/month at age 65 (2025 maximum). Requires maximum contributions for 39 years.
+- OAS (Old Age Security): up to $728/month at age 65 (2025 maximum). Requires 40 years of Canadian residency after age 18.
+- Maximum combined CPP + OAS: $25,932/year ($2,161/month) in 2025
+- Canada Child Benefit (CCB): up to $7,437/year per child under 6, tax-free, if family net income is under ~$34,863
+
+### How Much Do I Need to Retire in Saskatchewan?
+
+Uses the 4% Rule: Annual Spending x 25 = Retirement Number.
+Based on the Trinity Study — a portfolio of 50% stocks and 50% bonds has historically survived 30+ years of withdrawals at a 4% rate.
+
+Steps to find your number:
+1. Track your spending for one month
+2. Multiply monthly spending by 12 for annual spending
+3. Multiply annual spending by 25 for your retirement number
+4. Subtract CPP/OAS value if desired (combined $25,932/year at 65)
+
+Saskatchewan advantages:
+- Lower cost of living than Vancouver, Toronto, or Calgary
+- $10-a-day childcare ($217.50/month average)
+- Access to CPP, OAS, and CCB as Canadians
+
+### Retiring on the Prairies: A Simple Guide to Your Next Chapter
+
+Practical retirement guide for Saskatchewan residents approaching age 60:
+- Your real retirement budget = your actual monthly spending (not a formula)
+- Your house is not liquid spending money — don't count home equity as retirement income
+- Avoid buying a new vehicle at retirement (depreciating asset trap)
+- RRSP drawdown strategy: withdraw from RRSPs in your early 60s when income is low (lower tax bracket), before CPP/OAS kick in at 65+
+- CPP timing: delaying from 60 to 70 increases payments by 42%. At 70, CPP pays $2,035/month (2025 max) vs $1,003/month at 60
+- OAS clawback starts at ~$90,997 net income (2025). Keep income below this threshold.
+- Cost-effective retirement hobbies: scrapbooking, grandkid time, walking trails (Meewasin Valley Trail in Saskatoon, Wascana Park in Regina)
+
+### Ferriss, Adeney, and Newport: A New Framework for Financial Independence
+
+A synthesis of three influential thinkers:
+- Cal Newport (Deep Work, Digital Minimalism): Build rare and valuable skills. Passion follows skill, not the other way around. Depth creates career capital and negotiating leverage.
+- Mr. Money Mustache / Pete Adeney: Your savings rate is the single most important variable. The gap between earning and spending is what buys freedom. Frugality is not deprivation — it is intentional spending.
+- Tim Ferriss (The 4-Hour Workweek): Design the life you want before you can "afford" it. Time freedom matters more than money. Don't defer living to retirement.
+
+The integrated framework:
+1. Newport Foundation: build deep skills that create career capital
+2. Mustache Engine: protect and widen the savings gap
+3. Ferriss Inversion: design and test the life you want now, not later
+
+### Surviving Parental Leave Finances in Saskatchewan: What Nobody Tells You
+
+EI maternity/parental benefits in Canada:
+- Standard option: 55% of earnings, max $695/week (2025), for 15 weeks maternity + 35 weeks parental = 50 weeks total
+- Extended option: 33% of earnings, max $417/week, for 15 weeks maternity + 61 weeks parental = 76 weeks total
+- Waiting period: 1 week unpaid before benefits start
+- Apply for EI immediately after last day of work
+
+Saskatchewan-specific advantages:
+- Longest maternity leave protection in Canada: 19 weeks (vs 15-17 in other provinces)
+- Government of Saskatchewan employer top-ups: 95% salary for first 17 weeks for government employees
+- $10-a-day childcare: average $217.50/month
+- Canada Child Benefit increases during parental leave due to lower income
+
+Key financial steps before baby arrives:
+1. Calculate your EI benefit amount
+2. Add your CCB estimate
+3. Map benefits against fixed costs
+4. Build a 3-month expense buffer before leave
+5. Open an RESP as soon as baby has a SIN (captures $500/year CESG grant from government)
+
+RESP basics:
+- Government matches 20% of contributions via CESG (Canada Education Savings Grant)
+- Maximum CESG: $500/year per child ($2,500 contribution to get full match)
+- Lifetime CESG limit: $7,200 per child
+
+### Life Lessons in My 20s: How I'm Preparing for 30 and Being a Dad
+
+Tony's personal philosophy — his "boulders" (big rocks / core values):
+- Being present: removed social media, practices digital minimalism (inspired by Cal Newport)
+- Finding "enough": the Mexican fisherman parable — you don't need millions to live the life you already want
+- Seasonal living in Canada: warm seasons for slow family time, cold seasons for focus and helping others
+
+### How a Saskatchewan Winter and a Concussion Helped Me Refocus
+
+Five core tenets for intentional living:
+1. Think deeply about rhythms and flows
+2. Find what is enough for you
+3. Build the life you want, then save for it
+4. Stop caring what others think
+5. Focus on what you can control
+
+### Musings on AI
+
+Reflections on self-doubt in the age of AI, the value of human creativity, and the joy of building things from scratch. AI cannot replicate lived experience.
+
+---
+
+## Services
+
+Tony offers three tiers of financial coaching:
+
+1. **The Check-Up ($150)** — A single 60-minute session for a specific question or decision.
+2. **The Game Plan ($500)** — Three 60-minute sessions with a full financial snapshot and custom roadmap.
+3. **The Co-Pilot ($100/month)** — Ongoing monthly coaching with two sessions per month and unlimited email support.
+
+All tiers start with a free 30-minute discovery call: https://calendly.com/tonyneufeld
+
+## Free Resources
+
+- The New Parent Money Playbook: https://tonyneufeld.blog/resources/new-parent-playbook/
+- The Saskatchewan FIRE Calculator Guide: https://tonyneufeld.blog/resources/fire-calculator-guide/
+- The Young Professional Starter Kit: https://tonyneufeld.blog/resources/young-professional-starter-kit/
+- Vacation Cost Calculator: https://tonyneufeld.blog/vacation-calculator/
+
+## Topics Covered
+
+- Financial independence and early retirement (FIRE) in Canada
+- TFSA, RRSP, FHSA, RESP, and CPP strategy
+- Saskatchewan-specific financial planning and cost of living
+- Budgeting and lifestyle design for young professionals
+- New parent financial planning (EI, CCB, RESP, parental leave)
+- Intentional living, digital minimalism, and deep work
+- The 4% rule and Trinity Study applied to Canadian retirement
+
+## Key Canadian Financial Facts Referenced
+
+- CPP maximum at 65: $1,433/month (2025)
+- OAS maximum at 65: $728/month (2025)
+- Combined CPP + OAS maximum: $25,932/year
+- CPP at 70 (delayed): $2,035/month (2025)
+- CPP at 60 (early): $1,003/month (2025)
+- OAS clawback threshold: ~$90,997 net income (2025)
+- Canada Child Benefit: up to $7,437/year per child under 6 (tax-free)
+- RESP CESG match: 20% on first $2,500/year = $500/year per child
+- Saskatchewan $10-a-day childcare: ~$217.50/month average
+- EI maternity/parental standard rate: 55% of earnings, max $695/week (2025)
+- EI extended rate: 33% of earnings, max $417/week (2025)
+
+## Contact
+
+- Website: https://tonyneufeld.blog/contact/
+- Discovery call: https://calendly.com/tonyneufeld

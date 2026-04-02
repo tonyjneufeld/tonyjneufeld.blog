@@ -1,6 +1,8 @@
----  
-layout: post  
-title:  "Musings on AI"  
+---
+layout: post
+title: "Musings on AI"
+redirect_from:
+  - /2026/02/18/Musings on AI/
 ---
 Self-doubt. The moment I started click-clacking on my keyboard I had the feeling of self-doubt. That what I write won’t be good enough. That what I write I will have to plug through whatever LLM is the best at the moment. But what if I just wrote. In my own voice for once. Deeply, authentically, and most of all human writing.
 
@@ -12,4 +14,11 @@ But there is a bigger problem, self-doubt. This comes into play when I start try
 
 But this morning, while I was shovelling the 30cm of snow that blanketed my walkway something clicked. AI is not human. AI is far from perfect. AI can’t shovel this 30cm of snow, and it can’t replicate the raw lived experiences I have had. 
 
-The joy from the process, the effort, and the enjoyment from creating something from nothing can still be found. I just need to rediscover this.  
+The joy from the process, the effort, and the enjoyment from creating something from nothing can still be found. I just need to rediscover this.
+
+---
+
+### Keep Reading
+- [Life Lessons in My 20s](/Boulders/) — The philosophy of being present and doing meaningful work.
+- [How a Saskatchewan Winter and a Concussion Helped Me Refocus](/How-a-Saskatchewan-Winter-and-a-Concussion-Helped-Me-Refocus/) — Focusing on what you can control when everything feels uncertain.
+- [Ferriss, Adeney, and Newport: A New Framework for Financial Independence](/Ferriss-Adeney-and-Newport-A-New-Framework-for-Financial-Independence/) — Cal Newport's deep work philosophy applied to building a life of purpose.

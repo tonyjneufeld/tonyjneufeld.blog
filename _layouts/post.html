@@ -4,7 +4,7 @@ layout: default
 
 <div class="post">
   <h1>{{ page.title }}</h1>
-  <span class="fs-6 text-muted">{{ page.date | date: "%B %-d, %Y" }} • 
+  <span class="fs-6 text-muted">{{ page.date | date: "%B %-d, %Y" }} •
   {% assign words = content | number_of_words %}
   {% assign minutes = words | divided_by:200 %}
   {% if minutes < 1 %}
@@ -12,6 +12,14 @@ layout: default
   {% else %}
     {{ minutes }} min read
   {% endif %} </span>
+
+  {% if page.toc %}
+  <nav class="post-toc mt-3 mb-4">
+    <strong>In this post</strong>
+    {{ content | toc_only }}
+  </nav>
+  {% endif %}
+
   <div class="mt-4">{{ content }}</div>
 
   <div class="post-cta mt-5">

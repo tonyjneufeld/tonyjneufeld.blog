@@ -1,9 +1,12 @@
----  
-layout: post  
-title: "Retiring on the Prairies: A Simple Guide to Your Next Chapter"  
-date: 2026-03-10 09:00:00 -0600  
-categories: [Personal Finance, Retirement]  
-tags: [saskatchewan, retirement, rrsp, cpp, lifestyle design]  
+---
+layout: post
+title: "Retiring on the Prairies: A Simple Guide to Your Next Chapter"
+date: 2026-03-10 09:00:00 -0600
+categories: [Personal Finance, Retirement]
+tags: [saskatchewan, retirement, rrsp, cpp, lifestyle design]
+redirect_from:
+  - /2026/03/10/Retiring on the Prairies_ A Simple Guide to Your Next Chapter/
+toc: true
 ---  
 There’s a shift that happens when you hit 60. The kids are grown, the house is mostly quiet, and the idea of retirement stops being some distant, fuzzy dream and starts becoming a very real reality staring you in the face. 
 
@@ -62,4 +65,9 @@ Retirement is just your next great chapter. Keep your money simple, protect your
 
 ---
 
-*Enjoyed this post? I write practical insights on lifestyle design and personal finance right here in Saskatchewan. Join the newsletter to get my latest thoughts sent straight to your inbox!*  
+### Keep Reading
+- [How Much Do I Need to Retire in Saskatchewan?](/How-Much-Do-I-Need-to-Retire-in-Saskatchewan/) — A calculator to find your personal retirement number using the 4% rule.
+- [The Shockingly Simple Math Behind Early Retirement](/The-Shockingly-Simple-Math-Behind-Early-Retirement-and-Why-Its-Less-Risky-in-Canada/) — The math behind the savings rate and why Canada makes it easier.
+- [Surviving Parental Leave Finances in Saskatchewan](/Surviving-Parental-Leave-Finances-in-Saskatchewan-What-Nobody-Tells-You/) — For your kids or grandkids heading into parenthood.
+
+*Enjoyed this post? I write practical insights on lifestyle design and personal finance right here in Saskatchewan. Join the newsletter to get my latest thoughts sent straight to your inbox!*
