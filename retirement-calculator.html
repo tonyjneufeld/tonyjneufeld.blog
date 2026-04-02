@@ -1,0 +1,846 @@
+---
+layout: default
+title: "Retirement Savings Calculator"
+description: "Design the life you want, then find out what it takes to fund it. A retirement calculator that starts with living — not just saving."
+permalink: /retirement-calculator/
+---
+
+<div class="welcome-section" style="text-align: center;">
+  <h1>Retirement Savings Calculator</h1>
+  <p>Design your life first. Then save for it.</p>
+</div>
+
+<p class="mt-4" style="max-width: 720px; margin-left: auto; margin-right: auto; text-align: center; color: #555;">
+  Most retirement calculators ask how much you want to save. This one asks how you want to <em>live</em>.
+  Figure out what your ideal life actually costs, see where you stand today, and find out what it takes to get there.
+</p>
+
+<div class="retire-calc" id="retireCalc">
+
+  <!-- STEP 1: Lifestyle Cost -->
+  <div class="calc-section">
+    <h2>1. What does your ideal life cost?</h2>
+    <p style="font-size: 0.92rem; color: #666; margin-bottom: 1rem;">
+      Think about the life you want to live in retirement — not just surviving, but actually living.
+      Morning coffee at your favourite spot. A garden. Travel. Time with grandkids.
+      What does that life cost each month?
+    </p>
+
+    <div class="travel-toggle" style="margin-bottom: 1.25rem;">
+      <button id="btnSimple" class="toggle-btn active" onclick="setMode('simple')">Simple Estimate</button>
+      <button id="btnDetailed" class="toggle-btn" onclick="setMode('detailed')">Detailed Breakdown</button>
+    </div>
+
+    <!-- Simple mode -->
+    <div id="simpleInputs">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="monthlySimple">Monthly spending in retirement ($)</label>
+          <input type="number" id="monthlySimple" value="3500" step="100" min="500" max="30000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">What you'd spend each month to live the life you want</span>
+        </div>
+        <div class="col-md-6 mb-3" style="display: flex; align-items: center;">
+          <div class="spending-guide">
+            <span style="font-size: 0.82rem; color: #888; display: block; margin-bottom: 0.25rem;">Saskatchewan benchmarks:</span>
+            <span style="font-size: 0.82rem; color: #888;">Modest: ~$2,500 &nbsp;|&nbsp; Comfortable: ~$3,500 &nbsp;|&nbsp; Generous: ~$5,000+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed mode -->
+    <div id="detailedInputs" style="display: none;">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="housing">Housing ($)</label>
+          <input type="number" id="housing" value="1400" step="50" min="0" max="10000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Rent, mortgage, property tax, insurance</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="food">Groceries & dining ($)</label>
+          <input type="number" id="food" value="600" step="25" min="0" max="5000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Eating well matters</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="transport">Transportation ($)</label>
+          <input type="number" id="transport" value="400" step="25" min="0" max="3000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Vehicle, fuel, insurance, transit</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="travel">Travel & experiences ($)</label>
+          <input type="number" id="travel" value="400" step="25" min="0" max="5000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Vacations, weekend trips, concerts</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="hobbies">Hobbies & recreation ($)</label>
+          <input type="number" id="hobbies" value="200" step="25" min="0" max="3000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Golf, fishing, woodworking, gym</span>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="health">Healthcare & insurance ($)</label>
+          <input type="number" id="health" value="200" step="25" min="0" max="3000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Dental, prescriptions, extended health</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="other">Everything else ($)</label>
+          <input type="number" id="other" value="300" step="25" min="0" max="5000" onchange="calculate()" oninput="calculate()">
+          <span class="input-hint">Gifts, clothing, phone, subscriptions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lifestyle-total">
+      <div class="lifestyle-total-row">
+        <span>Monthly lifestyle cost</span>
+        <span id="monthlyTotal" class="lifestyle-total-value">$3,500</span>
+      </div>
+      <div class="lifestyle-total-row annual">
+        <span>Annual lifestyle cost</span>
+        <span id="annualTotal" class="lifestyle-total-value">$42,000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Where you are -->
+  <div class="calc-section">
+    <h2>2. Where are you now?</h2>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="age">Your current age</label>
+        <input type="number" id="age" value="30" step="1" min="18" max="80" onchange="calculate()" oninput="calculate()">
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="retireAge">Target retirement age</label>
+        <input type="number" id="retireAge" value="55" step="1" min="25" max="85" onchange="calculate()" oninput="calculate()">
+        <span class="input-hint">When do you want work to become optional?</span>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="currentSavings">Current savings ($)</label>
+        <input type="number" id="currentSavings" value="25000" step="1000" min="0" max="10000000" onchange="calculate()" oninput="calculate()">
+        <span class="input-hint">RRSP + TFSA + investments combined</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="monthlySavings">Monthly savings ($)</label>
+        <input type="number" id="monthlySavings" value="800" step="50" min="0" max="20000" onchange="calculate()" oninput="calculate()">
+        <span class="input-hint">What you put away each month right now</span>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="annualReturn">Expected annual return (%)</label>
+        <input type="number" id="annualReturn" value="6" step="0.5" min="0" max="15" onchange="calculate()" oninput="calculate()">
+        <span class="input-hint">Conservative: 4% | Balanced: 6% | Aggressive: 8%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="calc-section results-section" id="results">
+    <h2>Your Numbers</h2>
+
+    <div class="result-summary" id="resultSummary"></div>
+
+    <div class="result-breakdown">
+      <div class="result-row">
+        <span class="result-label">Annual lifestyle cost</span>
+        <span class="result-value" id="resAnnualCost">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Your number (25x annual spending)</span>
+        <span class="result-value" id="resFireNumber">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Currently saved</span>
+        <span class="result-value" id="resCurrentSavings">$0</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Projected savings at target age</span>
+        <span class="result-value" id="resProjected">$0</span>
+      </div>
+      <div class="result-row result-total">
+        <span class="result-label" id="resGapLabel">Gap</span>
+        <span class="result-value" id="resGap">$0</span>
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-section">
+      <div class="progress-label">
+        <span>Progress toward your number</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-section">
+      <div class="timeline-row">
+        <span class="timeline-icon">&#128197;</span>
+        <span id="timelineMsg">Calculating...</span>
+      </div>
+      <div class="timeline-row">
+        <span class="timeline-icon">&#128176;</span>
+        <span id="savingsNeeded">Calculating...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT MOVES THE NEEDLE -->
+  <div class="calc-section levers-section">
+    <h2>What Moves the Needle?</h2>
+    <p style="font-size: 0.92rem; color: #666; margin-bottom: 1rem;">
+      Small changes compound into big differences. Here's what each lever does to your timeline.
+    </p>
+
+    <div class="lever-cards" id="leverCards">
+      <div class="lever-card">
+        <div class="lever-title">Spend $200/mo less</div>
+        <div class="lever-impact" id="leverSpend"></div>
+        <div class="lever-detail" id="leverSpendDetail"></div>
+      </div>
+      <div class="lever-card">
+        <div class="lever-title">Save $200/mo more</div>
+        <div class="lever-impact" id="leverSave"></div>
+        <div class="lever-detail" id="leverSaveDetail"></div>
+      </div>
+      <div class="lever-card">
+        <div class="lever-title">Work 2 more years</div>
+        <div class="lever-impact" id="leverWork"></div>
+        <div class="lever-detail" id="leverWorkDetail"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Assumptions -->
+  <div class="calc-section">
+    <details>
+      <summary><strong>Assumptions & fine print</strong></summary>
+      <div style="padding: 0.75rem 0; font-size: 0.9rem; line-height: 1.6;">
+        <ul>
+          <li><strong>The 4% rule:</strong> This calculator uses the 4% safe withdrawal rate (your annual spending &times; 25 = your target number). Research suggests a portfolio invested in a diversified mix of stocks and bonds can sustain 4% annual withdrawals for 30+ years.</li>
+          <li><strong>Returns are real (inflation-adjusted):</strong> A 6% return assumption roughly reflects a balanced portfolio after inflation. Your actual returns will vary year to year.</li>
+          <li><strong>CPP and OAS are not included:</strong> This is intentionally conservative. CPP (up to ~$1,365/mo at 65 in 2026) and OAS (up to ~$727/mo at 65) will reduce what you need from your portfolio. Think of them as a bonus cushion.</li>
+          <li><strong>Tax is simplified:</strong> In retirement, withdrawals from RRSPs and non-registered accounts are taxed. TFSA withdrawals are tax-free. Your actual spending power depends on your account mix. Saskatchewan's provincial tax rates are moderate compared to most provinces.</li>
+          <li><strong>Saskatchewan context:</strong> Lower housing costs, no PST on many essentials, and relatively affordable recreation make the prairies one of the best places in Canada to retire affordably.</li>
+          <li><strong>This is not financial advice.</strong> It's a thinking tool. Talk to a fee-only financial planner if you want a personalized plan.</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="post-cta mt-4">
+  <h3>Want help building a plan that fits your life?</h3>
+  <p>A good financial plan doesn't start with spreadsheets — it starts with what matters to you.</p>
+  <a href="/services/" class="btn btn-service">Let's Talk</a>
+</div>
+
+<script>
+let mode = 'simple';
+
+function setMode(m) {
+  mode = m;
+  document.getElementById('btnSimple').classList.toggle('active', m === 'simple');
+  document.getElementById('btnDetailed').classList.toggle('active', m === 'detailed');
+  document.getElementById('simpleInputs').style.display = m === 'simple' ? '' : 'none';
+  document.getElementById('detailedInputs').style.display = m === 'detailed' ? '' : 'none';
+  calculate();
+}
+
+function val(id) {
+  return parseFloat(document.getElementById(id).value) || 0;
+}
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('en-CA');
+}
+
+function yearsToTarget(savings, monthly, rate, target) {
+  // Returns years until savings reach target, or Infinity
+  if (target <= savings) return 0;
+  if (monthly <= 0 && rate <= 0) return Infinity;
+  var r = rate / 12;
+  var years = 0;
+  var bal = savings;
+  // Month-by-month simulation (simpler and handles edge cases)
+  for (var m = 0; m < 1200; m++) {
+    bal = bal * (1 + r) + monthly;
+    if (bal >= target) return (m + 1) / 12;
+  }
+  return Infinity;
+}
+
+function futureValue(savings, monthly, rate, years) {
+  if (years <= 0) return savings;
+  var r = rate / 12;
+  var n = years * 12;
+  // FV of lump sum + FV of annuity
+  var fvLump = savings * Math.pow(1 + r, n);
+  var fvAnnuity = r > 0 ? monthly * ((Math.pow(1 + r, n) - 1) / r) : monthly * n;
+  return fvLump + fvAnnuity;
+}
+
+function requiredMonthly(savings, rate, years, target) {
+  if (years <= 0) return target - savings > 0 ? Infinity : 0;
+  var r = rate / 12;
+  var n = years * 12;
+  var fvLump = savings * Math.pow(1 + r, n);
+  var gap = target - fvLump;
+  if (gap <= 0) return 0;
+  if (r <= 0) return gap / n;
+  return gap / ((Math.pow(1 + r, n) - 1) / r);
+}
+
+function calculate() {
+  // Monthly spending
+  var monthly;
+  if (mode === 'simple') {
+    monthly = val('monthlySimple');
+  } else {
+    monthly = val('housing') + val('food') + val('transport') +
+              val('travel') + val('hobbies') + val('health') + val('other');
+  }
+  var annual = monthly * 12;
+  var fireNumber = annual * 25;
+
+  // Display lifestyle totals
+  document.getElementById('monthlyTotal').textContent = fmt(monthly);
+  document.getElementById('annualTotal').textContent = fmt(annual);
+
+  // Current state
+  var age = val('age');
+  var retireAge = val('retireAge');
+  var currentSavings = val('currentSavings');
+  var monthlySave = val('monthlySavings');
+  var annualReturn = val('annualReturn') / 100;
+  var yearsUntil = retireAge - age;
+
+  // Projected savings at target age
+  var projected = futureValue(currentSavings, monthlySave, annualReturn, yearsUntil);
+  var gap = fireNumber - projected;
+  var pct = fireNumber > 0 ? Math.min((projected / fireNumber) * 100, 100) : 0;
+
+  // Years to hit number at current rate
+  var yearsToHit = yearsToTarget(currentSavings, monthlySave, annualReturn, fireNumber);
+  var hitAge = age + yearsToHit;
+
+  // Required monthly to hit target by retire age
+  var reqMonthly = requiredMonthly(currentSavings, annualReturn, yearsUntil, fireNumber);
+
+  // Results
+  document.getElementById('resAnnualCost').textContent = fmt(annual);
+  document.getElementById('resFireNumber').textContent = fmt(fireNumber);
+  document.getElementById('resCurrentSavings').textContent = fmt(currentSavings);
+  document.getElementById('resProjected').textContent = fmt(projected);
+
+  if (gap <= 0) {
+    document.getElementById('resGapLabel').textContent = 'Surplus at target age';
+    document.getElementById('resGap').textContent = fmt(Math.abs(gap));
+    document.getElementById('resGap').style.color = '#2ecc71';
+  } else {
+    document.getElementById('resGapLabel').textContent = 'Gap at target age';
+    document.getElementById('resGap').textContent = fmt(gap);
+    document.getElementById('resGap').style.color = '';
+  }
+
+  // Summary
+  var summary;
+  if (gap <= 0) {
+    summary = "You're on track. At your current pace, you'll have more than enough by " + Math.round(retireAge) + ".";
+  } else if (yearsToHit < 100) {
+    summary = "At your current pace, you'll hit your number at age " + Math.round(hitAge) +
+              ". To retire by " + Math.round(retireAge) + ", you'd need to save " + fmt(reqMonthly) + "/month.";
+  } else {
+    summary = "At your current savings rate, you won't reach your number. " +
+              "To retire by " + Math.round(retireAge) + ", you'd need to save " + fmt(reqMonthly) + "/month.";
+  }
+  document.getElementById('resultSummary').textContent = summary;
+
+  // Progress
+  document.getElementById('progressPct').textContent = Math.round(pct) + '%';
+  document.getElementById('progressBar').style.width = pct + '%';
+  if (pct >= 100) {
+    document.getElementById('progressBar').style.background = '#2ecc71';
+  } else if (pct >= 60) {
+    document.getElementById('progressBar').style.background = '#2ecc71';
+  } else if (pct >= 30) {
+    document.getElementById('progressBar').style.background = '#f0ad4e';
+  } else {
+    document.getElementById('progressBar').style.background = '#e74c3c';
+  }
+
+  // Timeline messages
+  if (yearsToHit === 0) {
+    document.getElementById('timelineMsg').textContent = "You've already hit your number!";
+  } else if (yearsToHit < 100) {
+    document.getElementById('timelineMsg').textContent =
+      "At your current pace, you'll hit your number in " + Math.round(yearsToHit) +
+      " years (age " + Math.round(hitAge) + ")";
+  } else {
+    document.getElementById('timelineMsg').textContent =
+      "At your current savings rate, you won't reach your number without changes";
+  }
+
+  if (reqMonthly <= 0) {
+    document.getElementById('savingsNeeded').textContent =
+      "You're already saving enough to hit your number by " + Math.round(retireAge);
+  } else if (reqMonthly < 100000) {
+    document.getElementById('savingsNeeded').textContent =
+      "To retire by " + Math.round(retireAge) + ", you need to save " + fmt(reqMonthly) + "/month";
+  } else {
+    document.getElementById('savingsNeeded').textContent =
+      "Retiring by " + Math.round(retireAge) + " isn't feasible at current returns — consider adjusting your timeline or spending";
+  }
+
+  // LEVERS
+  // 1. Spend $200/mo less
+  var reducedAnnual = (monthly - 200) * 12;
+  var reducedFire = reducedAnnual * 25;
+  var reducedYears = yearsToTarget(currentSavings, monthlySave, annualReturn, reducedFire);
+  var savedYears1 = yearsToHit - reducedYears;
+  if (reducedFire <= currentSavings) {
+    document.getElementById('leverSpend').textContent = "You're already there";
+    document.getElementById('leverSpend').className = 'lever-impact lever-positive';
+    document.getElementById('leverSpendDetail').textContent = "Your current savings already cover this lifestyle";
+  } else if (savedYears1 > 0 && savedYears1 < 100) {
+    document.getElementById('leverSpend').textContent = Math.round(savedYears1) + " years earlier";
+    document.getElementById('leverSpend').className = 'lever-impact lever-positive';
+    document.getElementById('leverSpendDetail').textContent =
+      "Lower spending = smaller target (" + fmt(reducedFire) + ") + you could invest the difference too";
+  } else {
+    document.getElementById('leverSpend').textContent = "Modest impact";
+    document.getElementById('leverSpend').className = 'lever-impact lever-neutral';
+    document.getElementById('leverSpendDetail').textContent =
+      "New target: " + fmt(reducedFire);
+  }
+
+  // 2. Save $200/mo more
+  var moreYears = yearsToTarget(currentSavings, monthlySave + 200, annualReturn, fireNumber);
+  var savedYears2 = yearsToHit - moreYears;
+  if (fireNumber <= currentSavings) {
+    document.getElementById('leverSave').textContent = "Already there";
+    document.getElementById('leverSave').className = 'lever-impact lever-positive';
+    document.getElementById('leverSaveDetail').textContent = "You've already reached your number";
+  } else if (savedYears2 > 0 && savedYears2 < 100) {
+    document.getElementById('leverSave').textContent = Math.round(savedYears2) + " years earlier";
+    document.getElementById('leverSave').className = 'lever-impact lever-positive';
+    document.getElementById('leverSaveDetail').textContent =
+      "Extra $200/mo becomes " + fmt(futureValue(0, 200, annualReturn, yearsUntil)) + " over " + Math.round(yearsUntil) + " years";
+  } else if (moreYears < 100) {
+    document.getElementById('leverSave').textContent = "Reach it in " + Math.round(moreYears) + " years";
+    document.getElementById('leverSave').className = 'lever-impact lever-positive';
+    document.getElementById('leverSaveDetail').textContent =
+      "Extra $200/mo becomes " + fmt(futureValue(0, 200, annualReturn, yearsUntil)) + " over " + Math.round(yearsUntil) + " years";
+  } else {
+    document.getElementById('leverSave').textContent = "Helps, but not enough alone";
+    document.getElementById('leverSave').className = 'lever-impact lever-neutral';
+    document.getElementById('leverSaveDetail').textContent = "Consider combining with other changes";
+  }
+
+  // 3. Work 2 more years
+  var extendedProjected = futureValue(currentSavings, monthlySave, annualReturn, yearsUntil + 2);
+  var extendedGap = fireNumber - extendedProjected;
+  if (extendedGap <= 0 && gap > 0) {
+    document.getElementById('leverWork').textContent = "Closes the gap";
+    document.getElementById('leverWork').className = 'lever-impact lever-positive';
+    document.getElementById('leverWorkDetail').textContent =
+      "2 extra years of saving + growth brings you to " + fmt(extendedProjected);
+  } else if (extendedGap < gap) {
+    var pctImprove = Math.round(((gap - extendedGap) / gap) * 100);
+    document.getElementById('leverWork').textContent = pctImprove + "% closer";
+    document.getElementById('leverWork').className = 'lever-impact lever-positive';
+    document.getElementById('leverWorkDetail').textContent =
+      "Projected savings grow to " + fmt(extendedProjected) + " (from " + fmt(projected) + ")";
+  } else {
+    document.getElementById('leverWork').textContent = "Minimal impact";
+    document.getElementById('leverWork').className = 'lever-impact lever-neutral';
+    document.getElementById('leverWorkDetail').textContent = "Other levers may be more effective";
+  }
+}
+
+// Init
+calculate();
+</script>
+
+<style>
+.retire-calc {
+  max-width: 860px;
+  margin: 2rem auto;
+}
+
+.calc-section {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.calc-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #2ecc71;
+}
+
+.calc-section label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.calc-section select,
+.calc-section input[type="number"] {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  appearance: auto;
+}
+
+.input-hint {
+  display: block;
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 0.2rem;
+}
+
+/* Travel mode toggle */
+.travel-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.toggle-btn:hover {
+  border-color: #2ecc71;
+}
+
+.toggle-btn.active {
+  border-color: #2ecc71;
+  background: #2ecc71;
+  color: #fff;
+}
+
+/* Lifestyle total */
+.lifestyle-total {
+  background: #f5faf5;
+  border: 1px solid #d4edda;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.lifestyle-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+}
+
+.lifestyle-total-row.annual {
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-top: 1px solid #c3e6cb;
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.lifestyle-total-value {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #2ecc71;
+}
+
+/* Results */
+.results-section {
+  border: 2px solid #38250E;
+  background: #faf8f5;
+}
+
+.results-section h2 {
+  border-bottom-color: #38250E;
+}
+
+.result-summary {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #38250E;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: #f5f0e8;
+  border-radius: 6px;
+  border-left: 4px solid #38250E;
+}
+
+.result-breakdown {
+  margin-bottom: 1.25rem;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e8e4de;
+  font-size: 0.95rem;
+}
+
+.result-value {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-total {
+  border-bottom: 2px solid #38250E;
+  border-top: 2px solid #38250E;
+  padding: 0.75rem 0;
+  margin-top: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.result-total .result-value {
+  color: #38250E;
+  font-size: 1.3rem;
+}
+
+/* Progress bar */
+.progress-section {
+  margin-bottom: 1.25rem;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+.progress-track {
+  width: 100%;
+  height: 24px;
+  background: #e8e4de;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #2ecc71;
+  border-radius: 12px;
+  transition: width 0.5s ease, background 0.5s ease;
+  min-width: 0;
+}
+
+/* Timeline */
+.timeline-section {
+  margin-top: 0.5rem;
+}
+
+.timeline-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.timeline-icon {
+  font-size: 1.25rem;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* Levers section */
+.levers-section {
+  border-left: 4px solid #2ecc71;
+  background: #f0faf0;
+}
+
+.lever-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.lever-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.lever-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.lever-impact {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.lever-positive {
+  color: #2ecc71;
+}
+
+.lever-neutral {
+  color: #f0ad4e;
+}
+
+.lever-detail {
+  font-size: 0.8rem;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .calc-section {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  .calc-section label {
+    color: #ddd;
+  }
+
+  .calc-section select,
+  .calc-section input[type="number"] {
+    background: #333;
+    border-color: #555;
+    color: #eee;
+  }
+
+  .input-hint {
+    color: #999;
+  }
+
+  .toggle-btn {
+    background: #333;
+    border-color: #555;
+    color: #ddd;
+  }
+
+  .toggle-btn.active {
+    background: #2ecc71;
+    border-color: #2ecc71;
+    color: #fff;
+  }
+
+  .lifestyle-total {
+    background: #1e2e1e;
+    border-color: #2d5a2d;
+  }
+
+  .lifestyle-total-row.annual {
+    border-top-color: #2d5a2d;
+  }
+
+  .results-section {
+    background: #2a2520;
+    border-color: #5a3d1a;
+  }
+
+  .result-summary {
+    background: #332a1e;
+    color: #d4a96a;
+    border-left-color: #5a3d1a;
+  }
+
+  .result-row {
+    border-bottom-color: #444;
+  }
+
+  .result-total {
+    border-color: #5a3d1a;
+  }
+
+  .result-total .result-value {
+    color: #d4a96a;
+  }
+
+  .progress-label {
+    color: #bbb;
+  }
+
+  .progress-track {
+    background: #444;
+  }
+
+  .levers-section {
+    background: #1e2e1e;
+    border-left-color: #2ecc71;
+  }
+
+  .lever-card {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  .lever-title {
+    color: #ddd;
+  }
+
+  .lever-detail {
+    color: #999;
+  }
+
+  .spending-guide span {
+    color: #999 !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .retire-calc {
+    margin: 1rem auto;
+  }
+
+  .calc-section {
+    padding: 1rem;
+  }
+
+  .lever-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .result-total .result-value {
+    font-size: 1.1rem;
+  }
+}
+</style>

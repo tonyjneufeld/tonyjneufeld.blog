@@ -10,9 +10,23 @@ permalink: /resources/
   <p>For Saskatchewan families building wealth on the Prairies</p>
 </div>
 
+<div class="quiz-start-card mt-5">
+  <h2>Start Here: How's Your Money Really Doing?</h2>
+  <p>Take the free 2-minute Canadian Financial Health Quiz. Get your score, see where you stand, and find out exactly what to work on next.</p>
+  <a href="/resources/financial-health-quiz/" class="btn-quiz-start-light">Take the Quiz</a>
+</div>
+
 <h2 class="mt-5 mb-4">Free Tools</h2>
 
 <div class="row mb-4">
+  <div class="col-md-6 mb-4">
+    <div class="resource-card">
+      <span class="badge resource-badge">Calculator</span>
+      <h3>Career Break Calculator</h3>
+      <p>Find out how much you need to save for a career break — or how long your savings will last. Plan your mini-retirement with real numbers.</p>
+      <a href="/career-break-calculator/" class="btn btn-resource">Try It Free</a>
+    </div>
+  </div>
   <div class="col-md-6 mb-4">
     <div class="resource-card">
       <span class="badge resource-badge">Calculator</span>
@@ -21,12 +35,39 @@ permalink: /resources/
       <a href="/vacation-calculator/" class="btn btn-resource">Try It Free</a>
     </div>
   </div>
+</div>
+
+<div class="row mb-4">
   <div class="col-md-6 mb-4">
     <div class="resource-card">
       <span class="badge resource-badge">Calculator</span>
       <h3>Retirement Savings Calculator</h3>
-      <p>Track your monthly spending, plug it in, and find out how much you actually need to retire — based on the simple math behind the 4% rule.</p>
-      <a href="/2025/05/20/the-shockingly-simple-math-behind-early-retirement/" class="btn btn-resource">Try It Free</a>
+      <p>Design the life you want to live, then find out what it takes to fund it — a retirement calculator that starts with living, not just saving.</p>
+      <a href="/retirement-calculator/" class="btn btn-resource">Try It Free</a>
+    </div>
+  </div>
+</div>
+
+<h2 class="mt-4 mb-4">Guides</h2>
+
+<div class="row mb-4">
+  <div class="col-md-6 mb-4">
+    <div class="resource-card">
+      <span class="badge resource-badge">Guide</span>
+      <h3>Saskatoon Neighbourhood Guide</h3>
+      <p>Moving to Saskatoon? A local's honest take on the top 10 neighbourhoods — vibes, things to do, schools, cost of living, and tips for newcomers.</p>
+      <a href="/resources/saskatoon-neighbourhood-guide/" class="btn btn-resource">Read the Guide</a>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4">
+  <div class="col-md-6 mb-4">
+    <div class="resource-card">
+      <span class="badge resource-badge">Calculator</span>
+      <h3>Mindless Scrolling Calculator</h3>
+      <p>Find out how much of your life you've spent scrolling social media — and how much ad revenue you've generated for platforms that profit from your attention.</p>
+      <a href="/scrolling-calculator/" class="btn btn-resource">Try It Free</a>
     </div>
   </div>
 </div>
