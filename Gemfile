@@ -11,5 +11,4 @@ group :jekyll_plugins do
   gem 'jekyll-feed'
   gem 'jekyll-read-time'
   gem 'jekyll-redirect-from'
-  gem 'jekyll-toc'
 end
