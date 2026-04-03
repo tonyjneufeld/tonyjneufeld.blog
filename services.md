@@ -11,6 +11,15 @@ permalink: /services/
   I'm not here to hand you a map and wish you luck — I'm here to navigate alongside you.</p>
 </div>
 
+<!-- Spring Promotion Banner -->
+<div class="promo-banner mt-4">
+  <div class="promo-eyebrow">Limited-Time Offer</div>
+  <h2>Spring Finance Clean-Up — 3 Months Free</h2>
+  <p>The first five new Co-Pilot clients this spring get their first three months at no charge. No catch — just a great time to get your finances sorted before summer hits.</p>
+  <p>Offer valid for new Co-Pilot sign-ups only. Spots are first-come, first-served.</p>
+  <span class="promo-spots">5 spots available</span>
+</div>
+
 <div class="services-intro mt-5 mb-5" style="max-width: 720px; margin-left: auto; margin-right: auto; text-align: center;">
   <h2>How It Works</h2>
   <p>Every engagement starts with a <strong>free discovery call</strong> — no strings, no sales pitch. We'll talk about where you are, where you want to be, and whether working together makes sense. From there, you pick the level of support that fits your life.</p>
