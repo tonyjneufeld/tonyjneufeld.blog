@@ -57,4 +57,3 @@ plugins:
   - jekyll-feed
   - jekyll-read-time
   - jekyll-redirect-from
-  - jekyll-toc

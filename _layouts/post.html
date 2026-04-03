@@ -16,7 +16,7 @@ layout: default
   {% if page.toc %}
   <nav class="post-toc mt-3 mb-4">
     <strong>In this post</strong>
-    {{ content | toc }}
+    {% include toc.html html=content sanitize=true h_min=2 h_max=3 %}
   </nav>
   {% endif %}
 
