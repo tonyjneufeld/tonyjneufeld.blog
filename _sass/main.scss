@@ -511,6 +511,79 @@ a:hover {
   }
 }
 
+// Services promotion banner
+.promo-banner {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  .promo-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #388e3c;
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1b5e20;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #2e7d32;
+    margin-bottom: 0.25rem;
+
+    &:last-of-type {
+      font-size: 0.82rem;
+      color: #558b2f;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .promo-spots {
+    display: inline-block;
+    background: #4caf50;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
+    margin-top: 0.75rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .promo-banner {
+    background: linear-gradient(135deg, #1b2e1c 0%, #1e2d14 100%);
+    border-color: #4caf50;
+
+    .promo-eyebrow {
+      color: #81c784;
+    }
+
+    h2 {
+      color: #a5d6a7;
+    }
+
+    p {
+      color: #81c784;
+
+      &:last-of-type {
+        color: #66bb6a;
+      }
+    }
+  }
+}
+
 // Services intake form
 .get-started-section {
   max-width: 600px;
